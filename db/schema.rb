@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_05_185639) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_095026) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,7 +21,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_185639) do
     t.bigint "style_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "need"
+    t.bigint "needed_instrument_id"
+    t.string "video_url"
+    t.index ["needed_instrument_id"], name: "index_bands_on_needed_instrument_id"
     t.index ["style_id"], name: "index_bands_on_style_id"
   end
 
@@ -77,6 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_185639) do
     t.index ["style_id"], name: "index_users_on_style_id"
   end
 
+  add_foreign_key "bands", "instruments", column: "needed_instrument_id"
   add_foreign_key "bands", "styles"
   add_foreign_key "chatrooms", "bands"
   add_foreign_key "messages", "chatrooms"
