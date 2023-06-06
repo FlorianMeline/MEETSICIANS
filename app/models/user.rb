@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :messages
   belongs_to :band
   has_many :chatrooms, through: :messages
+  has_one_attached :avatar
   # Validation #
   validates :first_name, :last_name, :bio, :city, :instrument, presence: true
   validates :bio, length: { minimum: 50 }
