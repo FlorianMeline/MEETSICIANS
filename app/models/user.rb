@@ -7,5 +7,8 @@ class User < ApplicationRecord
   belongs_to :instrument
   has_many :messages
   belongs_to :band
-  has_many :chatroom, through: :messages
+  has_many :chatrooms, through: :messages
+  # Validation #
+  validates :first_name, :last_name, :bio, :city, :instrument, presence: true
+  validates :bio, length: { minimum: 50 }
 end
