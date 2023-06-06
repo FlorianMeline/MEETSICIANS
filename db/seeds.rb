@@ -92,14 +92,14 @@ file = File.open(Rails.root.join("app/assets/images/arctic-monkeys-1.png"))
 pearl.photo.attach(io: file, filename: "band.png", content_type: "image/png")
 
 noirdesir = Band.create!(
-name: "Noir Désir",
-bio: "Noir Désir, the influential French rock band, was my creative outlet as Jean-Paul Roy.
-Through my passionate vocals and poetic lyrics, we pushed boundaries and addressed societal issues.
-Our intense sound and energetic performances captured the hearts of fans.
-Despite challenges, Noir Désir's legacy as a musical force continues to resonate and inspire.",
-city: "Montcuq",
-style: grunge,
-needed_instrument_id: keyboard,
+  name: "Noir Désir",
+  bio: "Noir Désir, the influential French rock band, was my creative outlet as Jean-Paul Roy.
+  Through my passionate vocals and poetic lyrics, we pushed boundaries and addressed societal issues.
+  Our intense sound and energetic performances captured the hearts of fans.
+  Despite challenges, Noir Désir's legacy as a musical force continues to resonate and inspire.",
+  city: "Montcuq",
+  style: grunge,
+  needed_instrument_id: keyboard,
 )
 file = File.open(Rails.root.join("app/assets/images/NOIRDESIR.png"))
 noirdesir.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -362,7 +362,7 @@ file = File.open(Rails.root.join("app/assets/images/Hermann.png"))
 herman.avatar.attach(io: file, filename: "user.png", content_type: "image/png")
 
 skubu = User.create!(last_name: "Skubu", first_name: "Steve",
-email: "skubu@email.com", password: "azerty", bio: "Hey there, I'm Skubu, the fiddle maestro of Steve 'N' Seagulls!
+  email: "skubu@email.com", password: "azerty", bio: "Hey there, I'm Skubu, the fiddle maestro of Steve 'N' Seagulls!
 With my strings in motion, I add a touch of fiery folk to our rockin' bluegrass sound.
 From Finland to the world, I'm living my musical passion, creating infectious melodies that make hearts dance.
 Let's get down and embrace the fiddle frenzy!", city: "Montcuq", instrument: drums, style: rock, band: steve)
@@ -371,7 +371,7 @@ file = File.open(Rails.root.join("app/assets/images/skubu - Grande.png"))
 skubu.avatar.attach(io: file, filename: "user.png", content_type: "image/png")
 
 jamppa = User.create!(last_name: "Jamppa", first_name: "Steve",
-email: "jamppa@email.com", password: "azerty", bio: "Hey, it's Jamppa from Steve 'N' Seagulls, the rockin' bassist!
+  email: "jamppa@email.com", password: "azerty", bio: "Hey, it's Jamppa from Steve 'N' Seagulls, the rockin' bassist!
 I lay down the low-end grooves that make your feet move.
 From Finland's countryside to international stages, I bring the thunder and keep the rhythm tight.
 With every note, I strive to create a musical experience that resonates deep within.
@@ -381,7 +381,7 @@ file = File.open(Rails.root.join("app/assets/images/jamppa - Grande.png"))
 jamppa.avatar.attach(io: file, filename: "user.png", content_type: "image/png")
 
 beard = User.create!(last_name: "Beard", first_name: "Franck",
-email: "beard@email.com", password: "azerty", bio: "Hey, I'm Frank Beard, the rhythm powerhouse of ZZ Top!
+  email: "beard@email.com", password: "azerty", bio: "Hey, I'm Frank Beard, the rhythm powerhouse of ZZ Top!
 As the drummer, I bring the beats that make you move.
 With a career spanning decades, I've laid down the groove for countless iconic tracks.
 From blues to rock, my passion for music drives me to keep the rhythm tight and the crowd groovin'!",
