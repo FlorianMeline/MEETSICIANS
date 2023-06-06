@@ -1,4 +1,5 @@
 class Band < ApplicationRecord
+  has_one_attached :photo
   belongs_to :style
   has_many :instruments, through: :users
   has_many :chatrooms
