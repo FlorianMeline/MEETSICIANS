@@ -4,16 +4,6 @@ Instrument.destroy_all
 Style.destroy_all
 User.destroy_all
 
-puts "Creating Instruments..."
-guitar = Instrument.create!(name: "guitar")
-drums = Instrument.create!(name: "drums")
-piano = Instrument.create!(name: "piano")
-vocal = Instrument.create!(name: "vocals")
-bass = Instrument.create!(name: "bass")
-keyboard = Instrument.create!(name: "keyboard")
-bagpipe = Instrument.create!(name: "bagpipe")
-other = Instrument.create!(name: "other")
-
 puts "Creating styles..."
 metal = Style.create!(name: "metal")
 punk = Style.create!(name: "punk")
@@ -23,6 +13,16 @@ hard = Style.create!(name: "hard-rock")
 symphonic = Style.create!(name: "symphonic")
 country = Style.create!(name: "country")
 rock = Style.create!(name: "rock")
+
+puts "Creating Instruments..."
+guitar = Instrument.create!(name: "guitar")
+drums = Instrument.create!(name: "drums")
+piano = Instrument.create!(name: "piano")
+vocal = Instrument.create!(name: "vocals")
+bass = Instrument.create!(name: "bass")
+keyboard = Instrument.create!(name: "keyboard")
+bagpipe = Instrument.create!(name: "bagpipe")
+other = Instrument.create!(name: "other")
 
 puts "Creating bands..."
 tenacious = Band.create!(
@@ -266,7 +266,7 @@ falling = Band.create!(
   style: metal,
   need: bass
 )
-file = File.open(Rails.root.join("app/assets/images/falling-in-reverse2 - Grande.png"))
+file = File.open(Rails.root.join(""))
 falling.photo.attach(io: file, filename: "band.png", content_type: "image/png")
 
 spirit = Band.create!(
@@ -279,7 +279,7 @@ spirit = Band.create!(
   style: metal,
   need: drums
 )
-file = File.open(Rails.root.join("app/assets/images/spirit-box - Grande.png"))
+file = File.open(Rails.root.join(""))
 spirit.photo.attach(io: file, filename: "band.png", content_type: "image/png")
 
 motionless = Band.create!(
@@ -291,8 +291,34 @@ motionless = Band.create!(
   style: metal,
   need: keyboard
 )
-file = File.open(Rails.root.join("app/assets/images/motionless-in-white-1 - Grande.png"))
+file = File.open(Rails.root.join(""))
 motionless.photo.attach(io: file, filename: "band.png", content_type: "image/png")
+
+nightwish = Band.create!(
+  name: "nightwish",
+  bio: "Welcome to the world of Nightwish, where dreams and melodies intertwine! We are a symphonic metal powerhouse,
+  blending soaring vocals, powerful guitars, enchanting keyboards, and thunderous drums.
+  With our epic compositions and captivating storytelling, we transport audiences to realms both mystical and emotional.
+  Join us on this musical odyssey of passion, imagination, and sonic grandeur!",
+  city: "Montcuq",
+  style: symphonic,
+  need: guitar,
+  )
+  file = File.open(Rails.root.join("app/assets/images/nightwish 2.png"))
+  nightwish.photo.attach(io: file, filename: "band.png", content_type: "image/png")
+
+epica = Band.create!(
+  name: "Epica",
+  bio: "Step into the world of Epica, where symphonic metal reigns supreme!
+  We are the masters of blending operatic vocals, crushing guitars, and grand orchestrations.
+  With our intense melodies and thought-provoking lyrics, we embark on epic musical adventures
+  that traverse emotions and dimensions. Join us as we push the boundaries of metal with our symphonic symphony!",
+  city: "Montcuq",
+  style: symphonic,
+  need: bagpipe,
+  )
+  file = File.open(Rails.root.join("app/assets/image/epica.png"))
+  epica.photo.attach(io: file, filename: "band.png", content_type: "image/png")
 
 puts "Bandz created"
 
@@ -892,6 +918,89 @@ morrow = User.create!(last_name: "Morrow", first_name: "Justin",
 
 file = File.open(Rails.root.join("app/assets/images/justin-mauro-motionless.png"))
 morrow.avatar.attach(io: file, filename: "user.png", content_type: "image/png")
+
+tuomas = User.create!(last_name: "Holopainen", first_name: "Tuomas",
+  email: "tuomas@email.com", password: "azerty", bio: "Greetings, fellow dreamers! It is I, Tuomas Holopainen,
+  the visionary composer and keyboardist of Nightwish.
+  With symphonic orchestrations and poetic lyrics, I bring fantastical worlds to life.
+  Through the power of music, I seek to ignite imagination and awaken emotions.
+  Join me on this epic journey through the realms of symphonic metal, where dreams become reality.",
+  city: "Montcuq", instrument: keyboard, band: nightwish),
+
+file = File.open(Rails.root.join("app/assets/images/tuomas.png"))
+tuomas.avatar.attach(io: file, filename: "user.png", content_type: "image/png")
+
+floor = User.create!(last_name: "Jansen", first_name: "Floor",
+  email: "floor@email.com", password: "azerty", bio: "Hello, dear fans of Nightwish! I am Floor Jansen,
+  the powerhouse vocalist of this incredible band.
+  With my commanding presence and versatile voice, I bring a new dimension to Nightwish's music.
+  Together, we embark on epic musical adventures, delivering soaring melodies and emotional performances
+  that touch the hearts of listeners around the world. Join me as we conquer stages with our symphonic metal magic!
+  ",
+
+city: "Montcuq", instrument: vocal, band: nightwish),
+file = File.open(Rails.root.join("app/assets/images/floor.png"))
+
+floor.avatar.attach(io: file, filename: "user.png", content_type: "image/png")
+  kai = User.create!(last_name: "Hahto", first_name: "Kai",
+  email: "kai@email.com", password: "azerty", bio: "Hey there, rhythm warriors! I'm Kai Hahto,
+  the mighty drummer of Nightwish, delivering thunderous beats that propel our symphonic metal voyage.
+  With precision and power, I drive the band forward, creating a rhythmic foundation that sets hearts ablaze.
+  Join me as we embark on an epic musical odyssey, leaving no eardrum unshaken!",
+
+city: "Montcuq", instrument: drums, band: nightwish),
+file = File.open(Rails.root.join("app/assets/images/kai 2.png"))
+
+kai.avatar.attach(io: file, filename: "user.png", content_type: "image/png")
+  dono = User.create!(last_name: "Donockley", first_name: "Troy",
+  email: "dono@email.com", password: "azerty", bio: "Greetings, music enthusiasts! It's Troy Donockley,
+  the multi-instrumentalist of Nightwish, here to weave my sonic tapestry into the band's enchanting melodies.
+  With my Uilleann pipes, tin whistles, and guitars, I add a Celtic touch to our symphonic metal realm.
+  Together, we create a captivating fusion that takes listeners on a transcendent musical journey. Let the melodies soar!",
+  city: "Montcuq", instrument: bagpipe, band: nightwish),
+
+  file = File.open(Rails.root.join("app/assets/images/dono 2.png"))
+  dono.avatar.attach(io: file, filename: "user.png", content_type: "image/png")
+
+simone = User.create!(last_name: "Simons", first_name: "Simone",
+  email: "simone@email.com", password: "azerty", bio: "Hello, lovely fans of Epica! It's Simone Simons here,
+  the enchanting vocalist of the band. With my ethereal voice and passionate performances, I transport listeners to
+  realms of emotion and imagination. Together with Epica, we create symphonic metal masterpieces that empower and captivate.
+  Join me as we embark on a musical journey that transcends boundaries and touches the depths of the soul.",
+  city: "Montcuq", instrument: vocal, band: epica),
+
+file = File.open(Rails.root.join("app/assets/images/simone.png"))
+simone.avatar.attach(io: file, filename: "user.png", content_type: "image/png")
+
+mark = User.create!(last_name: "Jansen", first_name: "Mark",
+  email: "mark@email.com", password: "azerty", bio: "Greetings, metal enthusiasts! Mark Jansen here,
+  the creative force and growling vocalist of Epica. With my dark and powerful growls, I add an aggressive edge to our
+  symphonic metal sound. Through my lyrical prowess, I delve into the depths of humanity and spirituality.
+  Join me as we explore the realms of darkness and light, forging epic musical tales that leave a lasting impact.",
+  city: "Montcuq", instrument: guitar, band: epica),
+
+file = File.open(Rails.root.join("app/assets/images/mark.png"))
+mark.avatar.attach(io: file, filename: "user.png", content_type: "image/png")
+
+coen = User.create!(last_name: "Janssen", first_name: "Coen",
+  email: "coen@email.com", password: "azerty", bio: "Hey there, music aficionados! Coen Janssen at your service,
+  the keyboard wizard of Epica. With my ethereal melodies and symphonic arrangements, I add a magical touch to our epic
+  soundscapes. From haunting atmospheres to soaring solos, I guide our journey into the realms of symphonic metal.
+  Join me as we create sonic tapestries that captivate and inspire. Let the music transport you to new horizons!",
+  city: "Montcuq", instrument: keybord, band: epica),
+
+file = File.open(Rails.root.join("app/assets/images/coen.png"))
+coen.avatar.attach(io: file, filename: "user.png", content_type: "image/png")
+
+arien = User.create!(last_name: " Van Weesenbeek", first_name: "Ariën",
+  email: "arien@email.com", password: "azerty", bio: "Greetings, fellow metalheads! Ariën van Weesenbeek here,
+  the thunderous drummer of Epica. With my relentless beats and technical prowess, I bring the power and intensity
+  to our symphonic metal onslaught. From explosive double bass to intricate fills, I create the rhythmic foundation
+  that drives our music to new heights. Join me as we unleash a sonic storm that will leave you in awe!",
+  city: "Montcuq", instrument: keybord, band: epica),
+
+file = File.open(Rails.root.join("app/assets/images/arien.png"))
+arien.avatar.attach(io: file, filename: "user.png", content_type: "image/png")
 
 puts "Users created"
 
