@@ -1,32 +1,16 @@
 class ChatroomsController < ApplicationController
   def index
-    @chatrooms = Chatroom.all
+    @chatrooms_band = current_user.band_chatrooms
+    @chatrooms_joined = current_user.chatrooms_joined
   end
 
   def show
     @chatroom = Chatroom.find(params[:id])
-    @chatroom = Chatroom.new
-  end
-
-  def new
-    @chatroom = Chatroom.new
+    @message = Message.new
   end
 
   def create
-    @chatroom = Chatroom.find(params[:chatroom_id])
-    @message = Message.new(message_params)
-    @message.chatroom = @chatroom
-    @message.user = current_user
-    if @message.save
-      redirect_to chatroom_path(@chatroom)
-    else
-      render "chatrooms/show", status: :unprocessable_entity
-    end
+    @chatroom = Chatroom.new
   end
 
-  private
-
-  def message_params
-    params.require(:message).permit(:content)
-  end
 end
