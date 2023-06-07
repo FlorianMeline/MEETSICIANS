@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="search-bar">
+  <%# SEARCH-BAR + FILTER COMPONENT %>
+  </div>
+  <%@bands.each do |band| %>
+  <div class= "col-5">
+  <%= link_to band_path(band) do%>
+    <h1><%= band.name %></h1>
+    <br>
+    <%= band.city %>
+    <br>
+    <%= band.bio %>
+    <%= band.style.name %>
+    <%= band.needed_instrument_id %>
+<%# # creer une condition: si pas de photo attaché au band, afficher une photo "neutre" %>
+<br>
+      <% if band.photo.attached?%>
+        <%= cl_image_tag band.photo.key, style:"width: 400px"; %>
+      <% else %>
+        <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"width: 400px"; %>
+      <% end %>
+    </div>
+  <% end %>
+  <% end %>
+  <div class="footer-nav-bar">
+  <%# FOOTER-NAV-BAR COMPONENT %>
+  </div>
+</div>
