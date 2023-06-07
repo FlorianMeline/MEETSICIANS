@@ -1,0 +1,23 @@
+<div>
+  <%= link_to bands_path, class:"back" do %>
+  <p>RETOUR</p>
+  <% end %>
+  <%=cl_image_tag @band.photo.key, class: "band-banner" , width: 800, crop: :fill%>
+  <div class="banner-band">
+    <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 200, height: 200, crop: :fill%>
+    <p class="#"><%= @band.style.name%></p>
+  </div>
+  <div><%# !!!!!!!!!! PATH DU LINK_TO A CHANGER !!!!!!!!!!!!%>
+    <%= link_to band_path, class:"members" do %>
+    <p>Members</p>
+    <% end %>
+    <%= link_to band_path, class:"contact" do %>
+    <p>Contact</p>
+    <% end %>
+  </div>
+  <div>
+    <h1 class="name-band"><%= @band.name%> </h1>
+    <p class="bio-band"><%= @band.bio%></p>
+
+  </div>
+</div>
