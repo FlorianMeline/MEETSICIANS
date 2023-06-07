@@ -1,5 +1,6 @@
 class BandsController < ApplicationController
   def index
+    @bands = Band.all
   end
 
   def show
@@ -16,5 +17,4 @@ class BandsController < ApplicationController
 
   def edit
   end
-
 end
