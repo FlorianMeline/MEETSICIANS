@@ -32,7 +32,7 @@ tenacious = Band.create!(
   With killer guitars, epic vocals, and hilarious lyrics, we're here to rock your socks off and make you laugh till you cry!",
   city: "Montcuq",
   style: rock,
-  needed_instrument_id: drums,
+  needed_instrument_id: drums.id,
 )
 
 file = File.open(Rails.root.join("app/assets/images/Tenacious-D band.png"))
@@ -46,7 +46,7 @@ steve = Band.create!(
   Get ready for a foot-stomping, head-banging good time with Steve 'N' Seagulls!",
   city: "Montcuq",
   style: country,
-  needed_instrument_id: keyboard,
+  needed_instrument_id: keyboard.id,
 )
 
 file = File.open(Rails.root.join("app/assets/images/SteveNSeagulls - Moyenne.png"))
@@ -60,7 +60,7 @@ zz = Band.create!(
   delivering timeless hits and keeping the party going.",
   city: "Montcuq",
   style: country,
-  needed_instrument_id: guitar,
+  needed_instrument_id: guitar.id,
 )
 
 file = File.open(Rails.root.join("app/assets/images/zztop - Grande.png"))
@@ -74,7 +74,7 @@ pearl = Band.create!(
   Pearl Jam remains a voice for change and a force for unity.",
   city: "Montcuq",
   style: grunge,
-  needed_instrument_id: drums,
+  needed_instrument_id: drums.id,
 )
 file = File.open(Rails.root.join("app/assets/images/PearlJam.png"))
 pearl.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -86,7 +86,7 @@ arctic = Band.create!(
   Since then, we've evolved and explored new sounds, always staying true to our indie roots. Let the music roar!",
   city: "Montcuq",
   style: rock,
-  needed_instrument_id: bass,
+  needed_instrument_id: bass.id,
 )
 file = File.open(Rails.root.join("app/assets/images/arctic-monkeys-1.png"))
 pearl.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -99,7 +99,7 @@ noirdesir = Band.create!(
   Despite challenges, Noir Désir's legacy as a musical force continues to resonate and inspire.",
   city: "Montcuq",
   style: grunge,
-  needed_instrument_id: keyboard,
+  needed_instrument_id: keyboard.id,
 )
 file = File.open(Rails.root.join("app/assets/images/NOIRDESIR.png"))
 noirdesir.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -113,7 +113,7 @@ bmth = Band.create!(
   always exploring new territories and connecting with our fans around the world.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: bass
+  needed_instrument_id: bass.id
 )
 file = File.open(Rails.root.join("app/assets/images/bmth-1.png"))
 bmth.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -126,7 +126,7 @@ shikari = Band.create!(
   With a loyal and diverse fanbase, we continue to push the boundaries of our music and deliver a powerful live experience.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: drums
+  needed_instrument_id: drums.id
 )
 file = File.open(Rails.root.join("app/assets/images/enter-shikari-2.png"))
 shikari.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -139,7 +139,7 @@ pilots = Band.create!(
   and create a sense of unity among our diverse fanbase worldwide.",
   city: "Montcuq",
   style: alternative,
-  needed_instrument_id: guitar
+  needed_instrument_id: guitar.id
 )
 file = File.open(Rails.root.join("app/assets/images/twenty-one-pilots-1.png"))
 pilots.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -152,7 +152,7 @@ death = Band.create!(
   offering solace and empowerment through music.",
   city: "Montcuq",
   style: alternative,
-  needed_instrument_id: bass
+  needed_instrument_id: bass.id
 )
 file = File.open(Rails.root.join("app/assets/images/death-by-romy-1.png"))
 death.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -165,7 +165,7 @@ kiss = Band.create!(
   KISS is not just a band, it's a rock 'n' roll phenomenon that will echo through eternity.",
   city: "Montcuq",
   style: hard,
-  needed_instrument_id: drums,
+  needed_instrument_id: drums.id,
 )
 file = File.open(Rails.root.join("app/assets/images/kiss.png"))
 kiss.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -178,7 +178,7 @@ greta = Band.create!(
   Greta Van Fleet is here to keep the flame of rock 'n' roll burning bright for generations to come!",
   city: "Montcuq",
   style: hard,
-  needed_instrument_id: keyboard,
+  needed_instrument_id: keyboard.id,
 )
 file = File.open(Rails.root.join("app/assets/images/greta.png"))
 greta.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -191,7 +191,7 @@ mode = Band.create!(
   on the electronic music landscape.",
   city: "Montcuq",
   style: alternative,
-  needed_instrument_id: keyboard
+  needed_instrument_id: keyboard.id
 )
 file = File.open(Rails.root.join("app/assets/images/Depeche-Mode-1.png"))
 mode.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -204,7 +204,7 @@ omens = Band.create!(
   in their own journeys.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: bass
+  needed_instrument_id: bass.id
 )
 file = File.open(Rails.root.join("app/assets/images/Bad-Omens-1.png"))
 omens.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -216,7 +216,7 @@ dress = Band.create!(
   Through our music, we aim to inspire and connect with listeners, leaving a lasting impression.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: drums
+  needed_instrument_id: drums.id
 )
 file = File.open(Rails.root.join("app/assets/images/Static-Dress-1.png"))
 dress.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -228,7 +228,7 @@ sexpistols = Band.create!(
   Through our raw and confrontational music, we became the voice of a disenchanted generation, leaving an indelible mark on punk rock history.",
   city: "Montcuq",
   style: punk,
-  needed_instrument_id: bass,
+  needed_instrument_id: bass.id,
 )
 file = File.open(Rails.root.join("app/assets/images/Sex-Pistols.png"))
 sexpistols.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -241,7 +241,7 @@ nirvana = Band.create!(
   rock into the mainstream, forever defining a musical era.",
   city: "Montcuq",
   style: grunge,
-  needed_instrument_id: vocal,
+  needed_instrument_id: vocal.id,
 )
 file = File.open(Rails.root.join("app/assets/images/nirvana.png"))
 nirvana.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -252,7 +252,7 @@ theoffspring = Band.create!(
   With a blend of catchy hooks and socially conscious lyrics, we've become a voice for the disenchanted, inspiring generations of fans worldwide.",
   city: "Montcuq",
   style: punk,
-  needed_instrument_id: bass,
+  needed_instrument_id: bass.id,
 )
 file = File.open(Rails.root.join("app/assets/images/The_Offspring-stage.png"))
 theoffspring.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -264,7 +264,7 @@ falling = Band.create!(
   Through our music, we aim to connect with listeners, inspiring them to overcome adversity and find hope in the darkest moments.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: bass
+  needed_instrument_id: bass.id
 )
 file = File.open(Rails.root.join("app/assets/images/falling-in-reverse2 - Grande.png"))
 falling.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -277,7 +277,7 @@ spirit = Band.create!(
   on a profound and visceral level, inviting them into our sonic world.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: drums
+  needed_instrument_id: drums.id
 )
 file = File.open(Rails.root.join("app/assets/images/Spiritbox-3 - Grande.png"))
 spirit.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -289,7 +289,7 @@ motionless = Band.create!(
   we aim to create an immersive and cathartic experience, connecting with fans who resonate with our unique blend of heaviness and melody.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: keyboard
+  needed_instrument_id: keyboard.id
 )
 file = File.open(Rails.root.join("app/assets/images/Motionless-In-Whited - Grande.png"))
 motionless.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -302,7 +302,7 @@ nightwish = Band.create!(
   Join us on this musical odyssey of passion, imagination, and sonic grandeur!",
   city: "Montcuq",
   style: symphonic,
-  needed_instrument_id: guitar,
+  needed_instrument_id: guitar.id,
   )
   file = File.open(Rails.root.join("app/assets/images/nightwish 2.png"))
   nightwish.photo.attach(io: file, filename: "band.png", content_type: "image/png")
@@ -315,7 +315,7 @@ epica = Band.create!(
   that traverse emotions and dimensions. Join us as we push the boundaries of metal with our symphonic symphony!",
   city: "Montcuq",
   style: symphonic,
-  needed_instrument_id: bagpipe,
+  needed_instrument_id: bagpipe.id,
   )
   file = File.open(Rails.root.join("app/assets/images/epica.png"))
   epica.photo.attach(io: file, filename: "band.png", content_type: "image/png")
