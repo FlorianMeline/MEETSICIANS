@@ -3,13 +3,13 @@
     <% if @band.photo.attached?%>
       <%= cl_image_tag @band.photo.key,class: "band-banner" , style:"width: 400px"; %>
     <% else %>
-      <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"width: 400px"; %>
+      <%= image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"width: 400px"; %>
     <% end %>
 
     <% if @band.photo.attached?%>
       <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 200, height: 200, crop: :fill%>
     <% else %>
-      <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"width: 200px"; %>
+      <%= image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"width: 200px"; %>
     <% end %>
     <p><%= @band.style.name%></p>
   </div>
@@ -40,13 +40,13 @@
             <%= user.first_name %>
             <%= user.last_name %>
             <%= user.instrument.name %>
-            
+
         </div>
         <div class="member-photo">
             <% if @band.photo.attached?%>
               <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 80, height: 80, crop: :fill%>
             <% else %>
-              <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"width: 80px"; %>
+              <%= image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"width: 80px"; %>
             <% end %>
           <% end %>
         </div>
