@@ -12,4 +12,14 @@ class User < ApplicationRecord
   # Validation #
   validates :first_name, :last_name, :bio, :city, :instrument, presence: true
   validates :bio, length: { minimum: 50 }
+
+  def band_chatrooms
+    return nil unless band
+
+    band.chatrooms.joins(:messages).where.not(messages: {content: nil}).uniq
+  end
+
+  def chatrooms_joined
+    Chatroom.joins(:messages).where(messages: { user: self }).where.not(id: band_chatrooms&.pluck(:id)).uniq
+  end
 end
