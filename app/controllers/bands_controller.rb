@@ -10,6 +10,8 @@ class BandsController < ApplicationController
 
   def show
     @band = Band.find(params[:id])
+    @chatroom = Chatroom.joins(:messages).where(band: @band, messages: {user: current_user}).first || Chatroom.create(band: @band)
+    @users = @band.users
   end
 
   def new

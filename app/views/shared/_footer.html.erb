@@ -1,0 +1,23 @@
+<footer>
+  <div class="footer">
+      <%# sticky le footer en bas de l'écran et non de la page %>
+    <div class="footer-container d-flex justify-content-around align-items-center h-100">
+      <div class="nav-link <%="active" if current_page?(bands_path)%>">
+        <%= link_to "", bands_path, class:"footicon fa-solid fa-house"%>
+      </div>
+      <%# faire un if user_signed_in? pour activer les boutons ou rediriger sur login %>
+      <% if user_signed_in? %>
+        <div class="nav-link <%="active" if current_page?(chatrooms_path)%>">
+          <%= link_to "", chatrooms_path, class:"footicon fa-solid fa-envelope" %>
+        </div>
+        <div class="nav-link <%="active" if current_page?(user_session_path)%>">
+          <%= link_to "", user_session_path, class:"footicon fa-solid fa-user" %>
+        </div>
+      <% else %>
+      <div>
+        <%= link_to "", new_user_session_path, class: "footicon fa-solid fa-user" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</footer>

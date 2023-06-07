@@ -1,7 +1,14 @@
 <h1>Chatrooms</h1>
 
-<% @chatrooms.each do %>
-<%=  %>
+<H2>My band</H2>
+<% @chatrooms_band.each do |chatroom|%>
+<%= link_to chatroom.id, chatroom_path(chatroom) %>
 <% end %>
+<H2>My conv</H2>
+<% @chatrooms_joined.each do |chatroom|%>
+<%= link_to chatroom.id, chatroom_path(chatroom) %>
+<% end %>
+
+
 
 <%= link_to "Bands", bands_path %>
