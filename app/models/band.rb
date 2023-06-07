@@ -2,6 +2,7 @@ class Band < ApplicationRecord
   has_one_attached :photo
   belongs_to :style
   belongs_to :needed_instrument, class_name: "Instrument"
+  has_many :users
   has_many :instruments, through: :users
   has_many :chatrooms
   # Validation #
