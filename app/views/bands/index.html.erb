@@ -1,26 +1,28 @@
-<div class="container">
-  <div class="search-bar">
-  <%# SEARCH-BAR + FILTER COMPONENT %>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
+    <p class="title-band-banner">HOT BANDS</p>
+
   </div>
+
+<div class="container">
   <%@bands.each do |band| %>
-  <div class= "col-5">
-  <%= link_to band_path(band) do%>
-    <h1><%= band.name %></h1>
-    <br>
-    <%= band.city %>
-    <br>
-    <%= band.style.name %>
-    <%= band.needed_instrument_id %>
-<%# # creer une condition: si pas de photo attaché au band, afficher une photo "neutre" %>
-<br>
+    <div class="card card-band mx-2 my-4 " >
       <% if band.photo.attached?%>
-        <%= cl_image_tag band.photo.key, style:"width: 400px"; %>
+        <%= cl_image_tag band.photo.key, style:"height: 240px", class: "object-fit-cover"; %>
       <% else %>
-        <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"width: 400px"; %>
+        <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"height: 240px", class: "object-fit-cover"; %>
+      <% end %>
+      <%= link_to band_path(band) do%>
+        <div class="card-img-overlay card-band-infos d-flex flex-column align-items-center justify-content-end">
+          <h1 ><%= band.name %></h1>
+          <%= band.needed_instrument.name%>
+        </div>
       <% end %>
     </div>
   <% end %>
-  <% end %>
+</div>
+<%# # creer une condition: si pas de photo attaché au band, afficher une photo "neutre" %>
+
   <div class="footer-nav-bar">
   <%# FOOTER-NAV-BAR COMPONENT %>
   </div>
