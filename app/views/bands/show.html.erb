@@ -16,6 +16,10 @@
 
   <div><%# !!!!!!!!!! PATH DU LINK_TO A CHANGER !!!!!!!!!!!!%>
 
+    <%= link_to chatroom_path(@chatroom), class:"contact" do %>
+    <p>Contact</p>
+  <% end %>
+
   <!-- BTN MEMBERS = POP-UP -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   members
@@ -51,10 +55,6 @@
     </div>
   </div>
 </div>
-
-    <%= link_to chatroom_path, class:"contact" do %>
-      <p>Contact</p>
-    <% end %>
   </div>
 
   <div>
