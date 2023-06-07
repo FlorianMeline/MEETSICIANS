@@ -603,7 +603,7 @@ From the stage to the studio, I am the driving force behind KISS's unforgettable
 Together, we ignite the rock 'n' roll flame that will burn forever!",
 city: "Montcuq", instrument: vocal, style: rock, band: kiss)
 
-file = File.open(Rails.root.join("app/assets/images/paul.jpeg"))
+file = File.open(Rails.root.join("app/assets/images/Paul.jpeg"))
 paul.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
 
