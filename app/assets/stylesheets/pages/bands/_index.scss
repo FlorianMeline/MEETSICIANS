@@ -38,5 +38,32 @@
     0 0 100px red,
     0 0 120px red,
     0 0 180px red,
-    0 0  110px red;
+}
+
+.search-bar-black{
+  width: 100%;
+  border: none;
+  height: 35px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid white;
+  padding-left: 13px;
+}
+
+.button-search{
+  border: none;
+  padding: 5px;
+  position: absolute;
+  background: white;
+  right: 0;
+  background-color: black;
+}
+
+.input-search-bands {
+
+  background-color: black;
+  height: 35px;
+  border: none;
+  width: 100%;
 }

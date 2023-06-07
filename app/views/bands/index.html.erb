@@ -1,9 +1,15 @@
 
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
-    <p class="title-band-banner">HOT BANDS</p>
-
-  </div>
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
+  <p class="title-band-banner">HOT BANDS</p>
+    <%= form_tag bands_path, method: :get do %>
+      <div class="search-bar-black">
+        <%= text_field_tag :query, params[:query], placeholder: "search", class: "input-search-bands" %>
+        <button type="submit" class="button-search">
+          <i class="fas fa-arrow-right text-white"></i>
+        </button>
+      </div>
+    <% end %>
+</div>
 <div class="container">
   <%@bands.each do |band| %>
     <div class="card card-band mx-2 my-4 " >
