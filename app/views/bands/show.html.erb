@@ -1,23 +1,64 @@
 <div>
-  <%= link_to bands_path, class:"back" do %>
-  <p>RETOUR</p>
-  <% end %>
-  <%=cl_image_tag @band.photo.key, class: "band-banner" , width: 800, crop: :fill%>
   <div class="banner-band">
-    <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 200, height: 200, crop: :fill%>
-    <p class="#"><%= @band.style.name%></p>
-  </div>
-  <div><%# !!!!!!!!!! PATH DU LINK_TO A CHANGER !!!!!!!!!!!!%>
-    <%= link_to band_path, class:"members" do %>
-    <p>Members</p>
+    <% if @band.photo.attached?%>
+      <%= cl_image_tag @band.photo.key,class: "band-banner" , style:"width: 400px"; %>
+    <% else %>
+      <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"width: 400px"; %>
     <% end %>
+
+    <% if @band.photo.attached?%>
+      <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 200, height: 200, crop: :fill%>
+    <% else %>
+      <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"width: 200px"; %>
+    <% end %>
+    <p><%= @band.style.name%></p>
+  </div>
+
+  <div><%# !!!!!!!!!! PATH DU LINK_TO A CHANGER !!!!!!!!!!!!%>
+
     <%= link_to chatroom_path(@chatroom), class:"contact" do %>
     <p>Contact</p>
-    <% end %>
+  <% end %>
+
+  <!-- BTN MEMBERS = POP-UP -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  members
+</button>
+
+<!-- POP-UP -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Members</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+  <%# POP-UP BODY %>
+      <div class="modal-body">
+        <div class="member-name">
+          <% @users.each do |user| %>
+            <%= user.first_name %>
+            <%= user.last_name %>
+            <%= user.instrument.name %>
+            
+        </div>
+        <div class="member-photo">
+            <% if @band.photo.attached?%>
+              <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 80, height: 80, crop: :fill%>
+            <% else %>
+              <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"width: 80px"; %>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
   </div>
+</div>
+  </div>
+
   <div>
     <h1 class="name-band"><%= @band.name%> </h1>
     <p class="bio-band"><%= @band.bio%></p>
-
   </div>
 </div>
