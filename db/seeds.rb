@@ -592,7 +592,7 @@ I am the fire-breathing demon, the bass-playing mastermind, and the embodiment o
 From writing hits like 'God of Thunder' to building a merchandising empire, I am the ultimate showman, leaving an indelible mark on the world of music.
 The legend of Gene Simmons will never die!", city: "Montcuq", instrument: bass, style: rock, band: kiss)
 
-file = File.open(Rails.root.join("app/assets/images/gene.jpeg"))
+file = File.open(Rails.root.join("app/assets/images/Gene.jpeg"))
 gene.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
 paul = User.create!(last_name: "Stanley", first_name: "Paul",
