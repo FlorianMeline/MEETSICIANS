@@ -2,14 +2,11 @@
   <div class="search-bar">
   <%# SEARCH-BAR + FILTER COMPONENT %>
   </div>
-  <%@bands.each do |band| %>
+  <% @bands.each do |band| %>
   <div class= "col-5">
   <%= link_to band_path(band) do%>
     <h1><%= band.name %></h1>
     <br>
-    <%= band.city %>
-    <br>
-    <%= band.style.name %>
     <%= band.needed_instrument_id %>
 <%# # creer une condition: si pas de photo attaché au band, afficher une photo "neutre" %>
 <br>
