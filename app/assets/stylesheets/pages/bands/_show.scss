@@ -1,0 +1,78 @@
+.band-container {
+  margin-bottom: 74px;
+}
+
+.band-avatar {
+  border-radius: 100px;
+  width: 138px;
+  height: 138px;
+  position: absolute;
+  object-fit: cover;
+  inset: -69px 0 0;
+  margin: auto;
+}
+.photo-default {
+  border-radius: 50%;
+  width: 138px;
+  height: 138px;
+  object-fit: cover;
+}
+
+.band-banner {
+  width: 100%;
+  height: 272px;
+  object-fit: cover;
+}
+
+.btn-band-show {
+  width: 92px;
+  height: 28px;
+  background: #000000;
+  border: 1px solid #FFFFFF;
+  border-radius: 30px;
+  font-size: 10px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.functions-band {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: relative;
+  padding: 20px 1.3rem;
+
+}
+.music-style {
+  background: rgba(255, 8, 42, 0.43);
+  border-radius: 6px;
+  padding: 0.7em;
+  width: fit-content;
+  margin: auto;
+  font-size: 10px;
+  justify-content: center;
+}
+
+.need-instrument-band {
+  background: rgba(255, 8, 42, 0.43);
+  border-radius: 6px;
+  padding: 0.5em;
+  width:fit-content;
+  margin: auto;
+  font-size: 10px;
+  position: absolute;
+  top: 42px;
+  right: 20px;
+}
+
+.city-band {
+  position: absolute;
+  right: 20px;
+  top: 250px;
+  font-size: 12px;
+}
