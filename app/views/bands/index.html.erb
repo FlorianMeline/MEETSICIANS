@@ -34,13 +34,13 @@
   </div>
 </div>
 
-<div class="container mt-5">
+<div class="container mt-5 band-container">
   <%@bands.each do |band| %>
     <div class="card card-band mx-2 my-4 " >
       <% if band.photo.attached?%>
         <%= cl_image_tag band.photo.key, style:"height: 240px", class: "object-fit-cover"; %>
       <% else %>
-        <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"height: 240px", class: "object-fit-cover"; %>
+        <%= image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"height: 240px", class: "object-fit-cover"; %>
       <% end %>
       <%= link_to band_path(band) do%>
         <div class="card-img-overlay card-band-infos d-flex flex-column align-items-center justify-content-end">

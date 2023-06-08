@@ -1,64 +1,59 @@
-<div>
+<div class= "band-container">
   <div class="banner-band">
     <% if @band.photo.attached?%>
-      <%= cl_image_tag @band.photo.key,class: "band-banner" , style:"width: 400px"; %>
+      <%= cl_image_tag @band.photo.key,class: "band-banner"%>
     <% else %>
-      <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"width: 400px"; %>
+      <%= image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"width: 400px"; %>
     <% end %>
-
+  </div>
+    <p class= "need-instrument-band d-flex justify-content-center pt-2">LOOKING FOR : <%= @band.needed_instrument.name.upcase%></p>
+    <p class= "city-band d-flex justify-content-center text-align-center pt-2"><i class="fa-solid fa-location-dot" style="color: #ff082a;"></i><%= @band.city.upcase%></p>
+  <div class="functions-band"><%# !!!!!!!!!! PATH DU LINK_TO A CHANGER !!!!!!!!!!!!%>
+      <!-- BTN MEMBERS = POP-UP -->
+    <button type="button" class="btn btn-primary btn-band-show" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      members
+    </button>
     <% if @band.photo.attached?%>
       <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 200, height: 200, crop: :fill%>
     <% else %>
-      <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"width: 200px"; %>
+      <%= image_tag 'bad-omens.jpeg', class: 'photo-default'%>
     <% end %>
-    <p><%= @band.style.name%></p>
-  </div>
+    <%= link_to "contact", chatroom_path(@chatroom), class:"contact btn-band-show" %>
 
-  <div><%# !!!!!!!!!! PATH DU LINK_TO A CHANGER !!!!!!!!!!!!%>
+  <!-- POP-UP -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Members</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+      <%# POP-UP BODY %>
+          <div class="modal-body">
+            <div class="member-name">
+              <% @users.each do |user| %>
+                <%= user.first_name %>
+                <%= user.last_name %>
+                <%= user.instrument.name %>
 
-    <%= link_to chatroom_path(@chatroom), class:"contact" do %>
-    <p>Contact</p>
-  <% end %>
-
-  <!-- BTN MEMBERS = POP-UP -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  members
-</button>
-
-<!-- POP-UP -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Members</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-  <%# POP-UP BODY %>
-      <div class="modal-body">
-        <div class="member-name">
-          <% @users.each do |user| %>
-            <%= user.first_name %>
-            <%= user.last_name %>
-            <%= user.instrument.name %>
-            
+            </div>
+            <div class="member-photo">
+                <% if @band.photo.attached?%>
+                  <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 80, height: 80, crop: :fill%>
+                <% else %>
+                  <%= image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"width: 80px"; %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
         </div>
-        <div class="member-photo">
-            <% if @band.photo.attached?%>
-              <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 80, height: 80, crop: :fill%>
-            <% else %>
-              <%= image_tag 'bad-omens.png', alt: 'photo-default', style:"width: 80px"; %>
-            <% end %>
-          <% end %>
-        </div>
-
       </div>
     </div>
   </div>
-</div>
-  </div>
-
   <div>
-    <h1 class="name-band"><%= @band.name%> </h1>
-    <p class="bio-band"><%= @band.bio%></p>
+  <h1 class="name-band d-flex justify-content-center pt-4"><%= @band.name.upcase%> </h1>
+  <p class= "music-style d-flex justify-content-center pt-2"><%= @band.style.name.upcase%></p>
+  <p class="bio-band d-flex justify-content-space-between p-3"><%= @band.bio%></p>
+  <%# mettre le lien vidéo YOUTUBE %>
   </div>
 </div>

@@ -1,0 +1,44 @@
+.banner-chatroom img{
+  position: fixed;
+  top: 0;
+  height: 200px;
+  object-fit: cover;
+}
+.container-chat {
+    height: calc(100dvh - 200px);
+    overflow: scroll;
+}
+
+.chatroom {
+  margin-top: 9px;
+  height: calc(100dvh - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+
+  h1 {
+    border-bottom: 1px solid $gray-200;
+    margin-bottom: 0;
+    padding: 1rem;
+  }
+
+  .messages {
+    padding: 1rem;
+    padding-bottom: 239px;
+    height: 100%;
+    overflow: scroll;
+  }
+}
+
+#new_message {
+  border-top: 1px solid white;
+  padding: 1rem;
+  position: fixed;
+  bottom: 54px;
+  width: 100%;
+
+  .form-group {
+    margin-bottom: 0;
+  }
+}

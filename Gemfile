@@ -30,6 +30,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
+gem 'youtube', '~> 0.8.6'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
