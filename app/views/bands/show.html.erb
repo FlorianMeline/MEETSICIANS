@@ -3,7 +3,7 @@
     <% if @band.photo.attached?%>
       <%= cl_image_tag @band.photo.key,class: "band-banner"%>
     <% else %>
-      <%= image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"width: 400px"; %>
+      <%= cl_image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"width: 400px"; %>
     <% end %>
   </div>
     <p class= "need-instrument-band d-flex justify-content-center pt-2">LOOKING FOR : <%= @band.needed_instrument.name.upcase%></p>
@@ -16,7 +16,7 @@
     <% if @band.photo.attached?%>
       <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 200, height: 200, crop: :fill%>
     <% else %>
-      <%= image_tag 'bad-omens.jpeg', class: 'photo-default'%>
+      <%= cl_image_tag 'bad-omens.jpeg', class: 'photo-default'%>
     <% end %>
     <%= link_to "contact", chatroom_path(@chatroom), class:"contact btn-band-show" %>
 
@@ -41,7 +41,7 @@
                 <% if @band.photo.attached?%>
                   <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 80, height: 80, crop: :fill%>
                 <% else %>
-                  <%= image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"width: 80px"; %>
+                  <%= cl_image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"width: 80px"; %>
                 <% end %>
               <% end %>
             </div>
