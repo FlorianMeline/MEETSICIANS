@@ -1,5 +1,15 @@
 // Specific CSS for your home-page
 .back-btn {
   position: absolute;
-  color: white;
+  color: red;
+  left: 20px;
+  top: 20px;
+  background-color: #000000;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+}
+.back-btn i {
+  padding-left: 10px;
+  padding-top: 9px;
 }

@@ -1,11 +1,14 @@
 class BandsController < ApplicationController
   def index
     @bands = Band.all
-    if params[:query].present?
-      @bands = Band.search_by_name_city_and_need(params[:query])
-    else
-      @bands = Band.all
-    end
+    @styles = Style.all
+    @instruments = Instrument.all
+    @filtered_parameters = request.parameters.with_indifferent_access.slice(:style, :needed_instrument, :query)
+
+
+    @bands = Band.search_by_name_city_and_need(params[:query]) if params[:query].present?
+    @bands = @bands.joins(:style).where(style: { name: params[:style] }) if params[:style].present?
+    @bands = @bands.joins(:needed_instrument).where(needed_instrument: { name: params[:needed_instrument] }) if params[:needed_instrument].present?
   end
 
   def show
