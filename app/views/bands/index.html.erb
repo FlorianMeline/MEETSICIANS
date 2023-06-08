@@ -16,7 +16,7 @@
           <input class="oce-dropdown-input" data-action="click->dropdown#toggle" placeholder="Style" readonly />
           <ul class="oce-dropdown-menu-list"  data-dropdown-target="menu" id="liste" style="display: none">
             <% @styles.each do|style| %>
-              <%= link_to style.name, bands_path(@filtered_parameters.merge(style: style.name)), class:"oce-dropdown-menu-item text-white font-weight-light #{'selected' if params[:style] == style.name}"%>
+              <%= link_to style.name, bands_path(@filtered_parameters.merge(style: style.name)), class:"oce-dropdown-menu-item #{'selected' if params[:style] == style.name}"%>
             <% end %>
           </ul>
         </div>
@@ -26,7 +26,7 @@
           <input class="oce-dropdown-input" data-action="click->dropdown#toggle" placeholder="instru" readonly />
           <ul class="oce-dropdown-menu-list"  data-dropdown-target="menu" id="liste" style="display: none">
             <% @instruments.each do|instrument| %>
-              <%= link_to instrument.name, bands_path(@filtered_parameters.merge(needed_instrument: instrument.name)), class:"oce-dropdown-menu-item text-white font-weight-light #{'selected' if params[:needed_instrument] == instrument.name}"%>
+              <%= link_to instrument.name, bands_path(@filtered_parameters.merge(needed_instrument: instrument.name)), class:"oce-dropdown-menu-item #{'selected' if params[:needed_instrument] == instrument.name}"%>
             <% end %>
           </ul>
         </div>

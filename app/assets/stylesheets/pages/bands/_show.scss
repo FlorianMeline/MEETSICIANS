@@ -38,6 +38,8 @@
   align-items: center;
   text-align: center;
   justify-content: space-around;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
 
 .functions-band {
@@ -56,6 +58,8 @@
   margin: auto;
   font-size: 10px;
   justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
 }
 
 .need-instrument-band {
@@ -66,13 +70,25 @@
   margin: auto;
   font-size: 10px;
   position: absolute;
-  top: 42px;
+  top: 23px;
   right: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
 }
 
 .city-band {
   position: absolute;
   right: 20px;
-  top: 250px;
+  top: 230px;
   font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+}
+
+.bio-band {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  margin-left: 31px;
+  margin-right: 31px;
+  text-align: center;
 }
