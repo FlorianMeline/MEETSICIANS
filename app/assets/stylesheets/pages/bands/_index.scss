@@ -10,6 +10,8 @@
 
 .name-band {
   text-shadow: 4px 4px 6px #000000;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
 }
 .needed-instrument-pill{
   background-color: rgba(255, 8, 42, 0.43);
@@ -17,6 +19,8 @@
   padding: 6px;
   font-size: 15px;
   text-shadow: 1px 1px 1px #000000;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
 }
 
 .banner {
@@ -50,7 +54,9 @@
     0 0 120px red,
     0 0 180px red,
     0 0  110px red;
-    padding-bottom: 5px;
+  padding-bottom: 18px;
+  font-family: 'Istok Web', sans-serif;
+  font-weight:400;
 }
 .search-bar-black{
   display: flex;
@@ -77,6 +83,8 @@
   height: 45px;
   border: none;
   width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
 }
 
 .input-search-bands:focus{
@@ -108,6 +116,8 @@
   margin-bottom: 2px;
   width: 120px;
   border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
 }
 .oce-dropdown:has(.dropped) .oce-dropdown-input {
   padding: 8px;
