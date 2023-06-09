@@ -1,14 +1,16 @@
-<h1>Chatrooms</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
+    <%= cl_image_tag current_user.avatar.key, class: "chat-avatar"%>
+</div>
 
-<H2>My band</H2>
-<% @chatrooms_band.each do |chatroom|%>
-<%= link_to chatroom.id, chatroom_path(chatroom) %>
-<% end %>
-<H2>My conv</H2>
-<% @chatrooms_joined.each do |chatroom|%>
-<%= link_to chatroom.id, chatroom_path(chatroom) %>
-<% end %>
-
-
-
-<%= link_to "Bands", bands_path %>
+<div class="container container-chats">
+  <div>
+      <% @chatrooms_joined.each do |chatroom|%>
+        <%= cl_image_tag chatroom.band.photo.key, class:"band-chat-avatar" %>
+          <h3><%= link_to chatroom.band.name, chatroom_path(chatroom), class:"link-chat" %></h3>
+          <% end %>
+          <% @chatrooms_band.each do |chatroom|%>
+          <%= cl_image_tag chatroom.band.photo.key, class:"band-chat-avatar" %>
+          <%= link_to chatroom.band.name, chatroom_path(chatroom), class:"link-chat"%>
+          <% end %>
+  </div>
+</div>
