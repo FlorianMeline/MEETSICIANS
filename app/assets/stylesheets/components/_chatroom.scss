@@ -16,6 +16,8 @@
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
 
   h1 {
     border-bottom: 1px solid $gray-200;
@@ -41,4 +43,39 @@
   .form-group {
     margin-bottom: 0;
   }
+}
+
+.title-chatroom {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  text-align: center;
+}
+
+.bloc-new-message {
+  display: flex;
+  align-items: center;
+}
+
+#message_content {
+  border: none;
+}
+
+#new_message {
+  padding-bottom: 10px;
+  background-color: black;
+
+}
+.button-send-message {
+  border: none;
+  height: 45px;
+  width: 45px;
+  background-color: black;
+  right: 0;
+  color:red;
+  border: 1px solid white;
+  border-radius: 50px;
+  font-size: large;
+  padding-bottom: 4px;
+  margin-right: 15px;
+  padding-right: 8px;
 }
