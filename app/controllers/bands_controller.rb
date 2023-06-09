@@ -28,7 +28,7 @@ class BandsController < ApplicationController
 
     @band.style = @style
     @band.needed_instrument = @instrument
-
+    @band.errors
     if @band.save
       @band.users << @user
       redirect_to band_path(@band), notice: 'Bande créée avec succès.'
