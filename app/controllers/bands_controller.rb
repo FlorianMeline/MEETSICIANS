@@ -23,14 +23,18 @@ class BandsController < ApplicationController
   def create
     @band = Band.new(band_params)
     @user = current_user
-    raise
-    @current_user.band_id = @band
+    @style = Style.find(params[:style_id])
+    @instrument = Instrument.find(params[:needed_instrument_id])
+    @current_user.band = @band
+    @band.style = @style
+    @band.needed_instrument_id = @instrument
+
 
 
     if @band.save
       redirect_to band_path(@band), notice: 'Bande créée avec succès.'
     else
-      render :new
+      render :new,  status: :unprocessable_entity
     end
   end
 

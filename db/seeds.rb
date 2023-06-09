@@ -1032,7 +1032,10 @@ arien = User.create!(last_name: " Van Weesenbeek", first_name: "Ariën",
   that drives our music to new heights. Join me as we unleash a sonic storm that will leave you in awe!",
   city: "Montcuq", instrument: keyboard, style: rock, band: epica)
 
-test = User.create!(last_name: " Hello", first_name: "test",
+file = File.open(Rails.root.join("app/assets/images/arien.jpeg"))
+arien.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
+
+testa = User.create!(last_name: " Hello", first_name: "test",
   email: "test@email.com", password: "azerty", bio: "Greetings, fellow metalheads! Ariën van Weesenbeek here,
   the thunderous drummer of Epica. With my relentless beats and technical prowess, I bring the power and intensity
   to our symphonic metal onslaught. From explosive double bass to intricate fills, I create the rhythmic foundation
@@ -1040,7 +1043,7 @@ test = User.create!(last_name: " Hello", first_name: "test",
   city: "Montcuq", instrument: keyboard, style: rock, band: nil)
 
 file = File.open(Rails.root.join("app/assets/images/arien.jpeg"))
-text.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
+testa.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
 puts "Users created"
 
