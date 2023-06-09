@@ -1,0 +1,20 @@
+<div class= "band-container">
+  <div class="banner-band">
+      <%= cl_image_tag @user.avatar.key,class: "band-banner"%>
+  </div>
+    <%= cl_image_tag @user.avatar.key, class: "band-avatar", width: 200, height: 200, crop: :fill%>
+  <div class="functions-band">
+    <button type="button" class="btn btn-primary btn-create-band">
+      create a new band
+    </button>
+    <div class ="d-flex justify-content-between">
+      <p class= "music-style mr-2 pt-2"><%= @user.instrument.name.upcase%></p>  
+      <p class= "music-style pt-2"><%= @user.style.name.upcase%></p>
+      </div>
+  </div>
+    <div>
+      <p class="bio-band d-flex justify-content-space-between p-3"><%= @user.bio%></p>
+    </div>
+    <%# mettre le lien vidéo YOUTUBE %>
+  </div>
+</div>
