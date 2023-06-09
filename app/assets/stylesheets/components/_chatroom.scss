@@ -4,6 +4,7 @@
   height: 200px;
   object-fit: cover;
 }
+
 .container-chat {
     height: calc(100dvh - 200px);
     overflow: scroll;
@@ -47,8 +48,12 @@
 
 .title-chatroom {
   font-family: 'Inter', sans-serif;
-  font-weight: 800;
-  text-align: center;
+  font-weight: 600;
+  font-size: 31px;
+  margin: auto;
+  position: absolute;
+  text-shadow: 4px 4px 6px #000000;
+
 }
 
 .bloc-new-message {
@@ -78,4 +83,19 @@
   padding-bottom: 4px;
   margin-right: 15px;
   padding-right: 8px;
+}
+
+.band-chat-picture {
+  border-radius: 100%;
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
+  position: absolute;
+  right: 140px;
+  top: 45px;
+}
+
+.banner-relative {
+  position: relative;
+  display: flex;
 }
