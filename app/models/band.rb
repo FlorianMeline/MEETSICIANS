@@ -1,6 +1,7 @@
 class Band < ApplicationRecord
   include PgSearch::Model
   has_one_attached :photo
+  has_one_attached :avatar
   belongs_to :style
   belongs_to :needed_instrument, class_name: "Instrument"
   has_many :users

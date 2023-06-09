@@ -35,10 +35,13 @@ tenacious = Band.create!(
   city: "Montcuq",
   style: rock,
   needed_instrument_id: drums.id,
+  video_url: "https://www.youtube.com/embed/Sfz9jQ3KI5k"
 )
 
 file = File.open(Rails.root.join("app/assets/images/Tenacious-D band.jpeg"))
 tenacious.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/Tenacious-D band.jpeg"))
+tenacious.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 steve = Band.create!(
   name: "Steve 'N' Seagulls",
@@ -49,10 +52,13 @@ steve = Band.create!(
   city: "Montcuq",
   style: country,
   needed_instrument_id: keyboard.id,
+  video_url: "https://www.youtube.com/embed/9i4LBeT9IBQ"
 )
 
 file = File.open(Rails.root.join("app/assets/images/SteveNSeagulls - Moyenne.jpeg"))
 steve.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/stevens_avatar.jpeg"))
+steve.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 zz = Band.create!(
   name: "ZZ Top",
@@ -63,10 +69,12 @@ zz = Band.create!(
   city: "Montcuq",
   style: country,
   needed_instrument_id: guitar.id,
+  video_url: "https://www.youtube.com/embed/Gg9cNGHl-bg"
+
 )
 
 file = File.open(Rails.root.join("app/assets/images/zztop - Grande.jpeg"))
-steve.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+zz.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
 
 pearl = Band.create!(
   name: "Pearl Jam",
@@ -77,6 +85,7 @@ pearl = Band.create!(
   city: "Montcuq",
   style: grunge,
   needed_instrument_id: drums.id,
+  video_url: "https://www.youtube.com/embed/qM0zINtulhM"
 )
 file = File.open(Rails.root.join("app/assets/images/PearlJam.jpeg"))
 pearl.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -89,9 +98,10 @@ arctic = Band.create!(
   city: "Montcuq",
   style: rock,
   needed_instrument_id: bass.id,
+  video_url: "https://www.youtube.com/embed/KQsrIxyoJdE"
 )
 file = File.open(Rails.root.join("app/assets/images/arctic-monkeys-1.jpeg"))
-pearl.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+arctic.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
 
 noirdesir = Band.create!(
   name: "Noir Désir",
@@ -102,6 +112,7 @@ noirdesir = Band.create!(
   city: "Montcuq",
   style: grunge,
   needed_instrument_id: keyboard.id,
+  video_url: "https://www.youtube.com/embed/NrgcRvBJYBE"
 )
 file = File.open(Rails.root.join("app/assets/images/NOIRDESIR.jpeg"))
 noirdesir.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -115,7 +126,8 @@ bmth = Band.create!(
   always exploring new territories and connecting with our fans around the world.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: bass.id
+  needed_instrument_id: bass.id,
+  video_url: ""
 )
 file = File.open(Rails.root.join("app/assets/images/bmth-1.jpeg"))
 bmth.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -128,7 +140,8 @@ shikari = Band.create!(
   With a loyal and diverse fanbase, we continue to push the boundaries of our music and deliver a powerful live experience.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: drums.id
+  needed_instrument_id: drums.id,
+  video_url: "https://www.youtube.com/embed/P4MiC67seUY"
 )
 file = File.open(Rails.root.join("app/assets/images/enter-shikari-2.jpeg"))
 shikari.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -141,7 +154,8 @@ pilots = Band.create!(
   and create a sense of unity among our diverse fanbase worldwide.",
   city: "Montcuq",
   style: alternative,
-  needed_instrument_id: guitar.id
+  needed_instrument_id: guitar.id,
+  video_url: "https://www.youtube.com/embed/pXRviuL6vMY"
 )
 file = File.open(Rails.root.join("app/assets/images/twenty-one-pilots-1.jpeg"))
 pilots.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -154,7 +168,8 @@ death = Band.create!(
   offering solace and empowerment through music.",
   city: "Montcuq",
   style: alternative,
-  needed_instrument_id: bass.id
+  needed_instrument_id: bass.id,
+  video_url: "https://www.youtube.com/embed/JsvlM8QGY7M"
 )
 file = File.open(Rails.root.join("app/assets/images/death-by-romy-1.jpeg"))
 death.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -168,6 +183,8 @@ kiss = Band.create!(
   city: "Montcuq",
   style: hard,
   needed_instrument_id: drums.id,
+  video_url: "https://www.youtube.com/embed/ZhIsAZO5gl0"
+
 )
 file = File.open(Rails.root.join("app/assets/images/kiss.jpeg"))
 kiss.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -181,6 +198,8 @@ greta = Band.create!(
   city: "Montcuq",
   style: hard,
   needed_instrument_id: keyboard.id,
+  video_url: "https://www.youtube.com/embed/aJg4OJxp-co"
+
 )
 file = File.open(Rails.root.join("app/assets/images/greta.jpeg"))
 greta.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -193,7 +212,8 @@ mode = Band.create!(
   on the electronic music landscape.",
   city: "Montcuq",
   style: alternative,
-  needed_instrument_id: keyboard.id
+  needed_instrument_id: keyboard.id,
+  video_url: "https://www.youtube.com/embed/aGSKrC7dGcY"
 )
 file = File.open(Rails.root.join("app/assets/images/Depeche-Mode-1.jpeg"))
 mode.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -206,7 +226,8 @@ omens = Band.create!(
   in their own journeys.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: bass.id
+  needed_instrument_id: bass.id,
+  video_url: "https://www.youtube.com/embed/Aibxit_PpAg"
 )
 file = File.open(Rails.root.join("app/assets/images/Bad-Omens-1.jpeg"))
 omens.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -218,7 +239,8 @@ dress = Band.create!(
   Through our music, we aim to inspire and connect with listeners, leaving a lasting impression.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: drums.id
+  needed_instrument_id: drums.id,
+  video_url: "https://www.youtube.com/embed/19PZWrbr_7U"
 )
 file = File.open(Rails.root.join("app/assets/images/Static-Dress-1.jpeg"))
 dress.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -231,6 +253,8 @@ sexpistols = Band.create!(
   city: "Montcuq",
   style: punk,
   needed_instrument_id: bass.id,
+  video_url: "https://www.youtube.com/embed/yqrAPOZxgzU"
+
 )
 file = File.open(Rails.root.join("app/assets/images/Sex-Pistols.jpeg"))
 sexpistols.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -244,6 +268,8 @@ nirvana = Band.create!(
   city: "Montcuq",
   style: grunge,
   needed_instrument_id: vocal.id,
+  video_url: "https://www.youtube.com/embed/YQfkm4Vp-1o"
+
 )
 file = File.open(Rails.root.join("app/assets/images/nirvana.jpeg"))
 nirvana.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -255,6 +281,7 @@ theoffspring = Band.create!(
   city: "Montcuq",
   style: punk,
   needed_instrument_id: bass.id,
+  video_url: "https://www.youtube.com/embed/7iNbnineUCI"
 )
 file = File.open(Rails.root.join("app/assets/images/The_Offspring-stage.jpeg"))
 theoffspring.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -266,7 +293,8 @@ falling = Band.create!(
   Through our music, we aim to connect with listeners, inspiring them to overcome adversity and find hope in the darkest moments.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: bass.id
+  needed_instrument_id: bass.id,
+  video_url: "https://www.youtube.com/embed/qMXESlny4-I"
 )
 file = File.open(Rails.root.join("app/assets/images/falling-in-reverse2 - Grande.jpeg"))
 falling.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -279,7 +307,8 @@ spirit = Band.create!(
   on a profound and visceral level, inviting them into our sonic world.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: drums.id
+  needed_instrument_id: drums.id,
+  video_url: "https://www.youtube.com/embed/rJticAP6hD8"
 )
 file = File.open(Rails.root.join("app/assets/images/Spiritbox-3 - Grande.jpeg"))
 spirit.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -291,7 +320,8 @@ motionless = Band.create!(
   we aim to create an immersive and cathartic experience, connecting with fans who resonate with our unique blend of heaviness and melody.",
   city: "Montcuq",
   style: metal,
-  needed_instrument_id: keyboard.id
+  needed_instrument_id: keyboard.id,
+  video_url: "https://www.youtube.com/embed/B3faYe5V4Sk"
 )
 file = File.open(Rails.root.join("app/assets/images/Motionless-In-Whited - Grande.jpeg"))
 motionless.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -305,6 +335,8 @@ nightwish = Band.create!(
   city: "Montcuq",
   style: symphonic,
   needed_instrument_id: guitar.id,
+  video_url: "https://www.youtube.com/embed/TM23gaT4zkY"
+
   )
   file = File.open(Rails.root.join("app/assets/images/nightwish 2.jpeg"))
   nightwish.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -318,6 +350,7 @@ epica = Band.create!(
   city: "Montcuq",
   style: symphonic,
   needed_instrument_id: bagpipe.id,
+  video_url: "https://www.youtube.com/embed/7imPLmvLyQA"
   )
   file = File.open(Rails.root.join("app/assets/images/epica.jpeg"))
   epica.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -331,7 +364,7 @@ email: "black@email.com", password: "azerty", bio: "Yo, I'm Jack Black, the rock
 Born on August 28, 1969, in Santa Monica, California,
 I'm an American actor, comedian, and musician. I'm the frontman of the legendary comedic rock duo,
 Tenacious D. From belting out killer tunes to slaying audiences on the big screen,
-I'm here to rock your world!", city: "Montcuq", instrument: vocal, style: rock, band: tenacious)
+I'm here to rock your world!", city: "Montcuq", instrument: vocal, style: rock, band: tenacious, )
 file = File.open(Rails.root.join("app/assets/images/Jack Black.jpeg"))
 black.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
@@ -606,7 +639,6 @@ city: "Montcuq", instrument: vocal, style: rock, band: kiss)
 file = File.open(Rails.root.join("app/assets/images/Paul.jpeg"))
 paul.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
-
 ace = User.create!(last_name: "Frehley", first_name: "Ace",
 email: "ace@email.com", password: "azerty", bio: "
 HWhat's up, space cadets? It's Ace Frehley, the Spaceman of KISS, here to take you on a cosmic journey through rock 'n' roll.
@@ -617,15 +649,15 @@ city: "Montcuq", instrument: guitar, style: rock, band: kiss)
 file = File.open(Rails.root.join("app/assets/images/ace.jpeg"))
 ace.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
-josh = User.create!(last_name: "Kiszka", first_name: "Joshua",
-email: "josh@email.com", password: "azerty", bio: "Hey there, rockers! It's Joshua Kiszka,
-the frontman of Greta Van Fleet, ready to unleash my soulful vocals and rock 'n' roll spirit.
+gretat = User.create!(last_name: "Thunberg", first_name: "Greta",
+email: "josh@email.com", password: "azerty", bio: "Hey there, rockers! It's Greta Thunberg,
+the frontgirl of Greta Van Fleet, ready to unleash my soulful vocals and rock 'n' roll spirit.
 With a voice that channels the legends of the past, I bring a raw energy to our music.
 Together with my brothers, we're reviving the spirit of rock for a new generation. Let the music carry us forward!",
 city: "Montcuq", instrument: vocal, style: rock, band: greta)
 
-file = File.open(Rails.root.join("app/assets/images/josh.jpeg"))
-josh.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("app/assets/images/gretat.jpeg"))
+gretat.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
 jake = User.create!(last_name: "Kiszka", first_name: "Jacob",
 email: "jake@email.com", password: "azerty", bio: "Hey, rock 'n' roll warriors! It's Jake Kiszka,
