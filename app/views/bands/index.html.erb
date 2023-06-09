@@ -1,5 +1,5 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
-  <p class="title-band-banner">HOT BANDS</p>
+  <p class="title-band-banner">MEETSICIANS</p>
     <%= form_tag bands_path(@filtered_parameters.merge(query: params[:query])), method: :get do %>
       <div class="search-bar-black">
       <i class="fa-solid fa-magnifying-glass icon-search-bar"></i>
@@ -44,6 +44,7 @@
       <% end %>
       <%= link_to band_path(band) do%>
         <div class="card-img-overlay card-band-infos d-flex flex-column align-items-center justify-content-end">
+          <p class= "city-band position-city-in-card d-flex justify-content-center text-align-center"><i class="fa-solid fa-location-dot dot-localisation" style="color: #ff082a;"> </i> <%= band.city.upcase%></p>
           <h1 class="name-band" ><%= band.name %></h1>
           <p class="needed-instrument-pill">LOOKING FOR: <%= band.needed_instrument.name%></p>
         </div>
