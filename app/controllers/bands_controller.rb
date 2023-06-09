@@ -5,7 +5,6 @@ class BandsController < ApplicationController
     @instruments = Instrument.all
     @filtered_parameters = request.parameters.with_indifferent_access.slice(:style, :needed_instrument, :query)
 
-
     @bands = Band.search_by_name_city_and_need(params[:query]) if params[:query].present?
     @bands = @bands.joins(:style).where(style: { name: params[:style] }) if params[:style].present?
     @bands = @bands.joins(:needed_instrument).where(needed_instrument: { name: params[:needed_instrument] }) if params[:needed_instrument].present?
@@ -23,10 +22,13 @@ class BandsController < ApplicationController
 
   def create
     @band = Band.new(band_params)
-    @band.users = current_user
+    @user = current_user
+    raise
+    @current_user.band_id = @band
+
 
     if @band.save
-      redirect_to @band, notice: 'Bande créée avec succès.'
+      redirect_to band_path(@band), notice: 'Bande créée avec succès.'
     else
       render :new
     end
