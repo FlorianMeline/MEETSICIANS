@@ -1,0 +1,22 @@
+<div class= "band-container">
+  <div class="banner-band banner-user-profil">
+      <%= cl_image_tag @banner_picture_user ,class: "band-banner"%>
+      <h1 id="name-user"><strong><%= @user.first_name.upcase%> <%= @user.last_name.upcase%> </strong></h1>
+  </div>
+  <div class="functions-band">
+    <button type="button" class=" btn-create-band"><%=@button_band%> band
+    </button>
+    <%= cl_image_tag @user.avatar.key, class: "band-avatar", width: 200, height: 200, crop: :fill%>
+    <div class ="user-pill d-flex justify-content-between">
+      <p class= "music-style mr-2 pt-2"><%= @user.instrument.name.upcase%></p>
+      <p class= "music-style pt-2"><%= @user.style.name.upcase%></p>
+    </div>
+  </div>
+    <div>
+      <p class="bio-band mt-4 d-flex justify-content-space-between p-3"><%= @user.bio%></p>
+    </div>
+    <div class="container">
+    <iframe width="100%"  src="https://www.youtube.com/embed/racmy7Y9P4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
     <strong><h1 class="title-chatroom"><%= @chatroom.band.name %></h1></strong>
 </div>
-  <div class="container chatroom"
+<div class="container chatroom"
     data-controller="chatroom-subscription"
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
     data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
@@ -17,11 +17,16 @@
   <%= simple_form_for [@chatroom, @message],
     { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
   %>
+  <div class="bloc-new-message">
     <%= f.input :content,
       label: false,
       placeholder: "Type your message... #{@chatroom.name}",
-      wrapper_html: {class: "flex-grow-1"}
+      wrapper_html: {class: "flex-grow-1"},
+      input_html: { clss: "input-new-message"}
     %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+    <button type="submit" class="button-send-message">
+      <i class="fa-solid fa-paper-plane"></i>
+    </button>
   <% end %>
+  </div>
 </div>

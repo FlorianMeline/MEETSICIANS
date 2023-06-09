@@ -16,17 +16,17 @@
           <input class="oce-dropdown-input" data-action="click->dropdown#toggle" placeholder="Style" readonly />
           <ul class="oce-dropdown-menu-list"  data-dropdown-target="menu" id="liste" style="display: none">
             <% @styles.each do|style| %>
-              <%= link_to style.name, bands_path(@filtered_parameters.merge(style: style.name)), class:"oce-dropdown-menu-item text-white font-weight-light #{'selected' if params[:style] == style.name}"%>
+              <%= link_to style.name, bands_path(@filtered_parameters.merge(style: style.name)), class:"oce-dropdown-menu-item #{'selected' if params[:style] == style.name}"%>
             <% end %>
           </ul>
         </div>
     </div>
     <div class="oce-dropdown-container-instrument">
         <div class="oce-dropdown" data-controller="dropdown" style="color: white">
-          <input class="oce-dropdown-input" data-action="click->dropdown#toggle" placeholder="instru" readonly />
+          <input class="oce-dropdown-input" data-action="click->dropdown#toggle" placeholder="Instrument" readonly />
           <ul class="oce-dropdown-menu-list"  data-dropdown-target="menu" id="liste" style="display: none">
             <% @instruments.each do|instrument| %>
-              <%= link_to instrument.name, bands_path(@filtered_parameters.merge(needed_instrument: instrument.name)), class:"oce-dropdown-menu-item text-white font-weight-light #{'selected' if params[:needed_instrument] == instrument.name}"%>
+              <%= link_to instrument.name, bands_path(@filtered_parameters.merge(needed_instrument: instrument.name)), class:"oce-dropdown-menu-item #{'selected' if params[:needed_instrument] == instrument.name}"%>
             <% end %>
           </ul>
         </div>
@@ -40,7 +40,7 @@
       <% if band.photo.attached?%>
         <%= cl_image_tag band.photo.key, style:"height: 240px", class: "object-fit-cover"; %>
       <% else %>
-        <%= image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"height: 240px", class: "object-fit-cover"; %>
+        <%= cl_image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"height: 240px", class: "object-fit-cover"; %>
       <% end %>
       <%= link_to band_path(band) do%>
         <div class="card-img-overlay card-band-infos d-flex flex-column align-items-center justify-content-end">
