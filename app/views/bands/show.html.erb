@@ -7,7 +7,7 @@
     <% end %>
   </div>
     <p class= "need-instrument-band d-flex justify-content-center pt-2">LOOKING FOR : <%= @band.needed_instrument.name.upcase%></p>
-    <p class= "city-band d-flex justify-content-center text-align-center pt-2"><i class="fa-solid fa-location-dot" style="color: #ff082a;"></i><%= @band.city.upcase%></p>
+    <p class= "city-band d-flex justify-content-center text-align-center pt-2"><i class="fa-solid fa-location-dot" style="color: #ff082a;"></i> <%= @band.city.upcase%></p>
   <div class="functions-band"><%# !!!!!!!!!! PATH DU LINK_TO A CHANGER !!!!!!!!!!!!%>
       <!-- BTN MEMBERS = POP-UP -->
     <button type="button" class="btn btn-primary btn-band-show" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -55,5 +55,6 @@
   <p class= "music-style d-flex justify-content-center pt-2"><%= @band.style.name.upcase%></p>
   <p class="bio-band d-flex justify-content-space-between p-3"><%= @band.bio%></p>
   <%# mettre le lien vidéo YOUTUBE %>
+  <iframe width="100%"  src="https://www.youtube.com/embed/racmy7Y9P4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
 </div>

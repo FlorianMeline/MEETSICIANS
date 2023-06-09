@@ -1,17 +1,19 @@
+
 .card-band {
   border-radius: 10px;
   overflow: hidden;
-}
-.card-band-infos {
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
+  &-infos {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 }
 
 .name-band {
   text-shadow: 4px 4px 6px #000000;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
+  text-align: center;
 }
 .needed-instrument-pill{
   background-color: rgba(255, 8, 42, 0.43);
@@ -23,10 +25,6 @@
   font-weight: 300;
 }
 
-.banner {
-  background-size: cover;
-  background-position: center;
-}
 .banner {
   height: 245px;
   background-size: cover;
@@ -40,7 +38,6 @@
 
 .title-band-banner {
   filter: revert;
-  font-weight: 400;
   font-size: 32px;
   text-align: center;
   color: #fff;
@@ -58,6 +55,7 @@
   font-family: 'Istok Web', sans-serif;
   font-weight:400;
 }
+
 .search-bar-black{
   display: flex;
   width: 100%;
@@ -85,11 +83,11 @@
   width: 100%;
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
+  &:focus{
+    outline: none;
+  }
 }
 
-.input-search-bands:focus{
-  outline: none;
-}
 
 .icon-search-bar {
   font-size: 22px;
@@ -97,95 +95,7 @@
   padding: 11px;
 }
 
-.oce-dropdown {
-  border: solid white 1px;
-  width: 100%;
-  padding: 13px;
-  background-color: black;
-  margin-top: 15px;
-  border-radius: 30px;
-}
-
-.oce-dropdown-input {
-  width: 100%;
-  border-radius: 10px;
-  background: none;
-  color: white;
-  border: none;
-  padding: 0;
-  margin-bottom: 2px;
-  width: 120px;
-  border-radius: 30px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-}
-.oce-dropdown:has(.dropped) .oce-dropdown-input {
-  padding: 8px;
-}
-
-.oce-dropdown-menu-list {
-  z-index: 1;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.oce-dropdown-input:active, .oce-dropdown-input:focus {
-  border: solid white 1px;
-  outline: none;
-  width: 100%;
-  padding: 2px;
-}
-
-.oce-dropdown-menu-item {
-  padding: 7px;
-  margin: 3px 0px 3px 0px;
-  display: flex;
-  justify-content: space-between;
-  text-decoration: none;
-  border-top: 0.5px solid white;
-}
-
-.oce-dropdown-menu-item.selected {
-  border: solid white 1px;
-  border-radius: 30px;
-  font-weight: bold;
-}
-
-.oce-dropdown-menu-item.selected::after {
-  content: "\f00c";
-  color: red;
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-}
-
-.oce-dropdown-container {
-  position: relative;
-  z-index: 1;
-  width: 180px;
-}
-
 .filter-search {
   display: flex;
   justify-content: space-between;
-}
-
-.oce-dropdown-container-instrument {
-  position: relative;
-  z-index: 1;
-  width: 180px;
-}
-
-.oce-dropdown-menu-item:first-child {
-  border:none;
-}
-
-.oce-dropdown-menu-item:first-child.oce-dropdown-menu-item.selected {
-  border: solid white 1px;
-  border-radius: 30px;
-  font-weight: bold;
-}
-
-.oce-dropdown-menu-item.selected + .oce-dropdown-menu-item {
-  border: none;
 }
