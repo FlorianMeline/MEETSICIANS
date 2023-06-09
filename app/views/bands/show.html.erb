@@ -20,42 +20,50 @@
     <% end %>
     <%= link_to "contact", chatroom_path(@chatroom), class:"contact btn-band-show" %>
 
-  <!-- POP-UP -->
+    <!-- POP-UP -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content">
+
+
+        <div class="modal-content pop-body">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Members</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-      <%# POP-UP BODY %>
-          <div class="modal-body">
+
+          <%# POP-UP BODY %>
+          <div class="modal-body user-names">
             <div class="member-name">
               <% @users.each do |user| %>
-                <%= user.first_name %>
-                <%= user.last_name %>
-                <%= user.instrument.name %>
-
-            </div>
-            <div class="member-photo">
-                <% if @band.photo.attached?%>
-                  <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 80, height: 80, crop: :fill%>
-                <% else %>
-                  <%= cl_image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"width: 80px"; %>
-                <% end %>
+                <div class= "name-instrument d-flex align-items-center my-4">
+                  <div class="">
+                    <%=cl_image_tag user.avatar.key, width: 80, height: 80, crop: :fill, class: "member-photo" %>
+                  </div>
+                  <div>
+                    <div class="name">
+                      <%= user.first_name %>
+                      <%= user.last_name %>
+                    </div>
+                    <div class= "instrument">
+                      <%= user.instrument.name %>
+                    </div>
+                  </div>
+                </div>
               <% end %>
             </div>
           </div>
+          <%# POP-UP BODY %>
+
         </div>
       </div>
     </div>
   </div>
   <div>
-  <h1 class="name-band d-flex justify-content-center pt-4"><%= @band.name.upcase%> </h1>
-  <p class= "music-style d-flex justify-content-center pt-2"><%= @band.style.name.upcase%></p>
-  <p class="bio-band d-flex justify-content-space-between p-3"><%= @band.bio%></p>
-  <div class="container">
-    <iframe width="100%"  src="https://www.youtube.com/embed/racmy7Y9P4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
+    <h1 class="name-band d-flex justify-content-center pt-4"><%= @band.name.upcase%> </h1>
+    <p class= "music-style d-flex justify-content-center pt-2"><%= @band.style.name.upcase%></p>
+    <p class="bio-band d-flex justify-content-space-between p-3"><%= @band.bio%></p>
+    <div class="container">
+      <iframe width="100%"  src="https://www.youtube.com/embed/racmy7Y9P4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
   </div>
 </div>
