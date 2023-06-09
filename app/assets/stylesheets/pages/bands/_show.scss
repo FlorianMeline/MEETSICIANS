@@ -76,3 +76,18 @@
   top: 250px;
   font-size: 12px;
 }
+
+//---// STYLE POP-UP //---//
+
+.pop-body {
+  border-radius: 25px;
+}
+
+.user-names {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-photo {
+  border-radius: 50%;
+}
