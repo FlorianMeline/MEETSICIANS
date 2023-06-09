@@ -53,7 +53,6 @@
             </div>
           </div>
           <%# POP-UP BODY %>
-
         </div>
       </div>
     </div>
@@ -62,8 +61,7 @@
     <h1 class="name-band d-flex justify-content-center pt-4"><%= @band.name.upcase%> </h1>
     <p class= "music-style d-flex justify-content-center pt-2"><%= @band.style.name.upcase%></p>
     <p class="bio-band d-flex justify-content-space-between p-3"><%= @band.bio%></p>
-    <div class="container">
-      <iframe width="100%"  src="https://www.youtube.com/embed/racmy7Y9P4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
+    <%# mettre le lien vidéo YOUTUBE %>
+    <iframe class ="d-flex m-auto" width="85%"  src="<%= @band.video_url%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
 </div>
