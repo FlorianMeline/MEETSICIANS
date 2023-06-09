@@ -8,8 +8,11 @@
           <%= f.input :city, input_html: { class: "input-creation-style" }, label: false, placeholder:"City" %>
           <%= f.input :bio, input_html: { class: "input-creation-style" }, label: false, placeholder:"Biography" %>
           <%= f.input :video_url, input_html: { class: "input-creation-style" }, label: false, placeholder:"Full screen youtube video URL"%>
-          <%= f.association  :style %>
-          <%= f.association  :needed_instrument %>
+
+          <%= f.collection_select :style_id, Style.all, :id, :name, {}, class: "form-control" %>
+
+          <%= f.collection_select :needed_instrument_id, Instrument.all, :id, :name, {}, class: "form-control" %>
+
         <div class="center-button-new">
           <%= f.button :submit, class: "button-creation-band" %>
         </div>
