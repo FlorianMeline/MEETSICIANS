@@ -50,10 +50,9 @@
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 31px;
-  margin: auto;
-  position: absolute;
   text-shadow: 4px 4px 6px #000000;
-
+  margin-top: 147px;
+  text-align: center;
 }
 
 .bloc-new-message {
@@ -92,7 +91,7 @@
   object-fit: cover;
   position: absolute;
   right: 140px;
-  top: 45px;
+  top: 50px;
 }
 
 .banner-relative {
