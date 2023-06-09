@@ -24,27 +24,34 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
 
-      
+
         <div class="modal-content pop-body">
           <div class="modal-header">
-            <h1 class="modal-title fs-5 d-flex justify-content-center" id="exampleModalLabel">Members</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Members</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
           <%# POP-UP BODY %>
           <div class="modal-body user-names">
-            <div class="member-name d-flex justify-content-end">
+            <div class="member-name">
+
               <% @users.each do |user| %>
-                <%= user.first_name %>
-                <%= user.last_name %>
-                <%= user.instrument.name %>
+                <div class= "name-instrument d-flex align-items-center my-4">
+                  <div class="">
+                    <%=cl_image_tag user.avatar.key, width: 80, height: 80, crop: :fill, class: "member-photo" %>
+                  </div>
+                  <div>
+                    <div class="name">
+                      <%= user.first_name %>
+                      <%= user.last_name %>
+                    </div>
+                    <div class= "instrument">
+                      <%= user.instrument.name %>
+                    </div>
+                  </div>
+                </div>
               <% end %>
             </div>
-            <% @users.each do |user| %>
-              <div>
-                <%=cl_image_tag user.avatar.key, width: 80, height: 80, crop: :fill, class: "member-photo" %>
-              </div>
-            <% end %>
           </div>
           <%# POP-UP BODY %>
 
