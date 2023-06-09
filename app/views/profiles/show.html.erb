@@ -1,10 +1,10 @@
 <div class= "band-container">
   <div class="banner-band banner-user-profil">
-      <%= cl_image_tag @user.avatar.key,class: "band-banner"%>
+      <%= cl_image_tag @banner_picture_user ,class: "band-banner"%>
       <h1 id="name-user"><strong><%= @user.first_name.upcase%> <%= @user.last_name.upcase%> </strong></h1>
   </div>
   <div class="functions-band">
-    <button type="button" class=" btn-create-band"><%=@button_band%> a band
+    <button type="button" class=" btn-create-band"><%=@button_band%> band
     </button>
     <%= cl_image_tag @user.avatar.key, class: "band-avatar", width: 200, height: 200, crop: :fill%>
     <div class ="user-pill d-flex justify-content-between">
