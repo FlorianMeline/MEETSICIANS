@@ -1,0 +1,21 @@
+<div class="banner-creation-band">
+  <div class="creation-picture"></div>
+</div>
+<div>
+    <div class="container col-11 padding-form-creation form">
+      <%= simple_form_for [@band] do |f| %>
+          <%= f.input :name, input_html: { class: "input-creation-style" }, label: false, placeholder:"Band Name"%>
+          <%= f.input :city, input_html: { class: "input-creation-style" }, label: false, placeholder:"City" %>
+          <%= f.input :bio, input_html: { class: "input-creation-style" }, label: false, placeholder:"Biography" %>
+          <%= f.input :video_url, input_html: { class: "input-creation-style" }, label: false, placeholder:"Full screen youtube video URL"%>
+          <%= f.input :style %>
+          <%= f.input :needed_instrument %>
+        <div class="center-button-new">
+            <%= f.button :submit, class: "button-creation-band" %>
+        </div>
+      <% end %>
+    </div>
+
+</div>
+
+</div>

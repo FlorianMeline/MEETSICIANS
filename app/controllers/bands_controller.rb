@@ -18,9 +18,18 @@ class BandsController < ApplicationController
   end
 
   def new
+    @band = Band.new
   end
 
   def create
+    @band = Band.new(band_params)
+    @band.users = current_user
+
+    if @band.save
+      redirect_to @band, notice: 'Bande créée avec succès.'
+    else
+      render :new
+    end
   end
 
   def update
@@ -28,4 +37,22 @@ class BandsController < ApplicationController
 
   def edit
   end
+
+  private
+
+  def band_params
+    params.require(:band).permit(:name, :bio, :city, :style_id, :needed_instrument_id, :video_url)
+  end
 end
+# create_table "bands", force: :cascade do |t|
+#   t.string "name"
+#   t.text "bio"
+#   t.string "city"
+#   t.bigint "style_id", null: false
+#   t.datetime "created_at", null: false
+#   t.datetime "updated_at", null: false
+#   t.bigint "needed_instrument_id"
+#   t.string "video_url"
+#   t.index ["needed_instrument_id"], name: "index_bands_on_needed_instrument_id"
+#   t.index ["style_id"], name: "index_bands_on_style_id"
+# end

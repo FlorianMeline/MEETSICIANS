@@ -1,0 +1,40 @@
+.banner-creation-band {
+  background-color: #646262;
+  height: 180px;
+  width: 100%;
+  position: relative;
+}
+
+.creation-picture {
+  background-color: white;
+  border-radius: 100%;
+  position: absolute;
+  width: 138px;
+  height: 138px;
+  inset: 185px 0 0;
+  margin: auto;
+}
+
+.input-creation-style {
+  border-radius: 25px;
+  padding: 12px 22px 12px 22px;
+}
+
+.padding-form-creation {
+  margin-top: 100px;
+
+}
+
+.button-creation-band {
+  background-color: white;
+  border-radius: 25px;
+  color: black;
+  justify-content: center;
+
+}
+
+.center-button-new {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
