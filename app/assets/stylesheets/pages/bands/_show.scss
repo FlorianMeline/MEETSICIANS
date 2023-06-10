@@ -62,34 +62,50 @@
 }
 
 .need-instrument-band {
-  background: rgba(255, 8, 42, 0.43);
+  background: rgba(160, 10, 30, 0.934);
   border-radius: 6px;
-  padding: 0.5em;
-  width:fit-content;
+  padding: 10px ;
   margin: auto;
+  width:fit-content;
   font-size: 10px;
   position: absolute;
   top: 23px;
   right: 20px;
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
+  font-size: 12px;
+}
+
+.internal-padding {
+  padding-top: 10px;
 }
 
 .city-band {
   position: absolute;
-  right: 20px;
-  top: 230px;
   font-size: 12px;
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
+  background: rgba(0, 0, 0, 0.823);
+  border-radius: 6px;
+  padding: 9px ;
+}
+
+.position-city {
+  right: 20px;
+  top: 230px;
+}
+
+.dot-localisation {
+  padding-right: 6px;
+  margin-top: 2px;
 }
 
 .bio-band {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  margin-left: 31px;
-  margin-right: 31px;
-  text-align: center;
+
+  margin: 15px 9px 24px 9px;
+  text-align: justify;
 }
 
 //---// STYLE POP-UP //---//

@@ -2,15 +2,13 @@
   <div class="banner-band banner-user-profil">
       <%= cl_image_tag @banner_picture_user ,class: "band-banner"%>
       <h1 id="name-user"><strong><%= @user.first_name.upcase%> <%= @user.last_name.upcase%> </strong></h1>
-      <p class= "music-style pill-profil-instrument mr-2 pt-2"><%= @user.instrument.name.upcase%></p>
-      <p class= "city pt-2"><%= @user.city.upcase%></p>
   </div>
   <div class="functions-band">
     <button type="button" class=" btn-create-band"><%=@button_band%> band
-
     </button>
     <%= cl_image_tag @user.avatar.key, class: "band-avatar", width: 200, height: 200, crop: :fill%>
     <div class ="user-pill d-flex justify-content-between">
+      <p class= "music-style mr-2 pt-2"><%= @user.instrument.name.upcase%></p>
       <p class= "music-style pt-2"><%= @user.style.name.upcase%></p>
     </div>
   </div>

@@ -35,17 +35,22 @@
 }
 
 .user-pill .music-style {
-  margin-right: 20px;
+  margin-right: -9px;
 }
+
+.user-pill .music-style:first-child {
+  margin-right: 8px;
+}
+
 
 .pill-profil-instrument {
   position: absolute;
   top: 23px;
-  left: 31em;
+  left: 33em;
 }
 
-.city {
+.city-in-card {
   position: absolute;
-  top: 14em;
-  left: 19em;
+  top: 19em;
+  left: 25em;
 }

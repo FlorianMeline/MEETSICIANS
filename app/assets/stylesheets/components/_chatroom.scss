@@ -51,7 +51,7 @@
   font-weight: 600;
   font-size: 31px;
   text-shadow: 4px 4px 6px #000000;
-  margin-top: 147px;
+  margin-top: auto;
   text-align: center;
 }
 
@@ -78,23 +78,14 @@
   color:red;
   border: 1px solid white;
   border-radius: 50px;
+  text-align: center;
   font-size: large;
-  padding-bottom: 4px;
   margin-right: 15px;
-  padding-right: 8px;
 }
 
-.band-chat-picture {
-  border-radius: 100%;
-  height: 130px;
-  width: 130px;
-  object-fit: cover;
-  position: absolute;
-  right: 140px;
-  top: 50px;
-}
-
-.banner-relative {
-  position: relative;
-  display: flex;
+.banner-dicussion-chat {
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
 }
