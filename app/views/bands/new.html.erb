@@ -2,21 +2,22 @@
   <%= form_with(model: @band, url: bands_path, local: true) do |form| %>
   <img data-target="preview.preview" style="max-width: 100%; max-height: 200px;">
   <div class="creation-picture"></div>
-    <div class="custom-file-input-wrapper">
+    <div class="custom-file-input-wrapper " data-controller="preview">
       <%= label_tag 'photo', class: 'custom-file-label', id: 'photo-input' do %>
           <i class="fas fa-plus"></i>
       <% end %>
-      <%= form.file_field :photo, id: 'photo', class: 'hidden-field custom-file-input', accept: 'image/png, image/jpeg, image/jpg', data: { controller: 'preview', action: 'preview' }%>
+      <%= form.file_field :photo, id: 'photo', class: 'hidden-field custom-file-input', accept: 'image/png, image/jpeg, image/jpg', data: { action: 'preview#display' }%>
       <%= image_tag '' %>
+      <img data-preview-target="previewImage" class="photo-preview-form">
     </div>
-    <div class="custom-file-input-wrapper">
+    <div class="custom-file-input-wrapper" data-controller="preview">
       <%= label_tag 'avatar', id: 'avatar-input', class: 'custom-file-label' do %>
         <i class="fas fa-plus"></i>
       <% end %>
-      <%= form.file_field :avatar, id: 'avatar', class: 'hidden-field custom-file-input', accept: 'image/png, image/jpeg, image/jpg', data: { controller: 'preview', action: 'preview' }  %>
+      <%= form.file_field :avatar, id: 'avatar', class: 'hidden-field custom-file-input', accept: 'image/png, image/jpeg, image/jpg', data: { action: 'preview#display' }  %>
       <%= image_tag '' %>
-      <img data-preview-target="preview" style="max-width: 100%; max-height: 200px;">
-      <img data-preview-target="preview" style="max-width: 100%; max-height: 200px;">
+      <img data-preview-target="previewImage" class="avatar-preview-form">
+      <%# <img data-preview-target="preview" style="max-width: 100%; max-height: 200px;"> %>
     </div>
   </div>
   <div>

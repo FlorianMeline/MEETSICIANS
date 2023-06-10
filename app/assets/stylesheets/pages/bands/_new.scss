@@ -30,7 +30,7 @@
 }
 
 .padding-form-creation {
-  margin: 111px 16px;
+  margin: 116px 16px;
 }
 
 .button-creation-band {
@@ -52,17 +52,17 @@
 }
 
 #band_needed_instrument_id {
-  margin-top: 14px;
+  margin-top: 22px;
     background-color: #A4A3A3;
     text-decoration: none;
     border-radius: 7px;
     padding: 5px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    margin-left: 18px;
     margin-bottom: 17px;
-    width: 348px;
+    width: 311px;
     text-align: center;
+    margin-left: 31px;
 }
 
 #band_style_id{
@@ -73,9 +73,9 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   margin-bottom: 20px;
-  margin-left: 18px;
-  width: 348px;
+  width: 311px;
   text-align: center;
+  margin-left: 31px;
 }
 
 #band_photo {
@@ -106,6 +106,8 @@
   height: 40px;
   width: 40px;
   text-align: center;
+  z-index: 1;
+  object-fit: cover;
 }
 
 #photo-input {
@@ -146,4 +148,29 @@
 
 #band_city {
   padding-left: 7px;
+}
+
+.avatar-preview-form{
+  border-radius: 100%;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  inset: 185px 137px -14px;
+  margin: auto;
+  border: 1px solid white;
+  object-fit: cover;
+  background-color: white;
+}
+
+.photo-preview-form {
+  height: 180px;
+  width: 414px;
+  position: absolute;
+  object-fit: cover;
+  background-color: #646262;
+}
+
+.input-creation-style:focus-visible {
+  outline: none;
+  border: none;
 }

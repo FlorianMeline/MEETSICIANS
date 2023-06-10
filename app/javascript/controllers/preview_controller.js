@@ -1,14 +1,14 @@
 import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
-  static targets = ['preview']
+  static targets = ['previewImage']
 
-  preview(event) {
+  display(event) {
     const input = event.target
     if (input.files && input.files[0]) {
-      const reader = new FileReader()
+      const reader = new FileReader();
       reader.onload = (e) => {
-        this.previewTarget.src = e.target.result
+        this.previewImageTarget.src = e.target.result
       }
       reader.readAsDataURL(input.files[0])
     }
