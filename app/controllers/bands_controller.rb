@@ -22,18 +22,12 @@ class BandsController < ApplicationController
 
   def create
     @band = Band.new(band_params)
-    @user = current_user
-    @style = Style.find(params[:style_id])
-    @instrument = Instrument.find(params[:needed_instrument_id])
-    @picture_band = @band.photo.attach
-
-    @band.style = @style
-    @band.needed_instrument = @instrument
+    @current_user = current_user
     if @band.save
-      @band.users << @user
-      redirect_to band_path(@band), notice: 'Bande créée avec succès.'
+      redirect_to @band
+      current_user.update(band_id: @band.id)
     else
-      render :new,  status: :unprocessable_entity
+      render :new
     end
   end
 
@@ -46,7 +40,7 @@ class BandsController < ApplicationController
   private
 
   def band_params
-    params.require(:band).permit(:name, :bio, :city, :style_id, :needed_instrument_id, :video_url)
+    params.require(:band).permit(:name, :bio, :city, :style_id, :needed_instrument_id, :video_url, :photo, :avatar)
   end
 end
 # create_table "bands", force: :cascade do |t|

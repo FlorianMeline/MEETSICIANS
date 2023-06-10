@@ -1,25 +1,27 @@
 <div class="banner-creation-band">
   <div class="creation-picture"></div>
 </div>
+  <img data-target="preview.preview" style="max-width: 100%; max-height: 200px;">
 <div>
-    <div class="container col-11 padding-form-creation form">
-      <%= simple_form_for [ @band] do |f| %>
-          <%= f.input :image, as: :image_preview, input_html: {preview_version: :thumb} %>
-          <%= f.input :name, input_html: { class: "input-creation-style" }, label: false, placeholder:"Band Name"%>
-          <%= f.input :city, input_html: { class: "input-creation-style" }, label: false, placeholder:"City" %>
-          <%= f.input :bio, input_html: { class: "input-creation-style" }, label: false, placeholder:"Biography" %>
-          <%= f.input :video_url, input_html: { class: "input-creation-style" }, label: false, placeholder:"Full screen youtube video URL"%>
+    <%= form_with(model: @band, url: bands_path, local: true) do |form| %>
+  <%= form.text_field :name, placeholder: "Name" %>
+  <%= form.text_area :bio, placeholder: "Bio" %>
+  <%= form.text_field :city, placeholder: "City" %>
+  <%= form.collection_select :style_id, Style.all, :id, :name, prompt: "Select a style" %>
+  <%= form.collection_select :needed_instrument_id, Instrument.all, :id, :name, prompt: "Select a needed instrument" %>
+  <%= form.url_field :video_url, placeholder: "Video URL" %>
 
-          <%= f.collection_select :style_id, Style.all, :id, :name, {}, class: "form-control" %>
-
-          <%= f.collection_select :needed_instrument_id, Instrument.all, :id, :name, {}, class: "form-control" %>
-
-        <div class="center-button-new">
-          <%= f.button :submit, class: "button-creation-band" %>
-        </div>
-      <% end %>
+    <div>
+      <%= form.file_field :photo, accept: "image/png, image/jpeg, image/jpg", data: { controller: "preview", target: "preview.fileField", previewPhoto: "preview.previewPhoto" } %>
+      <%= image_tag "", class: "preview-image", data: { target: "preview.previewPhoto" } %>
     </div>
 
-</div>
+    <div>
+      <%= form.file_field :avatar, accept: "image/png, image/jpeg, image/jpg", data: { controller: "preview", target: "preview.fileField", previewAvatar: "preview.previewAvatar" } %>
+      <%= image_tag "", class: "preview-image", data: { target: "preview.previewAvatar" } %>
+    </div>
 
+  <%= form.submit "Create Band" %>
+<% end %>
+<script src="/path/to/preview_controller.js" type="module"></script>
 </div>

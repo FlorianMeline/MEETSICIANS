@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resource :profile, only: [:show]
-  
-  resources :bands, only: [:index, :create, :show, :new, :update, :delete] do
+
+  resources :bands, only: [:index, :create, :show, :new, :update, :destroy] do
     resources :chatroom, only: :create
   end
 
