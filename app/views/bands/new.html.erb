@@ -7,7 +7,6 @@
           <i class="fas fa-plus"></i>
       <% end %>
       <%= form.file_field :photo, id: 'photo', class: 'hidden-field custom-file-input', accept: 'image/png, image/jpeg, image/jpg', data: { action: 'preview#display' }%>
-      <%= image_tag '' %>
       <img data-preview-target="previewImage" class="photo-preview-form">
     </div>
     <div class="custom-file-input-wrapper" data-controller="preview">
