@@ -34,6 +34,18 @@
   position: relative;
 }
 
-.user-pill .music-style:last-child  {
-  margin-left: 10px;
+.user-pill .music-style {
+  margin-right: 20px;
+}
+
+.pill-profil-instrument {
+  position: absolute;
+  top: 23px;
+  left: 31em;
+}
+
+.city {
+  position: absolute;
+  top: 14em;
+  left: 19em;
 }
