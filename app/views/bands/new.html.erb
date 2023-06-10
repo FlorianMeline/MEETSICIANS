@@ -24,12 +24,15 @@
     <%= form.text_field :name, placeholder: 'Name', class: " input-creation-style " %>
   </div>
   <div class="name-input-page-creation">
+    <i class="fas fa-pen pen-input"></i>
     <%= form.text_area :bio, placeholder: "Biography", class: "input-creation-style" %>
   </div>
   <div class="name-input-page-creation">
+    <i class="fas fa-map-marker-alt icon-page-creation"></i>
     <%= form.text_field :city, placeholder: "City", class: "input-creation-style" %>
   </div>
   <div class="name-input-page-creation">
+    <i class="fas fa-video icon-page-creation"></i>
     <%= form.url_field :video_url, placeholder: "Video URL", class: "input-creation-style" %>
   </div>
     <%= form.collection_select :needed_instrument_id, Instrument.all, :id, :name, prompt: "Add the instrument you need"%>
