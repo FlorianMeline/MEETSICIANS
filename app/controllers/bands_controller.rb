@@ -25,10 +25,10 @@ class BandsController < ApplicationController
     @user = current_user
     @style = Style.find(params[:style_id])
     @instrument = Instrument.find(params[:needed_instrument_id])
+    @picture_band = @band.photo.attach
 
     @band.style = @style
     @band.needed_instrument = @instrument
-    @band.errors
     if @band.save
       @band.users << @user
       redirect_to band_path(@band), notice: 'Bande créée avec succès.'

@@ -4,6 +4,7 @@
 <div>
     <div class="container col-11 padding-form-creation form">
       <%= simple_form_for [ @band] do |f| %>
+          <%= f.input :image, as: :image_preview, input_html: {preview_version: :thumb} %>
           <%= f.input :name, input_html: { class: "input-creation-style" }, label: false, placeholder:"Band Name"%>
           <%= f.input :city, input_html: { class: "input-creation-style" }, label: false, placeholder:"City" %>
           <%= f.input :bio, input_html: { class: "input-creation-style" }, label: false, placeholder:"Biography" %>
