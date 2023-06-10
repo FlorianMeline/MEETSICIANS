@@ -6,8 +6,8 @@
       <%= cl_image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"width: 400px"; %>
     <% end %>
   </div>
-    <p class= "need-instrument-band d-flex justify-content-center pt-2">LOOKING FOR : <%= @band.needed_instrument.name.upcase%></p>
-    <p class= "city-band d-flex justify-content-center text-align-center pt-2"><i class="fa-solid fa-location-dot" style="color: #ff082a;"></i> <%= @band.city.upcase%></p>
+    <p class= "need-instrument-band d-flex justify-content-center">LOOKING FOR : <%= @band.needed_instrument.name.upcase%></p>
+    <p class= "city-band position-city d-flex justify-content-center text-align-center"><i class="fa-solid fa-location-dot dot-localisation" style="color: #ff082a;"> </i> <%= @band.city.upcase%></p>
   <div class="functions-band"><%# !!!!!!!!!! PATH DU LINK_TO A CHANGER !!!!!!!!!!!!%>
       <!-- BTN MEMBERS = POP-UP -->
     <button type="button" class="btn btn-primary btn-band-show" data-bs-toggle="modal" data-bs-target="#exampleModal">

@@ -1,6 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
-    <%= cl_image_tag @chatroom.band.photo.key, class: "band-chat-picture"%>
-
+<div class="banner-dicussion-chat" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
       <strong><h1 class="title-chatroom"><%= @chatroom.band.name.upcase %></h1></strong>
 </div>
 <div class="container chatroom"

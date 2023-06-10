@@ -16,7 +16,7 @@
   text-align: center;
 }
 .needed-instrument-pill{
-  background-color: rgba(255, 8, 42, 0.43);
+  background-color: rgba(160, 10, 30, 0.904);
   border-radius: 6px;
   padding: 6px;
   font-size: 15px;
@@ -98,4 +98,9 @@
 .filter-search {
   display: flex;
   justify-content: space-between;
+}
+
+.position-city-in-card {
+  bottom: 177px;
+  left: 266px;
 }
