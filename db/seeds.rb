@@ -127,7 +127,7 @@ bmth = Band.create!(
   city: "Montcuq",
   style: metal,
   needed_instrument_id: bass.id,
-  video_url: ""
+  video_url: "https://www.youtube.com/embed/racmy7Y9P4M"
 )
 file = File.open(Rails.root.join("app/assets/images/bmth-1.jpeg"))
 bmth.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
@@ -649,7 +649,7 @@ city: "Montcuq", instrument: guitar, style: rock, band: kiss)
 file = File.open(Rails.root.join("app/assets/images/ace.jpeg"))
 ace.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
-gretat = User.create!(last_name: "Thunberg", first_name: "Greta",
+greta = User.create!(last_name: "Kiszka", first_name: "Joshua",
 email: "josh@email.com", password: "azerty", bio: "Hey there, rockers! It's Greta Thunberg,
 the frontgirl of Greta Van Fleet, ready to unleash my soulful vocals and rock 'n' roll spirit.
 With a voice that channels the legends of the past, I bring a raw energy to our music.
