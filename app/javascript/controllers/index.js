@@ -13,5 +13,5 @@ application.register("hello", HelloController)
 import DropdownController from "./dropdown_controller"
 application.register("dropdown", DropdownController)
 
-import EditProfilController from "./_edit_profil_controller"
-application.register("edit-profil", EditProfilController)
+import PreviewController from './preview_controller'
+application.register('preview', PreviewController)

@@ -1,0 +1,176 @@
+.banner-creation-band {
+  background-color: #646262;
+  height: 180px;
+  width: 100%;
+  position: relative;
+}
+
+.creation-picture {
+  background-color: white;
+  border-radius: 100%;
+  position: absolute;
+  width: 138px;
+  height: 138px;
+  inset: 185px 0 0;
+  margin: auto;
+}
+
+.form-new-container {
+  margin-left: 6px;
+}
+
+.input-creation-style {
+  border-radius: 25px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  width: 369px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+}
+
+.padding-form-creation {
+  margin: 116px 16px;
+}
+
+.button-creation-band {
+  background-color: white;
+  border-radius: 25px;
+  color: black;
+  justify-content: center;
+  padding: 13px;
+  margin-left: 126px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  margin-top: 2em;
+}
+
+.center-button-new {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+#band_needed_instrument_id {
+  margin-top: 22px;
+    background-color: #A4A3A3;
+    text-decoration: none;
+    border-radius: 7px;
+    padding: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 17px;
+    width: 311px;
+    text-align: center;
+    margin-left: 31px;
+}
+
+#band_style_id{
+  background-color: #A4A3A3;
+  text-decoration: none;
+  border-radius: 7px;
+  padding: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+  width: 311px;
+  text-align: center;
+  margin-left: 31px;
+}
+
+#band_photo {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-file-input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.custom-file-input-wrapper {
+  position: absolute;
+  display: inline-block;
+}
+
+.custom-file-label {
+  position: absolute;
+  background-color: #FF082A;
+  border: 2px solid white;
+  padding: 6px;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  z-index: 1;
+  object-fit: cover;
+}
+
+#photo-input {
+  top: 10em;
+  left: 22em;
+}
+
+#avatar-input {
+  top: 210px;
+  left: 15em;
+}
+
+.name-input-page-creation {
+  border: 2px solid white;
+  border: 2px solid white;
+  border-radius: 25px;
+  align-items: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 11px 0px 11px 0px;
+  margin: 0px 15px 18px;
+}
+
+.icon-page-creation {
+  color: #A4A3A3;
+  padding: 0px 8px 0px 23px;
+}
+
+#band_bio {
+  padding-left: 6px;
+}
+
+.pen-input {
+  color: #A4A3A3;
+  padding: 0px 4px 28px 23px;
+}
+
+#band_city {
+  padding-left: 7px;
+}
+
+.avatar-preview-form{
+  border-radius: 100%;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  inset: 185px 137px -14px;
+  margin: auto;
+  border: 1px solid white;
+  object-fit: cover;
+  background-color: white;
+}
+
+.photo-preview-form {
+  height: 180px;
+  width: 414px;
+  position: absolute;
+  object-fit: cover;
+  background-color: #646262;
+}
+
+.input-creation-style:focus-visible {
+  outline: none;
+  border: none;
+}

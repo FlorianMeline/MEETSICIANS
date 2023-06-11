@@ -34,6 +34,44 @@
   position: relative;
 }
 
-.user-pill .music-style:last-child  {
-  margin-left: 10px;
+.user-pill .music-style {
+  margin-right: -9px;
+}
+
+.user-pill .music-style:first-child {
+  margin-right: 8px;
+}
+
+
+.pill-profil-instrument {
+  position: absolute;
+  top: 23px;
+  left: 33em;
+}
+
+.city-in-card {
+  position: absolute;
+  top: 19em;
+  left: 25em;
+}
+
+.btn-disconnect {
+  position: fixed;
+  right: 20px;
+  top: 26px;
+  width: 92px;
+  height: 28px;
+  background: #000000;
+  border: 1px solid #FFFFFF;
+  border-radius: 30px;
+  font-size: 10px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
