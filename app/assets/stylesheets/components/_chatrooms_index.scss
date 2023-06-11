@@ -1,17 +1,25 @@
+.banner-messenger{
+  height: 150px;
+}
+
+.container-chats{
+  height: calc(100dvh - 200px);
+  overflow: scroll;
+}
+
 .chat-avatar{
   border-radius: 100px;
-  width: 138px;
-  height: 138px;
+  width: 100px;
+  height: 100px;
   position: absolute;
   object-fit: cover;
-  inset: -464px 0 0;
+  inset: -500px 0 0;
   margin: auto;
 }
 
 .link-chat{
   text-decoration: none;
   color: white;
-  border-bottom: 1px solid white;
   display: flex;
 }
 
@@ -19,8 +27,16 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  display: block;
+  margin-right: 10px;
 }
 
 .container-chats{
   margin-top: 65px;
+}
+
+.message{
+  border-bottom: 1px solid white;
+  display: flex;
+  padding: 15px;
 }
