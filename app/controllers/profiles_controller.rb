@@ -5,10 +5,10 @@ class ProfilesController < ApplicationController
     @banner_picture_user = @user.avatar.key
 
     if @user.band.present?
-      @button_band = "edit your"
+      @button_band = "Go to your"
       @banner_picture_user = @user.band.photo.key
     else
-      @button_band = "create a"
+      @button_band = "Create a"
     end
   end
 

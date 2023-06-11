@@ -39,15 +39,24 @@
               <% @users.each do |user| %>
                 <div class= "name-instrument d-flex align-items-center my-4">
                   <div class="">
+                    <div>
+                    <% if @users.include?(user) %>
+                      <%= button_to "",
+                        band_delete_user_path(@band, user),
+                        method: :delete_user,
+                        data: { turbo_confirm: "Are you sure?" },
+                        form: { class: "delete-button hidden-field" } %>
+                      <% end %>
                     <%=cl_image_tag user.avatar.key, width: 80, height: 80, crop: :fill, class: "member-photo" %>
                   </div>
+                      </div>
                   <div>
                     <div class="name">
                       <%= user.first_name %>
                       <%= user.last_name %>
                     </div>
                     <div class= "instrument">
-
+                      <%= user.instrument.name %>
                     </div>
                   </div>
                 </div>

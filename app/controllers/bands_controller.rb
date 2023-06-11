@@ -31,15 +31,6 @@ class BandsController < ApplicationController
   end
 
   def update
-    @band = Band.find(params[:id])
-    @user = current_user
-    @users = User.all
-
-    if @band.update(band_params)
-      puts"updated"
-    else
-      render :edit
-    end
   end
 
 

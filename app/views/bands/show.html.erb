@@ -10,7 +10,7 @@
     <p class= "need-instrument-band d-flex justify-content-center">LOOKING FOR : <%= @band.needed_instrument.name.upcase%></p>
     <p class= "city-band position-city d-flex justify-content-center text-align-center"><i class="fa-solid fa-location-dot dot-localisation" style="color: #ff082a;"> </i> <%= @band.city.upcase%></p>
     <%if @users.include?(@user) %>
-      <%= link_to "",edit_band_path(@band),  class: " custom-edition-profil"%>
+      <%= link_to "",edit_band_path(@band),  class: "custom-edition-profil"%>
       <% end %>
   <div class="functions-band"><%# !!!!!!!!!! PATH DU LINK_TO A CHANGER !!!!!!!!!!!!%>
       <!-- BTN MEMBERS = POP-UP -->
@@ -51,15 +51,6 @@
                     <div class= "instrument">
                       <%= user.instrument.name %>
                     </div>
-                    <% if @users.include?(user) %>
-                  <%= button_to "Delete",
-                    band_delete_user_path(@band, user),
-                    method: :delete_user,
-                    data: { turbo_confirm: "Are you sure?" },
-                    class: "text-white",
-                    form: { class: "inline-form" } %>
-                <% end %>
-
                   </div>
                 </div>
               <% end %>
