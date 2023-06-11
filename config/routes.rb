@@ -4,14 +4,13 @@ Rails.application.routes.draw do
 
   resource :profile, only: [:show, :edit, :update, :post]
 
-  resources :bands, only: [:index, :create, :show, :new, :delete, :update, :edit] do
+  resources :bands, only: [:index, :create, :show, :new, :update, :edit] do
     resources :chatroom, only: :create
-    delete '/users/:id', to: 'users#delete_user', as: 'delete_user'
   end
 
+  resources :users, only: [:update, :post]
 
   resources :chatrooms, only: [:index, :show] do
     resources :messages, only: :create
   end
-
 end

@@ -7,7 +7,7 @@ class User < ApplicationRecord
   belongs_to :style
   belongs_to :instrument
   has_many :messages
-  belongs_to :band
+  belongs_to :band, optional: true
   has_many :chatrooms, through: :messages
   has_one_attached :avatar
   # Validation #

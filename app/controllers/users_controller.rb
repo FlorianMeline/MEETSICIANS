@@ -1,17 +1,23 @@
 class UsersController < ApplicationController
 
+  def update
+    @user = User.find(params[:id])  # Assuming the user ID is passed as a parameter
 
-  def destroy
-    raise
-    @band = Band.find(params[:band_id])  # Assuming the band ID is passed as a parameter
-    @user = User.find(params[:user_id])  # Assuming the user ID is passed as a parameter
+    @user.update(band: nil)
 
-    if @band.users.include?(@user)
-      @user.update(band_id: nil)
+    @user.save
+
+    @band = Band.find(params[:id])
+    if @user.save
+      redirect_to edit_band_path(@band)
     else
-      # The user does not belong to the band
-      # Handle the error or any required action
-      puts "The user does not belong to the band."
+      render :new, status: :unprocessable_entity
     end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:band_id)
   end
 end
