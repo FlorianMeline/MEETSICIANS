@@ -65,9 +65,9 @@
 .need-instrument-band {
   background: rgba(255, 8, 42, 0.9);
   border-radius: 6px;
-  padding: 0.5em;
-  width:fit-content;
+  padding: 10px ;
   margin: auto;
+  width:fit-content;
   font-size: 10px;
   position: absolute;
   top: 23px;
@@ -79,6 +79,7 @@
 
 .city-band {
   position: absolute;
+
   right: 20px;
   top: 220px;
   font-size: 12px;
@@ -95,9 +96,9 @@
 .bio-band {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  margin-left: 31px;
-  margin-right: 31px;
-  text-align: center;
+
+  margin: 15px 9px 24px 9px;
+  text-align: justify;
 }
 
 //---// STYLE POP-UP //---//

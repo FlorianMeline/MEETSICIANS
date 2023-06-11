@@ -12,3 +12,7 @@ application.register("hello", HelloController)
 
 import DropdownController from "./dropdown_controller"
 application.register("dropdown", DropdownController)
+
+
+import PreviewController from './preview_controller'
+application.register('preview', PreviewController)

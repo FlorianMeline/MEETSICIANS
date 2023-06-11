@@ -5,7 +5,6 @@ class BandsController < ApplicationController
     @instruments = Instrument.all
     @filtered_parameters = request.parameters.with_indifferent_access.slice(:style, :needed_instrument, :query)
 
-
     @bands = Band.search_by_name_city_and_need(params[:query]) if params[:query].present?
     @bands = @bands.joins(:style).where(style: { name: params[:style] }) if params[:style].present?
     @bands = @bands.joins(:needed_instrument).where(needed_instrument: { name: params[:needed_instrument] }) if params[:needed_instrument].present?
@@ -18,14 +17,29 @@ class BandsController < ApplicationController
   end
 
   def new
+    @band = Band.new
   end
 
   def create
+    @band = Band.new(band_params)
+    @current_user = current_user
+    if @band.save
+      redirect_to @band
+      current_user.update(band_id: @band.id)
+    else
+      render :new
+    end
   end
 
   def update
   end
 
   def edit
+  end
+
+  private
+
+  def band_params
+    params.require(:band).permit(:name, :bio, :city, :style_id, :needed_instrument_id, :video_url, :photo, :avatar)
   end
 end
