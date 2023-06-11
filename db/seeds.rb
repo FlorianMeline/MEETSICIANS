@@ -649,15 +649,15 @@ city: "Montcuq", instrument: guitar, style: rock, band: kiss)
 file = File.open(Rails.root.join("app/assets/images/ace.jpeg"))
 ace.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
-greta = User.create!(last_name: "Kiszka", first_name: "Joshua",
+josh = User.create!(last_name: "Kiszka", first_name: "Joshua",
 email: "josh@email.com", password: "azerty", bio: "Hey there, rockers! It's Greta Thunberg,
 the frontgirl of Greta Van Fleet, ready to unleash my soulful vocals and rock 'n' roll spirit.
 With a voice that channels the legends of the past, I bring a raw energy to our music.
 Together with my brothers, we're reviving the spirit of rock for a new generation. Let the music carry us forward!",
 city: "Montcuq", instrument: vocal, style: rock, band: greta)
 
-file = File.open(Rails.root.join("app/assets/images/gretat.jpeg"))
-gretat.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("app/assets/images/josh.jpeg"))
+josh.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
 jake = User.create!(last_name: "Kiszka", first_name: "Jacob",
 email: "jake@email.com", password: "azerty", bio: "Hey, rock 'n' roll warriors! It's Jake Kiszka,
