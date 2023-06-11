@@ -11,4 +11,11 @@ class ProfilesController < ApplicationController
       @button_band = "create a"
     end
   end
+
+  def edit
+  end
+
+  def update
+  end
+
 end

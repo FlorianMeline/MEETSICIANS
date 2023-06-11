@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include PgSearch::Model
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -13,6 +14,11 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :bio, :city, :instrument, presence: true
   validates :bio, length: { minimum: 50 }
 
+  pg_search_scope :search_by_name,
+  against: [:first_name, :last_name],
+  using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
   def band_chatrooms
     return nil unless band
 

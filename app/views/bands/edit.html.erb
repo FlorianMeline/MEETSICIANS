@@ -4,7 +4,6 @@
       <%= cl_image_tag @band.photo.key,class: "band-banner"%>
     <% else %>
       <%= cl_image_tag 'bad-omens.jpeg', alt: 'photo-default', style:"width: 400px"; %>
-
     <% end %>
   </div>
     <p class= "need-instrument-band d-flex justify-content-center">LOOKING FOR : <%= @band.needed_instrument.name.upcase%></p>
@@ -23,12 +22,11 @@
       <%= cl_image_tag 'bad-omens.jpeg', class: 'photo-default'%>
     <% end %>
 
-    <%if @users.include?(@user) %>
-      <%= link_to "contact", chatroom_path(@chatroom), class:"contact btn-band-show d-none" %>
-    <% end %>
     <!-- POP-UP -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
+
+
         <div class="modal-content pop-body">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Members</h1>
@@ -49,17 +47,8 @@
                       <%= user.last_name %>
                     </div>
                     <div class= "instrument">
-                      <%= user.instrument.name %>
-                    </div>
-                    <% if @users.include?(user) %>
-                  <%= button_to "Delete",
-                    band_delete_user_path(@band, user),
-                    method: :delete_user,
-                    data: { turbo_confirm: "Are you sure?" },
-                    class: "text-white",
-                    form: { class: "inline-form" } %>
-                <% end %>
 
+                    </div>
                   </div>
                 </div>
               <% end %>
