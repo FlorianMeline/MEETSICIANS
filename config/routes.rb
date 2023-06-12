@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resource :profile, only: [:show, :edit, :update, :post]
 
-  resources :bands, only: [:index, :create, :show, :new, :update, :destroy, :edit] do
+  resources :bands, only: [:index, :create, :show, :new, :edit, :update, :destroy] do
     resources :chatroom, only: :create
   end
 
