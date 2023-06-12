@@ -15,14 +15,14 @@ class User < ApplicationRecord
   validates :bio, length: { minimum: 50 }
 
   pg_search_scope :search_by_name,
-  against: [:first_name, :last_name],
-  using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
-    }
+                  against: %i[first_name last_name],
+                  using: {
+                    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+                  }
   def band_chatrooms
     return nil unless band
 
-    band.chatrooms.joins(:messages).where.not(messages: {content: nil}).uniq
+    band.chatrooms.joins(:messages).where.not(messages: { content: nil }).uniq
   end
 
   def chatrooms_joined

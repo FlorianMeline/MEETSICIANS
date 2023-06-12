@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
 
-  resource :profile, only: [:show, :edit, :update, :post]
+  resource :profile, only: [:show, :edit, :update, :post] do
+    resources :users, only: [:edit, :update]
+  end
 
   resources :bands, only: [:index, :create, :show, :new, :edit, :update, :destroy] do
     resources :chatroom, only: :create

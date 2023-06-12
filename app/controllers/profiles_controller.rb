@@ -12,10 +12,13 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def edit
+  private
+
+  def user_params
+    params.require(:user).permit(:band_id, :first_name, :last_name, :bio, :city, :instrument_id, :style_id, :video_url)
   end
 
-  def update
+  def band_params
+    params.require(:user).permit(:first_name, :last_name, :bio, :city, :band_id, :photo, :avatar, :style_id,:instrument_id, :video_url)
   end
-
 end

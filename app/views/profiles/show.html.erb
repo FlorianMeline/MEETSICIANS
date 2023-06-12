@@ -3,7 +3,6 @@
       <%= cl_image_tag @banner_picture_user ,class: "band-banner"%>
       <h1 id="name-user"><strong><%= @user.first_name.upcase %>
       <%= @user.last_name.upcase%> </strong></h1>
-      <%= link_to "", edit_profile_path(@user),  class: " custom-edition-profil"%>
   </div>
   <div class="functions-band">
   <%if @user.band.present?%>
