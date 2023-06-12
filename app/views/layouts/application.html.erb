@@ -12,15 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;700;600&family=Istok+Web&family=Poppins:wght@200;400;300;600&family=Rubik&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= javascript_include_tag "/assets/application.js", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
-        <%# <%= render "shared/flashes" %>
-        <%= render "shared/back_btn" %>
-
-        <%= yield %>
-
-        <%= render 'shared/footer' %>
+  <%# <%= render "shared/flashes" %>
+  <%= yield %>
+    <% unless controller_name == "pages"%>
+      <%= render "shared/back_btn" %>
+      <%= render 'shared/footer' %>
+    <% end %>
   </body>
 </html>

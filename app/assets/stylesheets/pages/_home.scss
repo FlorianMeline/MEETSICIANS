@@ -14,3 +14,25 @@
   padding-left: 10px;
   padding-top: 9px;
 }
+
+.logo {
+  padding: 0;
+  object-fit: cover;
+}
+
+.catch {
+  text-align: center;
+  padding: 25px;
+}
+
+.btn-home {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.btn-sign-up {
+  border-radius: 30px;
+  padding: 8px;
+  margin-top: 40px;
+}
