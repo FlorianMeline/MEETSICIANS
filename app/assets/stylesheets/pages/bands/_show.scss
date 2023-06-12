@@ -65,27 +65,28 @@
 .need-instrument-band {
   background: rgba(255, 8, 42, 0.8);
   border-radius: 6px;
-  padding: 10px ;
+  padding: 10px;
   margin: auto;
-  width:fit-content;
-  font-size: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 11px;
   position: absolute;
   top: 23px;
   right: 20px;
   font-family: 'Poppins', sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   padding-inline: 12px;
 }
 
 .city-band {
+  padding: 11px;
   position: absolute;
-
   right: 20px;
   top: 220px;
   font-size: 12px;
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
-  background: #121212;
+  background: #121212fa;
   border-radius: 6px;
   padding-bottom: 26px;
   padding-inline: 12px;
@@ -99,25 +100,6 @@
 
   margin: 15px 9px 24px 9px;
   text-align: justify;
-}
-
-//---// STYLE POP-UP //---//
-
-
-
-.pop-body {
-  border-radius: 25px;
-}
-
-.name-instrument {
-  width: fit-content;
-  margin-left: 15px;
-}
-
-
-.member-photo {
-  border-radius: 50%;
-  margin-right: 5px;
 }
 
 .custom-edition-profil::before {
@@ -137,4 +119,93 @@
   color: white;
   top: 13em;
   left: 2em;
+}
+
+//---// STYLE POP-UP //---//
+
+.modal-dialog {
+  border-radius: 25px;
+}
+
+.modal-content {
+  background-color: #191919;
+  border-radius: 25px;
+}
+
+.modal-header {
+  background-color: #191919;
+  border-radius: 25px;
+  border: none;
+}
+
+.modal-body {
+  background-color: #191919;
+  border-radius: 25px;
+}
+
+.name-instrument {
+  width: fit-content;
+  margin-left: 15px;
+}
+
+.name {
+  font-size: 20px;
+}
+
+.instrument {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.member-photo {
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+
+.custom-edition-profil::before {
+  position: absolute;
+  background-color:#FF082A;
+
+  border: 2px solid white;
+  padding: 6px;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+}
+
+.title-member-banner {
+  filter: revert;
+  font-size: 40px;
+
+  text-align: center;
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 20px #fff,
+    0 0 40px #fff,
+    0 0 80px rgb(255, 11, 11),
+    0 0 30px red,
+    0 0 30px red,
+    0 0 30px red,
+    0 0 30px red,
+    0 0  30px red;
+  padding-bottom: 18px;
+  font-family: 'Istok Web', sans-serif;
+  font-weight:400;
+}
+
+.back-btn-pop {
+  color: #ffffff;
+  background-color: #000000;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  border: 1px #000000;
+}
+
+.fa-location-dot::before {
+  content: "\f3c5";
+  padding-right: 4px;
 }

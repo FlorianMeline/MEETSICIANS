@@ -8,7 +8,7 @@
     <% end %>
   </div>
     <p class= "need-instrument-band d-flex justify-content-center">LOOKING FOR : <%= @band.needed_instrument.name.upcase%></p>
-    <p class= "city-band position-city d-flex justify-content-center text-align-center"><i class="fa-solid fa-location-dot dot-localisation" style="color: #ff082a;"> </i> <%= @band.city.upcase%></p>
+    <p class= "city-band position-city d-flex justify-content-center text-align-center"><i class="fa-solid fa-location-dot dot-localisation padding-dot" style="color: #ff082a;"> </i> <%= @band.city.upcase%></p>
     <%if @users.include?(@user) %>
       <%= link_to "",edit_band_path(@band),  class: "custom-edition-profil"%>
     <% end %>
@@ -23,24 +23,25 @@
       <%= cl_image_tag 'bad-omens.jpeg', class: 'photo-default'%>
     <% end %>
 
-    <%if @users.include?(@user) %>
-      <%= link_to "contact", chatroom_path(@chatroom), class:"contact btn-band-show d-none" %>
+    <%unless @users.include?(@user) %>
+      <%= link_to "contact", chatroom_path(@chatroom), class:"contact btn-band-show" %>
     <% end %>
+
     <!-- POP-UP -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content pop-body">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Members</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="back-btn-pop m-3 align-self-start fa-solid fa-arrow-left" data-bs-dismiss="modal" aria-label="Close" ></button>
+          <div class="modal-header align-self-center">
+            <h1 class="modal-title title-member-banner" id="exampleModalLabel"  >Members</h1>
           </div>
 
           <%# POP-UP BODY %>
-          <div class="modal-body user-names">
+          <div class="modal-body user-names pb-5">
             <div class="member-name">
               <% @users.each do |user| %>
-                <div class= "name-instrument d-flex align-items-center my-4">
-                  <div class="">
+                <div class= "name-instrument d-flex align-items-center my-4 ">
+                  <div>
                     <%=cl_image_tag user.avatar.key, width: 80, height: 80, crop: :fill, class: "member-photo" %>
                   </div>
                   <div>

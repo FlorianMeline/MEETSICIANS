@@ -16,7 +16,7 @@
   text-align: center;
 }
 .needed-instrument-pill{
-  background-color: rgba(255, 8, 42, 0.8);
+  background-color: #980a0ae3;
   border-radius: 6px;
   padding: 6px;
   font-size: 15px;
@@ -104,4 +104,20 @@
 .position-city-in-card {
   bottom: 177px;
   left: 266px;
+}
+
+.city-band-index {
+  padding: 11px;
+  position: absolute;
+  right: 9px;
+  top: 1px;
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  background: #121212fa;
+  border-radius: 6px;
+  padding-bottom: 26px;
+  padding-inline: 12px;
+  margin: auto;
+  height: 22px;
 }
