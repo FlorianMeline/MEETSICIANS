@@ -1,11 +1,10 @@
 .delete-button{
   background-color: transparent;
-  border: 2px solid white;
+  border: 2px solid #FF082A;
   border-radius: 100%;
   height: 33px;
   width: 33px;
   text-align: center;
-  color: white;
   font-weight: 400;
   position: absolute;
   left: 19em;
@@ -16,7 +15,7 @@
   font-family: 'Font Awesome 6 Free';
   content: "\f068";
   font-weight: 900;
-  color: white;
+  color: #FF082A;
 }
 
 .city-band-edit-band {    position: absolute;
@@ -98,15 +97,23 @@
 
 
 .button-edition-band{
-  background-color: white;
-  border-radius: 25px;
-  color: black;
+  background-color: black;
+  border-radius: 100px;
+  color: #FF082A;
+  border: 2px solid #FF082A;
   justify-content: center;
   padding: 13px;
   margin-left: 154px;
   font-family: 'Poppins', sans-serif;
   width: 7em;
   font-weight: 700;
+}
+
+.button-edition-band::before {
+  font-family: 'Font Awesome 6 Free';
+  content: "\f068";
+  font-weight: 900;
+  color: white;
 }
 
 .band-banner-edit {
@@ -197,9 +204,9 @@
 
 .height-input-edition #band_needed_instrument_id{
   margin-top: 22px;
-  background-color: rgba(255, 8, 42, 0.8);
-  color: white;
-  border: 1px solid white;
+  background-color: black;
+  color: #A4A3A3;
+  border: 1px solid #FF082A;
   text-decoration: none;
   border-radius: 7px;
   padding: 5px;
@@ -214,9 +221,9 @@
 
 .height-input-edition #band_style_id{
   margin-top: 22px;
-  background-color: rgba(255, 8, 42, 0.8);
-  color: white;
-  border: 1px solid white;
+  background-color: black;
+  color: #A4A3A3;
+  border: 1px solid #FF082A;
   text-decoration: none;
   border-radius: 7px;
   padding: 5px;
@@ -226,4 +233,31 @@
   width: 40%;
   text-align: center;
   margin-left: 31px;
+}
+
+.input-edit-url {
+  border-radius: 25px;
+  background-color: transparent;
+  border: none;
+  color: #A4A3A3;
+  width: 369px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+}
+
+
+.input-edit-url:focus-visible {
+  outline: none;
+  border: none;
+}
+
+.name-input-page-edition {
+  border: 0.5px solid white;
+  border-radius: 15px;
+  align-items: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 6px 0px 6px 0px;
+  margin: 3px 15px 28px;
 }
