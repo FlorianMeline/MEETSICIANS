@@ -36,9 +36,9 @@ class BandsController < ApplicationController
   def edit
     @band = Band.find(params[:id])
     @users = @band.users
-    respond_to do |format|
-      format.html { render :edit, locals: { band: @band } }
-    end
+    # respond_to do |format|
+    #   format.html { render :edit, locals: { band: @band } }
+    # end
   end
 
   def update
