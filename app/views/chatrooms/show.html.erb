@@ -1,5 +1,9 @@
 <div class="banner-dicussion-chat" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
       <strong><h1 class="title-chatroom"><%= @chatroom.band.name.upcase %></h1></strong>
+    <% if current_user.band.id == @chatroom.band.id %>
+    <%# à changer %>
+        <%= link_to "Add to your band", edit_current_user_path, class:"add-btn" %>
+    <% end %>
 </div>
 <div class="container chatroom"
     data-controller="chatroom-subscription"
@@ -8,7 +12,7 @@
     <div class="messages" data-chatroom-subscription-target="messages">
       <% @chatroom.messages.each do |message| %>
         <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-          
+
           <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
             <%= render "messages/message", message: message %>
           </div>
