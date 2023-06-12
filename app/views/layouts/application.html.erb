@@ -41,11 +41,11 @@
   </head>
 
   <body>
-        <%# <%= render "shared/flashes" %>
-        <%= render "shared/back_btn" %>
-
-        <%= yield %>
-
-        <%= render 'shared/footer' %>
+  <%# <%= render "shared/flashes" %>
+  <%= yield %>
+    <% unless controller_name == "pages"%>
+      <%= render "shared/back_btn" %>
+      <%= render 'shared/footer' %>
+    <% end %>
   </body>
 </html>
