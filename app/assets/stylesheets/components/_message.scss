@@ -6,7 +6,7 @@
 .sender-style, .receiver-style {
   width: 65%;
   max-width: 400px;
-  padding: 10px;
+
   min-height: 60px;
 }
 
@@ -16,14 +16,16 @@
   border-radius: 100%;
 }
 
-.sender-style {
+.sender-style .message-wrapper {
   background-color: #2A2A2A;
   border-radius: 25px 0px 25px 25px;
+  padding: 10px;
 }
 
-.receiver-style {
+.receiver-style .message-wrapper {
   background-color: #FF082A;
   border-radius: 0px 25px 25px 25px;
+  padding: 10px;
 }
 
 .message-content{
