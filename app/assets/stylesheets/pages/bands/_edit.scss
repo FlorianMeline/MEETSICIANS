@@ -11,3 +11,56 @@
   left: 19em;
   margin-top: 14px;
 }
+
+.city-band-edit-band {    position: absolute;
+  right: 20px;
+  top: 127px;
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  background: #121212;
+  border-radius: 6px;
+  padding-bottom: 26px;
+  padding-inline: 12px;
+  margin: auto;
+  height: 22px;
+  z-index: 1;
+}
+
+#paste-front-instrument {
+  z-index: 1;
+}
+
+.height-input-edition{
+  margin-top: 5em;
+}
+
+.input-edit-band{
+  border-radius: 25px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 34px;
+}
+
+.input-edit-band:focus-visible {
+  outline: none;
+  border: none;
+}
+.bio-edit-band:focus-visible {
+  outline: none;
+  border: none;
+}
+
+.bio-edit-band{
+  border-radius: 25px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+}
