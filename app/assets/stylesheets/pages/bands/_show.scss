@@ -50,7 +50,7 @@
   padding: 20px 1.3rem;
 }
 .music-style {
-  background: rgba(255, 8, 42, 0.9);
+  background: #980a0ae3;
   border-radius: 6px;
   padding: 0.7em;
   width: fit-content;
@@ -63,29 +63,30 @@
 }
 
 .need-instrument-band {
-  background: rgba(255, 8, 42, 0.9);
+  background:  #980a0ae6;
   border-radius: 6px;
-  padding: 10px ;
+  padding: 10px;
   margin: auto;
-  width:fit-content;
-  font-size: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 11px;
   position: absolute;
   top: 23px;
   right: 20px;
   font-family: 'Poppins', sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   padding-inline: 12px;
 }
 
 .city-band {
+  padding: 11px;
   position: absolute;
-
   right: 20px;
   top: 220px;
   font-size: 12px;
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
-  background: #121212;
+  background: #121212fa;
   border-radius: 6px;
   padding-bottom: 26px;
   padding-inline: 12px;
@@ -122,7 +123,7 @@
 
 .custom-edition-profil::before {
   position: absolute;
-  background-color: #FF082A;
+  background-color: rgba(143, 5, 5, 0.845);
   border: 2px solid white;
   padding: 6px;
   border-radius: 100%;
