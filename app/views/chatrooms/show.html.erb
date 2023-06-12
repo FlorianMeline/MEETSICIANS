@@ -8,6 +8,10 @@
     <div class="messages" data-chatroom-subscription-target="messages">
       <% @chatroom.messages.each do |message| %>
         <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+          <div class="message-user">
+            <%= cl_image_tag message.user.avatar.key, class:"avatar-message" %>
+            <%= message.user.first_name %>
+          </div>
           <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
             <%= render "messages/message", message: message %>
           </div>
