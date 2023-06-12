@@ -17,8 +17,8 @@
     <button type="button" class="btn btn-primary btn-band-show" data-bs-toggle="modal" data-bs-target="#exampleModal">
       members
     </button>
-    <% if @band.photo.attached?%>
-      <%=cl_image_tag @band.photo.key, class: "band-avatar", width: 200, height: 200, crop: :fill, gravity: :face%>
+    <% if @band.avatar.attached?%>
+      <%=cl_image_tag @band.avatar.key, class: "band-avatar", width: 200, height: 200, crop: :fill%>
     <% else %>
       <%= cl_image_tag 'bad-omens.jpeg', class: 'photo-default'%>
     <% end %>
