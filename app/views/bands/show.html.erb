@@ -8,7 +8,7 @@
     <% end %>
   </div>
     <p class= "need-instrument-band d-flex justify-content-center">LOOKING FOR : <%= @band.needed_instrument.name.upcase%></p>
-    <p class= "city-band position-city d-flex justify-content-center text-align-center"><i class="fa-solid fa-location-dot dot-localisation" style="color: #ff082a;"> </i> <%= @band.city.upcase%></p>
+    <p class= "city-band position-city d-flex justify-content-center text-align-center"><i class="fa-solid fa-location-dot dot-localisation padding-dot" style="color: #ff082a;"> </i> <%= @band.city.upcase%></p>
     <%if @users.include?(@user) %>
       <%= link_to "",edit_band_path(@band),  class: "custom-edition-profil"%>
       <% end %>
@@ -23,8 +23,8 @@
       <%= cl_image_tag 'bad-omens.jpeg', class: 'photo-default'%>
     <% end %>
 
-    <%if @users.include?(@user) %>
-      <%= link_to "contact", chatroom_path(@chatroom), class:"contact btn-band-show d-none" %>
+    <%unless @users.include?(@user) %>
+      <%= link_to "contact", chatroom_path(@chatroom), class:"contact btn-band-show" %>
     <% end %>
 
     <!-- POP-UP -->
