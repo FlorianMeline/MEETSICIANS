@@ -14,8 +14,8 @@ class Band < ApplicationRecord
   validates :name, length: { minimum: 3 }
   validates :bio, length: { minimum: 10 }
   pg_search_scope :search_by_name_city_and_need,
-    against: [ :name, :city, :needed_instrument_id ],
-    using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
-    }
+                  against: %i[name city needed_instrument_id],
+                  using: {
+                    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+                  }
 end

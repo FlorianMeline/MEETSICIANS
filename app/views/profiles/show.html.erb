@@ -3,7 +3,6 @@
       <%= cl_image_tag @banner_picture_user ,class: "band-banner"%>
       <h1 id="name-user"><strong><%= @user.first_name.upcase %>
       <%= @user.last_name.upcase%> </strong></h1>
-      <%= link_to "", edit_profile_path(@user),  class: " custom-edition-profil"%>
   </div>
   <div class="functions-band">
   <%if @user.band.present?%>
@@ -12,7 +11,7 @@
   <%= link_to "#{@utton_band} band", new_band_path(),  class: " btn-create-band"%>
   <%end%>
 
-    <%= cl_image_tag @user.avatar.key, class: "band-avatar", width: 200, height: 200, crop: :fill%>
+    <%= cl_image_tag @user.avatar.key, class: "band-avatar", width: 200, height: 200, crop: :fill, gravity: :face%>
     <div class ="user-pill d-flex justify-content-between">
       <p class= "music-style mr-2 pt-2"><%= @user.instrument.name.upcase%></p>
       <p class= "music-style pt-2"><%= @user.style.name.upcase%></p>
