@@ -11,7 +11,7 @@
     <p class= "city-band position-city d-flex justify-content-center text-align-center"><i class="fa-solid fa-location-dot dot-localisation padding-dot" style="color: #ff082a;"> </i> <%= @band.city.upcase%></p>
     <%if @users.include?(@user) %>
       <%= link_to "",edit_band_path(@band),  class: "custom-edition-profil"%>
-      <% end %>
+    <% end %>
   <div class="functions-band"><%# !!!!!!!!!! PATH DU LINK_TO A CHANGER !!!!!!!!!!!!%>
       <!-- BTN MEMBERS = POP-UP -->
     <button type="button" class="btn btn-primary btn-band-show" data-bs-toggle="modal" data-bs-target="#exampleModal">
