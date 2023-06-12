@@ -13,7 +13,9 @@ class BandsController < ApplicationController
   def show
     @band = Band.find(params[:id])
     @chatroom = Chatroom.joins(:messages).where(band: @band, messages: {user: current_user}).first || Chatroom.create(band: @band)
+    @user = current_user
     @users = @band.users
+
   end
 
   def new
@@ -31,10 +33,19 @@ class BandsController < ApplicationController
     end
   end
 
+  def edit
+    @band = Band.find(params[:id])
+    @users = @band.users
+  end
+
   def update
   end
 
-  def edit
+
+  private
+
+  def band_params
+    params.require(:band).permit(:name, :bio, :city, :users, :photo, :avatar, :style, :instruments, :needed_instrument)
   end
 
   private
