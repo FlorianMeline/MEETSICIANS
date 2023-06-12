@@ -36,21 +36,25 @@ class BandsController < ApplicationController
   def edit
     @band = Band.find(params[:id])
     @users = @band.users
+    respond_to do |format|
+      format.html { render :edit, locals: { band: @band } }
+    end
   end
 
   def update
+    @band = Band.find(params[:id])  # Assuming the user ID is passed as a parameter
+
+    if @band.update(band_params)
+      redirect_to @band
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
 
   private
 
   def band_params
-    params.require(:band).permit(:name, :bio, :city, :users, :photo, :avatar, :style, :instruments, :needed_instrument)
-  end
-
-  private
-
-  def band_params
-    params.require(:band).permit(:name, :bio, :city, :style_id, :needed_instrument_id, :video_url, :photo, :avatar)
+    params.require(:band).permit(:name, :bio, :city, :users, :photo, :avatar, :style_id, :needed_instrument_id, :video_url)
   end
 end

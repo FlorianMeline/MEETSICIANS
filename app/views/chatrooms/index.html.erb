@@ -1,24 +1,23 @@
-<div class="banner-messenger" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
-    <%= cl_image_tag current_user.avatar.key, class: "chat-avatar"%>
+<div class="chats-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
 </div>
+    <%= cl_image_tag current_user.avatar.key, class: "chat-avatar"%>
 <div class="container container-chats">
   <div class= "chat-preview">
       <% @chatrooms_joined.each do |chatroom|%>
       <div class="message">
         <%= cl_image_tag chatroom.band.photo.key, class:"band-chat-avatar" %>
           <div class="preview">
-            <%= link_to chatroom.band.name, chatroom_path(chatroom), class:"link-chat" %>
-            <%= @preview %>
+            <h4><strong><%= link_to chatroom.band.name, chatroom_path(chatroom), class:"link-chat" %></strong></h4>
+            <%= chatroom.messages.last.content %>
           </div>
       </div>
         <% end %>
         <% @chatrooms_band.each do |chatroom|%>
           <div class="message">
-            <%# <%= link_to chatroom_path(chatroom), class:"link-chat"%>
             <%= cl_image_tag chatroom.band.photo.key, class:"band-chat-avatar" %>
           <div class="preview">
-            <%= link_to chatroom.band.name, chatroom_path(chatroom), class:"link-chat"%>
-            <%= @preview %>
+            <h4><strong><%= link_to chatroom.band.name, chatroom_path(chatroom), class:"link-chat"%></strong></h4>
+            <%= chatroom.messages.last.content %>
           </div>
             </div>
           <% end %>

@@ -1,10 +1,24 @@
-.banner-messenger{
-  height: 150px;
+.chats-banner{
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+}
+
+.band-chat-avatar{
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  display: block;
+  margin-right: 10px;
+  object-fit: cover;
 }
 
 .container-chats{
-  height: calc(100dvh - 200px);
+  height: calc(100dvh - 210px);
   overflow: scroll;
+  margin-top: 25px;
+  padding-bottom: 54px;
 }
 
 .chat-avatar{
@@ -13,7 +27,7 @@
   height: 100px;
   position: absolute;
   object-fit: cover;
-  inset: -500px 0 0;
+  inset: -705px 0 0;
   margin: auto;
 }
 
@@ -23,20 +37,11 @@
   display: flex;
 }
 
-.band-chat-avatar{
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: block;
-  margin-right: 10px;
-}
-
-.container-chats{
-  margin-top: 65px;
-}
-
 .message{
   border-bottom: 1px solid white;
   display: flex;
   padding: 15px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
 }
