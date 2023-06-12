@@ -6,21 +6,62 @@
 .sender-style, .receiver-style {
   width: 65%;
   max-width: 400px;
-  padding: 10px;
+
   min-height: 60px;
 }
 
-.sender-style {
-  background-color: #2A2A2A;
-  border-radius: 25px 0px 25px 25px;
+.avatar-message{
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
 }
 
-.receiver-style {
+.sender-style .message-wrapper {
+  background-color: #2A2A2A;
+  border-radius: 25px 0px 25px 25px;
+  padding: 10px;
+}
+
+.receiver-style .message-wrapper {
   background-color: #FF082A;
   border-radius: 0px 25px 25px 25px;
+  padding: 10px;
 }
 
 .message-content{
   margin-bottom: 0px;
   padding-left: 10px;
+}
+
+.message-row {
+  flex-direction: column;
+}
+
+.message-user {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 5px;
+}
+
+.message-row.justify-content-start {
+  .avatar-message {
+    margin-right: 5px;
+  }
+}
+
+.message-row.justify-content-end {
+  align-items: flex-end;
+
+  .message-user {
+    flex-direction: row-reverse;
+  }
+  .avatar-message {
+    margin-left: 5px;
+  }
+}
+
+.horodatage{
+  font-size: 12px;
+  color: #dcdcdc;
+  text-align: right;
 }
