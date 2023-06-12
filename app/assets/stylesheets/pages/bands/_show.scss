@@ -123,7 +123,8 @@
 
 .custom-edition-profil::before {
   position: absolute;
-  background-color: rgba(143, 5, 5, 0.845);
+  background-color:#FF082A;
+
   border: 2px solid white;
   padding: 6px;
   border-radius: 100%;
@@ -138,4 +139,9 @@
   color: white;
   top: 13em;
   left: 2em;
+}
+
+.fa-location-dot::before {
+  content: "\f3c5";
+  padding-right: 4px;
 }
