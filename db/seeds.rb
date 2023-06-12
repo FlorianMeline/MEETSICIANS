@@ -32,15 +32,14 @@ tenacious = Band.create!(
   bio: "We're Tenacious D, the dynamic musical duo that brings the rock and laughs!
   Comprised of Jack Black and Kyle Gas, we joined forces to conquer the world with our comedic rock tunes.
   With killer guitars, epic vocals, and hilarious lyrics, we're here to rock your socks off and make you laugh till you cry!",
-  city: "Montcuq",
+  city: "Nantes",
   style: rock,
   needed_instrument_id: drums.id,
   video_url: "https://www.youtube.com/embed/Sfz9jQ3KI5k"
 )
-
 file = File.open(Rails.root.join("app/assets/images/Tenacious-D band.jpeg"))
 tenacious.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
-file_avatar = File.open(Rails.root.join("app/assets/images/Tenacious-D band.jpeg"))
+file_avatar = File.open(Rails.root.join("app/assets/images/tenacious_avatar.jpeg"))
 tenacious.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 steve = Band.create!(
@@ -49,12 +48,11 @@ steve = Band.create!(
   Hailing from Finland, we put a crazy twist on rock and metal classics.
   With banjos, accordions, and a whole lot of energy, we've taken the world by storm.
   Get ready for a foot-stomping, head-banging good time with Steve 'N' Seagulls!",
-  city: "Montcuq",
+  city: "Le Mans",
   style: country,
   needed_instrument_id: keyboard.id,
   video_url: "https://www.youtube.com/embed/9i4LBeT9IBQ"
 )
-
 file = File.open(Rails.root.join("app/assets/images/SteveNSeagulls - Moyenne.jpeg"))
 steve.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
 file_avatar = File.open(Rails.root.join("app/assets/images/stevens_avatar.jpeg"))
@@ -66,15 +64,15 @@ zz = Band.create!(
   Dusty Hill on bass, and Frank Beard on drums, we've been shredding stages since the '70s.
   From our signature beards to our infectious riffs, we've become legends of rock,
   delivering timeless hits and keeping the party going.",
-  city: "Montcuq",
+  city: "Angers",
   style: country,
   needed_instrument_id: guitar.id,
   video_url: "https://www.youtube.com/embed/Gg9cNGHl-bg"
-
 )
-
 file = File.open(Rails.root.join("app/assets/images/zztop - Grande.jpeg"))
 zz.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/zztop-avatar.jpeg"))
+zz.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 pearl = Band.create!(
   name: "Pearl Jam",
@@ -82,26 +80,31 @@ pearl = Band.create!(
   As the bassist, I, Jeff Ament, helped shape our signature sound. With Eddie Vedder's powerful vocals and our collective energy,
   we created music that spoke to the hearts of millions. Through ups and downs,
   Pearl Jam remains a voice for change and a force for unity.",
-  city: "Montcuq",
+  city: "Le Mans",
   style: grunge,
   needed_instrument_id: drums.id,
   video_url: "https://www.youtube.com/embed/qM0zINtulhM"
 )
 file = File.open(Rails.root.join("app/assets/images/PearlJam.jpeg"))
 pearl.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/pearljam-avatar.jpeg"))
+pearl.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
+
 
 arctic = Band.create!(
   name: "Arctic Monkeys",
   bio: "We're Arctic Monkeys, a British rock band that's all about delivering raw energy and infectious hooks.
   From Sheffield, we burst onto the scene with our debut album, 'Whatever People Say I Am, That's What I'm Not.'
   Since then, we've evolved and explored new sounds, always staying true to our indie roots. Let the music roar!",
-  city: "Montcuq",
+  city: "Angers",
   style: rock,
   needed_instrument_id: bass.id,
   video_url: "https://www.youtube.com/embed/KQsrIxyoJdE"
 )
 file = File.open(Rails.root.join("app/assets/images/arctic-monkeys-1.jpeg"))
 arctic.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/arcticmonkeys-avatar.jpeg"))
+arctic.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 noirdesir = Band.create!(
   name: "Noir Désir",
@@ -109,13 +112,15 @@ noirdesir = Band.create!(
   Through my passionate vocals and poetic lyrics, we pushed boundaries and addressed societal issues.
   Our intense sound and energetic performances captured the hearts of fans.
   Despite challenges, Noir Désir's legacy as a musical force continues to resonate and inspire.",
-  city: "Montcuq",
+  city: "Nantes",
   style: grunge,
   needed_instrument_id: keyboard.id,
   video_url: "https://www.youtube.com/embed/NrgcRvBJYBE"
 )
 file = File.open(Rails.root.join("app/assets/images/NOIRDESIR.jpeg"))
 noirdesir.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/noirdesir-avatar.jpeg"))
+noirdesir.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 bmth = Band.create!(
   name: "Bring Me The Horizon",
@@ -124,13 +129,15 @@ bmth = Band.create!(
   With powerful lyrics and intense performances, we strive to push boundaries and challenge the status quo.
   We've released several critically acclaimed albums and continue to evolve as artists,
   always exploring new territories and connecting with our fans around the world.",
-  city: "Montcuq",
+  city: "Nantes",
   style: metal,
   needed_instrument_id: bass.id,
   video_url: "https://www.youtube.com/embed/racmy7Y9P4M"
 )
 file = File.open(Rails.root.join("app/assets/images/bmth-1.jpeg"))
 bmth.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/bmth-avatar.jpeg"))
+bmth.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 shikari = Band.create!(
   name: "Enter Shikari",
@@ -138,13 +145,15 @@ shikari = Band.create!(
   electronic, and post-hardcore, we create a sonic fusion that defies genre boundaries.
   Through our passionate lyrics and energetic performances, we aim to challenge social norms and inspire change.
   With a loyal and diverse fanbase, we continue to push the boundaries of our music and deliver a powerful live experience.",
-  city: "Montcuq",
+  city: "Nantes",
   style: metal,
   needed_instrument_id: drums.id,
   video_url: "https://www.youtube.com/embed/P4MiC67seUY"
 )
 file = File.open(Rails.root.join("app/assets/images/enter-shikari-2.jpeg"))
 shikari.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/shikari-avatar.jpeg"))
+shikari.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 pilots = Band.create!(
   name: "Twenty One Pilots",
@@ -152,13 +161,15 @@ pilots = Band.create!(
   including alternative rock, pop, and hip-hop. Through our introspective lyrics and energetic performances,
   we aim to connect with listeners on a deep and personal level. We strive to inspire hope, address mental health issues,
   and create a sense of unity among our diverse fanbase worldwide.",
-  city: "Montcuq",
+  city: "Nantes",
   style: alternative,
   needed_instrument_id: guitar.id,
   video_url: "https://www.youtube.com/embed/pXRviuL6vMY"
 )
 file = File.open(Rails.root.join("app/assets/images/twenty-one-pilots-1.jpeg"))
 pilots.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/21pilots-avatar.jpeg"))
+pilots.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 death = Band.create!(
   name: "DeathByRomy",
@@ -166,13 +177,15 @@ death = Band.create!(
   Through haunting melodies and raw lyrics, we explore themes of love, pain, and self-discovery. With my unique sound
   and personal storytelling, we aim to connect with listeners on a deep emotional level,
   offering solace and empowerment through music.",
-  city: "Montcuq",
+  city: "Nantes",
   style: alternative,
   needed_instrument_id: bass.id,
   video_url: "https://www.youtube.com/embed/JsvlM8QGY7M"
 )
 file = File.open(Rails.root.join("app/assets/images/death-by-romy-1.jpeg"))
 death.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/deathbyromy-avatar.jpeg"))
+death.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 kiss = Band.create!(
   name: "Kiss",
@@ -180,7 +193,7 @@ kiss = Band.create!(
   We are the gods of thunder, the kings of glam, and the masters of spectacle.
   With face paint and pyrotechnics, we've rocked arenas with anthems like 'Rock and Roll All Nite.'
   KISS is not just a band, it's a rock 'n' roll phenomenon that will echo through eternity.",
-  city: "Montcuq",
+  city: "Le Mans",
   style: hard,
   needed_instrument_id: drums.id,
   video_url: "https://www.youtube.com/embed/ZhIsAZO5gl0"
@@ -188,6 +201,8 @@ kiss = Band.create!(
 )
 file = File.open(Rails.root.join("app/assets/images/kiss.jpeg"))
 kiss.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/kiss-avatar.jpeg"))
+kiss.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 greta = Band.create!(
   name: "Greta Van Fleet",
@@ -195,7 +210,7 @@ greta = Band.create!(
   We are the young rockers bringing a modern twist to the golden age.
   With soulful vocals, blistering guitar riffs, and thunderous drums, we've captured the essence of bands like Led Zeppelin.
   Greta Van Fleet is here to keep the flame of rock 'n' roll burning bright for generations to come!",
-  city: "Montcuq",
+  city: "Nantes",
   style: hard,
   needed_instrument_id: keyboard.id,
   video_url: "https://www.youtube.com/embed/aJg4OJxp-co"
@@ -203,6 +218,8 @@ greta = Band.create!(
 )
 file = File.open(Rails.root.join("app/assets/images/greta.jpeg"))
 greta.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/greta-avatar.jpeg"))
+greta.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 mode = Band.create!(
   name: "Depeche Mode",
@@ -210,13 +227,15 @@ mode = Band.create!(
   we've carved a unique place in music history. Through introspective lyrics and atmospheric soundscapes, we've explored themes of love,
   desire, and personal introspection. Our music continues to resonate with fans worldwide, making an enduring impact
   on the electronic music landscape.",
-  city: "Montcuq",
+  city: "Angers",
   style: alternative,
   needed_instrument_id: keyboard.id,
   video_url: "https://www.youtube.com/embed/aGSKrC7dGcY"
 )
 file = File.open(Rails.root.join("app/assets/images/Depeche-Mode-1.jpeg"))
 mode.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/depeche-avatar.jpeg"))
+mode.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 omens = Band.create!(
   name: "Bad Omens",
@@ -224,40 +243,45 @@ omens = Band.create!(
   melodic hooks, and introspective lyrics, we explore themes of personal struggle, growth, and resilience.
   Through our music, we aim to connect with listeners, sharing a cathartic experience and inspiring them to find strength
   in their own journeys.",
-  city: "Montcuq",
+  city: "Nantes",
   style: metal,
   needed_instrument_id: bass.id,
   video_url: "https://www.youtube.com/embed/Aibxit_PpAg"
 )
 file = File.open(Rails.root.join("app/assets/images/Bad-Omens-1.jpeg"))
 omens.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/omens-logo.jpeg"))
+omens.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 dress = Band.create!(
   name: "Static Dress",
   bio: "We are Static Dress, a post-hardcore band fueled by raw emotion and unapologetic energy. With a blend of aggressive
   riffs, atmospheric soundscapes, and passionate vocals, we create a sonic journey that delves into personal struggles and growth.
   Through our music, we aim to inspire and connect with listeners, leaving a lasting impression.",
-  city: "Montcuq",
+  city: "Angers",
   style: metal,
   needed_instrument_id: drums.id,
   video_url: "https://www.youtube.com/embed/19PZWrbr_7U"
 )
 file = File.open(Rails.root.join("app/assets/images/Static-Dress-1.jpeg"))
 dress.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/dress-avatar.jpeg"))
+dress.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 sexpistols = Band.create!(
   name: "Sex Pistols",
   bio: "The iconic punk rock band, shook the music world in the late 1970s.
   With Johnny Rotten's snarling vocals and our explosive energy, we unleashed a rebellious spirit that challenged the status quo.
   Through our raw and confrontational music, we became the voice of a disenchanted generation, leaving an indelible mark on punk rock history.",
-  city: "Montcuq",
+  city: "Le Mans",
   style: punk,
   needed_instrument_id: bass.id,
   video_url: "https://www.youtube.com/embed/yqrAPOZxgzU"
-
 )
 file = File.open(Rails.root.join("app/assets/images/Sex-Pistols.jpeg"))
 sexpistols.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/sexpistols-avatar.jpeg"))
+sexpistols.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 nirvana = Band.create!(
   name: "Nirvana",
@@ -265,39 +289,44 @@ nirvana = Band.create!(
   With Dave Grohl's explosive drumming and Krist Novoselic's driving bass lines, we crafted a raw and emotive sound.
   From 'Smells Like Teen Spirit' to 'Come As You Are,' our songs captured a generation's angst and propelled alternative
   rock into the mainstream, forever defining a musical era.",
-  city: "Montcuq",
+  city: "Nantes",
   style: grunge,
   needed_instrument_id: vocal.id,
   video_url: "https://www.youtube.com/embed/YQfkm4Vp-1o"
-
 )
 file = File.open(Rails.root.join("app/assets/images/nirvana.jpeg"))
 nirvana.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/nirvana-avatar.jpeg"))
+nirvana.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 theoffspring = Band.create!(
   name: "The Offspring",
   bio: "Since our formation in the 1980s, we've been serving up high-energy anthems like 'Self Esteem' and 'Pretty Fly (For a White Guy)'.
   With a blend of catchy hooks and socially conscious lyrics, we've become a voice for the disenchanted, inspiring generations of fans worldwide.",
-  city: "Montcuq",
+  city: "Nantes",
   style: punk,
   needed_instrument_id: bass.id,
   video_url: "https://www.youtube.com/embed/7iNbnineUCI"
 )
 file = File.open(Rails.root.join("app/assets/images/The_Offspring-stage.jpeg"))
 theoffspring.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/offspring-avatar.jpeg"))
+theoffspring.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 falling = Band.create!(
   name: "Falling in Reverse",
   bio: "We are Falling In Reverse, a post-hardcore band driven by raw emotion and unapologetic energy. With a blend of heavy riffs,
   catchy hooks, and introspective lyrics, we create a sonic journey that explores personal struggles, redemption, and self-discovery.
   Through our music, we aim to connect with listeners, inspiring them to overcome adversity and find hope in the darkest moments.",
-  city: "Montcuq",
+  city: "Angers",
   style: metal,
   needed_instrument_id: bass.id,
   video_url: "https://www.youtube.com/embed/qMXESlny4-I"
 )
 file = File.open(Rails.root.join("app/assets/images/falling-in-reverse2 - Grande.jpeg"))
 falling.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/falling-avatar.jpeg"))
+falling.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 spirit = Band.create!(
   name: "Spirit Box",
@@ -305,26 +334,30 @@ spirit = Band.create!(
   crushing riffs, and ethereal vocals, we create a sonic experience that defies genre conventions. Through our introspective and
   emotive lyrics, we explore themes of inner turmoil, personal growth, and the human condition. We strive to connect with listeners
   on a profound and visceral level, inviting them into our sonic world.",
-  city: "Montcuq",
+  city: "Nantes",
   style: metal,
   needed_instrument_id: drums.id,
   video_url: "https://www.youtube.com/embed/rJticAP6hD8"
 )
 file = File.open(Rails.root.join("app/assets/images/Spiritbox-3 - Grande.jpeg"))
 spirit.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/spirit-avatar.jpeg"))
+spirit.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 motionless = Band.create!(
   name: "Motionless in White",
   bio: "We are Motionless In White, a gothic metalcore band known for our dark and intense sound. With a fusion of heavy riffs,
   melodic hooks, and haunting lyrics, we explore themes of darkness, individuality, and personal struggles. Through our music,
   we aim to create an immersive and cathartic experience, connecting with fans who resonate with our unique blend of heaviness and melody.",
-  city: "Montcuq",
+  city: "Nantes",
   style: metal,
   needed_instrument_id: keyboard.id,
   video_url: "https://www.youtube.com/embed/B3faYe5V4Sk"
 )
 file = File.open(Rails.root.join("app/assets/images/Motionless-In-Whited - Grande.jpeg"))
 motionless.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/motion-avatar.jpeg"))
+motionless.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 nightwish = Band.create!(
   name: "nightwish",
@@ -332,14 +365,15 @@ nightwish = Band.create!(
   blending soaring vocals, powerful guitars, enchanting keyboards, and thunderous drums.
   With our epic compositions and captivating storytelling, we transport audiences to realms both mystical and emotional.
   Join us on this musical odyssey of passion, imagination, and sonic grandeur!",
-  city: "Montcuq",
+  city: "Angers",
   style: symphonic,
   needed_instrument_id: guitar.id,
   video_url: "https://www.youtube.com/embed/TM23gaT4zkY"
-
-  )
-  file = File.open(Rails.root.join("app/assets/images/nightwish 2.jpeg"))
-  nightwish.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+)
+file = File.open(Rails.root.join("app/assets/images/nightwish 2.jpeg"))
+nightwish.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/nightwish-avatar.jpeg"))
+nightwish.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 epica = Band.create!(
   name: "Epica",
@@ -347,13 +381,15 @@ epica = Band.create!(
   We are the masters of blending operatic vocals, crushing guitars, and grand orchestrations.
   With our intense melodies and thought-provoking lyrics, we embark on epic musical adventures
   that traverse emotions and dimensions. Join us as we push the boundaries of metal with our symphonic symphony!",
-  city: "Montcuq",
+  city: "Nantes",
   style: symphonic,
   needed_instrument_id: bagpipe.id,
   video_url: "https://www.youtube.com/embed/7imPLmvLyQA"
-  )
-  file = File.open(Rails.root.join("app/assets/images/epica.jpeg"))
-  epica.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+)
+file = File.open(Rails.root.join("app/assets/images/epica.jpeg"))
+epica.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/epica-avatar.jpeg"))
+epica.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
 puts "Bandz created"
 
@@ -1034,6 +1070,50 @@ arien = User.create!(last_name: " Van Weesenbeek", first_name: "Ariën",
 
 file = File.open(Rails.root.join("app/assets/images/arien.jpeg"))
 arien.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
+
+oceane = User.create!(last_name: " Villeneuve", first_name: "Océane",
+  email: "oceane@email.com", password: "azerty", bio: "I am Oceane, an extraordinary bassist.
+  My fingers create a symphony of rhythms that comes from the depths of my soul.
+  I weave complex basslines that resonate with raw emotion.
+  My melodic talent has captivated audiences worldwide, creating an unbreakable bond between me and the music.
+  My harmonious journey continues, leaving an indelible imprint on the music scene.",
+  city: "Nantes", instrument: bass, style: rock, band: tenacious)
+
+file = File.open(Rails.root.join("app/assets/images/oceane-avatar.jpeg"))
+oceane.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
+
+victor = User.create!(last_name: "Pichereau", first_name: "Victor",
+  email: "victor@email.com", password: "azerty", bio: "I am Victor, a fierce metal vocalist.
+  With each scream that escapes my throat, I unleash a torrent of raw power and emotion.
+  My voice cuts through the chaos, piercing the darkness with brutal melodies.
+  I command the stage with an unyielding presence, captivating metalheads worldwide.
+  My relentless journey in the world of metal continues, leaving a thunderous mark on the music scene.",
+  city: "Nantes", instrument: vocal, style: metal, band: tenacious)
+
+file = File.open(Rails.root.join("app/assets/images/victor-avatar.jpeg"))
+victor.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
+
+ulysse = User.create!(last_name: "Charraud", first_name: "Ulysse",
+  email: "ulysse@email.com", password: "azerty", bio: "I am Ulysse, a skilled drummer.
+  With every strike of my sticks, I unleash a rhythmic storm that reverberates through the air.
+  From intricate fills to thunderous beats, I forge the backbone of the music.
+  My passion for percussion ignites the stage, captivating audiences with my dynamic presence.
+  My relentless pursuit as a drummer continues, leaving an indelible mark on the music scene.",
+  city: "Nantes", instrument: drums, style: metal, band: tenacious)
+
+file = File.open(Rails.root.join("app/assets/images/ulysse-avatar.jpeg"))
+ulysse.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
+
+florian = User.create!(last_name: "Meline", first_name: "Florian",
+  email: "florian@email.com", password: "azerty", bio: "I am Florian, a masterful bagpiper.
+  With each breath, I summon ancient melodies that transport listeners to distant lands.
+  The haunting notes of my bagpipes weave tales of forgotten traditions and vibrant cultures.
+  My passionate playing resonates with the souls of those who hear it, creating a profound connection.
+  As a devoted bagpiper, my musical journey carries on, leaving an unforgettable imprint on the music scene.",
+  city: "Nantes", instrument: bagpipe, style: metal, band: tenacious)
+
+file = File.open(Rails.root.join("app/assets/images/florian-avatar.jpeg"))
+florian.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
 puts "Users created"
 
