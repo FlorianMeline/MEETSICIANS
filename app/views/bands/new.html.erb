@@ -19,31 +19,28 @@
       <%# <img data-preview-target="preview" style="max-width: 100%; max-height: 200px;"> %>
     </div>
   </div>
-  <div>
-  <div class="container padding-new-band">
-    <div class="padding-form-creation">
-    <div class="name-input-page-creation">
-      <i class="far fa-user-circle icon-page-creation"></i>
-      <%= form.text_field :name, placeholder: 'Name', class: " input-creation-style " %>
-    </div>
-    <div class="name-input-page-creation">
-      <i class="fas fa-pen pen-input"></i>
-      <%= form.text_area :bio, placeholder: "Biography", class: "input-creation-style" %>
-    </div>
-    <div class="name-input-page-creation">
-      <i class="fas fa-map-marker-alt icon-page-creation"></i>
-      <%= form.text_field :city, placeholder: "City", class: "input-creation-style" %>
-    </div>
-    <div class="name-input-page-creation">
-      <i class="fas fa-video icon-page-creation"></i>
-      <%= form.url_field :video_url, placeholder: "Video URL", class: "input-creation-style" %>
-    </div>
-      <%= form.collection_select :needed_instrument_id, Instrument.all, :id, :name, prompt: "Add the instrument you need"%>
-      <%= form.collection_select :style_id, Style.all, :id, :name, prompt: "Add a style"%>
-      <%= form.submit "Create Band", class: "button-creation-band" %>
-      <% end %>
-    <div>
-    </div>
+  <div class="container padding-navbar-edit">
+  <div class="padding-form-creation">
+  <div class="name-input-page-creation">
+    <i class="far fa-user-circle icon-page-creation"></i>
+    <%= form.text_field :name, placeholder: 'Name', class: " input-creation-style " %>
+  </div>
+  <div class="name-input-page-creation">
+    <i class="fas fa-pen pen-input"></i>
+    <%= form.text_area :bio, placeholder: "Biography", class: "input-creation-style" %>
+  </div>
+  <div class="name-input-page-creation">
+    <i class="fas fa-map-marker-alt icon-page-creation"></i>
+    <%= form.text_field :city, placeholder: "City", class: "input-creation-style" %>
+  </div>
+  <div class="name-input-page-creation">
+    <i class="fas fa-video icon-page-creation"></i>
+    <%= form.url_field :video_url, placeholder: "Video URL", class: "input-creation-style" %>
+  </div>
+    <%= form.collection_select :needed_instrument_id, Instrument.all, :id, :name, prompt: "Add the instrument you need"%>
+    <%= form.collection_select :style_id, Style.all, :id, :name, prompt: "Add a style"%>
+    <%= form.submit "Create Band", class: "button-creation-band" %>
+    <% end %>
   </div>
 <%# <script src="/path/to/preview_controller.js" type="module"></script> %>
 </div>
