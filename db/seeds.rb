@@ -1077,7 +1077,7 @@ oceane = User.create!(last_name: " Villeneuve", first_name: "Océane",
   I weave complex basslines that resonate with raw emotion.
   My melodic talent has captivated audiences worldwide, creating an unbreakable bond between me and the music.
   My harmonious journey continues, leaving an indelible imprint on the music scene.",
-  city: "Nantes", instrument: bass, style: rock, band: tenacious)
+  city: "Nantes", instrument: bass, style: rock, video_url: "https://www.youtube.com/embed/8JVlY3df4D4")
 
 file = File.open(Rails.root.join("app/assets/images/oceane-avatar.jpeg"))
 oceane.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
@@ -1088,7 +1088,7 @@ victor = User.create!(last_name: "Pichereau", first_name: "Victor",
   My voice cuts through the chaos, piercing the darkness with brutal melodies.
   I command the stage with an unyielding presence, captivating metalheads worldwide.
   My relentless journey in the world of metal continues, leaving a thunderous mark on the music scene.",
-  city: "Nantes", instrument: vocal, style: metal, band: tenacious)
+  city: "Nantes", instrument: vocal, style: metal,  video_url: "https://www.youtube.com/embed/9L_T9khrwdo")
 
 file = File.open(Rails.root.join("app/assets/images/victor-avatar.jpeg"))
 victor.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
@@ -1099,7 +1099,7 @@ ulysse = User.create!(last_name: "Charraud", first_name: "Ulysse",
   From intricate fills to thunderous beats, I forge the backbone of the music.
   My passion for percussion ignites the stage, captivating audiences with my dynamic presence.
   My relentless pursuit as a drummer continues, leaving an indelible mark on the music scene.",
-  city: "Nantes", instrument: drums, style: metal, band: tenacious)
+  city: "Nantes", instrument: drums, style: metal, video_url: "https://www.youtube.com/embed/uwdFR0PBANk")
 
 file = File.open(Rails.root.join("app/assets/images/ulysse-avatar.jpeg"))
 ulysse.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
@@ -1110,7 +1110,7 @@ florian = User.create!(last_name: "Meline", first_name: "Florian",
   The haunting notes of my bagpipes weave tales of forgotten traditions and vibrant cultures.
   My passionate playing resonates with the souls of those who hear it, creating a profound connection.
   As a devoted bagpiper, my musical journey carries on, leaving an unforgettable imprint on the music scene.",
-  city: "Nantes", instrument: bagpipe, style: metal, band: tenacious)
+  city: "Nantes", instrument: bagpipe, style: metal, video_url: "https://www.youtube.com/embed/2EXysr5NRiE")
 
 file = File.open(Rails.root.join("app/assets/images/florian-avatar.jpeg"))
 florian.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
