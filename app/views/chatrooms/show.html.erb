@@ -2,9 +2,6 @@
       <strong><h1 class="title-chatroom"><%= @chatroom.band.name.upcase %></h1></strong>
     <% if current_user.band.present? %>
       <% current_user.band.id == @chatroom.band.id %>
-      <strong><h1 class="title-chatroom"><%= @chatroom.band.name.upcase %></h1></strong>
-    <% else %>
-      <strong><h1 class="title-chatroom"><%= @chatroom.current_user.name.upcase %></h1></strong>
 
     <%# turbo method update %>
     <%= link_to "Add to your band", update_user_chatroom_path(@chatroom),data: {turbo_method: :patch}, class:"add-btn" %>
