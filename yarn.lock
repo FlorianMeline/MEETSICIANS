@@ -7,6 +7,11 @@
   resolved "https://registry.npmjs.org/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
+"@hotwired/stimulus-webpack-helpers@^1.0.0":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@hotwired/stimulus-webpack-helpers/-/stimulus-webpack-helpers-1.0.1.tgz#4cd74487adeca576c9865ac2b9fe5cb20cef16dd"
+  integrity sha512-wa/zupVG0eWxRYJjC1IiPBdt3Lruv0RqGN+/DTMmUWUyMAEB27KXmVY6a8YpUVTM7QwVuaLNGW4EqDgrS2upXQ==
+
 "@hotwired/stimulus@^3.2.1":
   version "3.2.1"
   resolved "https://registry.npmjs.org/@hotwired/stimulus/-/stimulus-3.2.1.tgz"
@@ -696,6 +701,14 @@ stimulus-use@^0.52.0:
   version "0.52.0"
   resolved "https://registry.npmjs.org/stimulus-use/-/stimulus-use-0.52.0.tgz"
   integrity sha512-b2Z2krSSIqKvG9ncrjMlxbX3SYg9mgL0g/1Zc25jTZjTr0//wgg7szUi9G67amBs/yLqO12GAEnudybZgYNnjA==
+
+stimulus@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/stimulus/-/stimulus-3.2.1.tgz#bf049a4379ed4ff7475515acce1f0b6fa15a0187"
+  integrity sha512-EhpuHnTwtkWrE5m7tQxLBLsi1aE6xJ/9MbB88aKXZSquIC4pCueKJ2AGaF5gq+/BzP7+xvYaVYA0j1dIUuBsgA==
+  dependencies:
+    "@hotwired/stimulus" "^3.2.1"
+    "@hotwired/stimulus-webpack-helpers" "^1.0.0"
 
 supports-color@^8.0.0:
   version "8.1.1"
