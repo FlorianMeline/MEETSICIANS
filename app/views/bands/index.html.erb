@@ -10,9 +10,9 @@
       </div>
     <% end %>
 
-  <div class="filter-search" data-controller="dropdown">
+  <div class="filter-search">
     <div class="oce-dropdown-container">
-        <div class="oce-dropdown" style="color: white">
+        <div class="oce-dropdown"  data-controller="dropdown" style="color: white">
           <input class="oce-dropdown-input" data-action="click->dropdown#toggle" placeholder="Style" readonly />
           <ul class="oce-dropdown-menu-list"  data-dropdown-target="menu" id="liste" style="display: none">
             <% @styles.each do|style| %>
@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="oce-dropdown-container-instrument">
-        <div class="oce-dropdown" style="color: white">
+        <div class="oce-dropdown"  data-controller="dropdown"style="color: white">
           <input class="oce-dropdown-input" data-action="click->dropdown#toggle" placeholder="Instrument" readonly />
           <ul class="oce-dropdown-menu-list"  data-dropdown-target="menu" id="liste" style="display: none">
             <% @instruments.each do|instrument| %>
