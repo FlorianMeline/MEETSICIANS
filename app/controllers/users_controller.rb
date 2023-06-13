@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
     if @user.update
       @user.save
-      redirect_to edit_band_path(@band)
+      redirect_to band_path(@band)
     else
       render :new, status: :unprocessable_entity
     end
