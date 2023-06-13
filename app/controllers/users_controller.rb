@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-before_update :reload_page
-
 
   def update
     @user = User.find(params[:id])  # Assuming the user ID is passed as a parameter
