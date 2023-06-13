@@ -54,18 +54,18 @@
 
 #band_needed_instrument_id {
   margin-top: 22px;
-    background-color: black;
-    text-decoration: none;
-    color: #A4A3A3;
-    border: 1px solid #FF082A;
-    border-radius: 7px;
-    padding: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    margin-bottom: 17px;
-    width: 311px;
-    text-align: center;
-    margin-left: 31px;
+  background-color: black;
+  text-decoration: none;
+  color: #A4A3A3;
+  border: 1px solid #FF082A;
+  border-radius: 7px;
+  padding: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 17px;
+  width: 89%;
+  text-align: center;
+  margin-left: 20px;
 }
 
 #band_needed_instrument_id:focus-visible {
@@ -83,9 +83,9 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   margin-bottom: 20px;
-  width: 311px;
+  width: 89%;
   text-align: center;
-  margin-left: 31px;
+  margin-left: 20px;
 }
 #band_style_id:focus-visible {
   outline: none;
@@ -169,7 +169,7 @@
   position: absolute;
   width: 140px;
   height: 140px;
-  inset: 245px 137px -14px;
+  inset: 350px 137px -14px;
   margin: auto;
   border: 1px solid white;
   object-fit: cover;
