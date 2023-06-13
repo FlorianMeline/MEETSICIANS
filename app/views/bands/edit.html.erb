@@ -28,19 +28,21 @@
           members
       </button>
     </div>
-    <div class="height-input-edition">
-      <%= form.text_field :name, placeholder: 'Name', class: " input-edit-band name-band d-flex justify-content-center" %>
-      <%= form.collection_select :needed_instrument_id, Instrument.all, :id, :name, class:"dropdown-edition", prompt: "Add the instrument you need"%>
-      <%= form.collection_select :style_id, Style.all, :id, :name, prompt: "Add a style"%>
+    <div class="container padding-navbar-edit">
+      <div class="height-input-edition">
+        <%= form.text_field :name, placeholder: 'Name', class: " input-edit-band name-band d-flex justify-content-center" %>
+        <%= form.collection_select :needed_instrument_id, Instrument.all, :id, :name, class:"dropdown-edition", prompt: "Add the instrument you need"%>
+        <%= form.collection_select :style_id, Style.all, :id, :name, prompt: "Add a style"%>
+      </div>
+      <%= form.text_area :bio, placeholder: "Biography", class: "bio-edit-band", input_html: {value: @band.bio }  %>
+      <%# mettre le lien vidéo YOUTUBE %>
+      <div class="name-input-page-edition">
+        <i class="fas fa-video icon-page-creation"></i>
+        <%= form.url_field :video_url, placeholder: "Video URL", class: "input-edit-url" %>
+      </div>
+      <%= form.submit "Save", class: "button-edition-band" %>
+      <%end%>
     </div>
-    <%= form.text_area :bio, placeholder: "Biography", class: "bio-edit-band", input_html: {value: @band.bio }  %>
-    <%# mettre le lien vidéo YOUTUBE %>
-    <div class="name-input-page-edition">
-      <i class="fas fa-video icon-page-creation"></i>
-      <%= form.url_field :video_url, placeholder: "Video URL", class: "input-edit-url" %>
-    </div>
-    <%= form.submit "Save", class: "button-edition-band" %>
-    <%end%>
   </div>
 
       <!-- POP-UP -->
