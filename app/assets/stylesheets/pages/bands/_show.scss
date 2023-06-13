@@ -151,17 +151,30 @@
 
 .name {
   font-size: 20px;
+  margin-left: 10px;
 }
 
 .instrument {
   font-size: 15px;
   text-transform: uppercase;
   font-weight: lighter;
+  margin-left: 10px;
 }
 
 .member-photo {
   border-radius: 50%;
   margin-right: 5px;
+  border-radius: 100%;
+  box-shadow:
+    0 0 5px #fff,
+    0 0 6px #fff,
+    0 0 6px #fff,
+    0 0 6px rgb(255, 11, 11),
+    0 0 6px red,
+    0 0 6px red,
+    0 0 25px red,
+    0 0 6px red,
+    0 0  6px red;
 }
 
 
