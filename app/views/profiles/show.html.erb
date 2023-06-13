@@ -21,7 +21,6 @@
       <p class="bio-band mt-4 d-flex justify-content-space-between p-3"><%= @user.bio%></p>
     </div>
     <div class="container">
-    <iframe width="100%"  src="<%= @user.band.video_url%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div>
   <%= link_to "disconnect",  destroy_user_session_path, data: {turbo_method: :delete}, class:"btn-disconnect" %>
