@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   resources :users, only: [:update, :post]
 
   resources :chatrooms, only: [:index, :show] do
+    member do
+      patch :update_user
+    end
     resources :messages, only: :create
   end
 end
