@@ -5,6 +5,7 @@ export default class extends Controller {
   static targets = ["menu"]
 
   connect() {
+    console.log("Hello");
     useClickOutside(this, { element: this.menuTarget })
   }
 
