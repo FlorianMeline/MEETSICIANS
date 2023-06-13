@@ -1,4 +1,10 @@
 // Specific CSS for your home-page
+.body-homepage-home {
+  padding-top: 10rem;
+  height: 100vh;
+  background-size: cover;
+}
+
 .back-btn {
   position: absolute;
   color: white;
@@ -10,6 +16,7 @@
   border-radius: 50%;
   z-index: 100;
 }
+
 .back-btn i {
   padding-left: 10px;
   padding-top: 9px;
@@ -18,21 +25,37 @@
 .logo {
   padding: 0;
   object-fit: cover;
+  width: 100px;
+  height: 360px;
 }
 
 .catch {
   text-align: center;
-  padding: 25px;
+  font-size: xx-large;
+  padding-inline: 25px;
+  margin: 0;
 }
 
 .btn-home {
   display: flex;
   justify-content: center;
-  margin-top: 35px;
+}
+
+
+.btn-meetsicians {
+  font-size: x-large;
+  border-radius: 25px;
+  border: solid 1px white;
+  padding: 10px 25px;
+  color: white;
+  text-decoration: none;
+  background-color: #191919c2;
 }
 
 .btn-sign-up {
-  border-radius: 30px;
-  padding: 8px;
-  margin-top: 40px;
+  padding-top: 160px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  text-shadow: -2px 2px 6px #000000;;
 }
