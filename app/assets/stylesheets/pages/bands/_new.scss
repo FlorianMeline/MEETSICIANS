@@ -68,6 +68,11 @@
     margin-left: 31px;
 }
 
+#band_needed_instrument_id:focus-visible {
+  outline: none;
+  border:1px solid #FF082A;
+}
+
 #band_style_id{
   background-color: black;
   color: #A4A3A3;
@@ -81,6 +86,10 @@
   width: 311px;
   text-align: center;
   margin-left: 31px;
+}
+#band_style_id:focus-visible {
+  outline: none;
+  border: 1px solid #FF082A;
 }
 
 #band_photo {
