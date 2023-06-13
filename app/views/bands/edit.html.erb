@@ -1,11 +1,11 @@
 
 <div class="banner-creation-band">
-  <%= form_with(model: @band, url: band_path,method: :patch, local: true) do |form| %>
+  <%= form_with(model: @band, url: band_path,method: :patch) do |form| %>
   <%= cl_image_tag @band.photo.key,class: "band-banner-edit"%>
     <div class="edition-city position-city d-flex justify-content-center text-align-center">
       <%= form.text_field :city, placeholder: "City", class: "input-creation-style" %>
     </div>
-    <%=cl_image_tag @band.photo.key, class: "band-avatar-edition", width: 200, height: 200, crop: :fill%>
+    <%=cl_image_tag @band.avatar.key, class: "band-avatar-edition", width: 200, height: 200, crop: :fill%>
     <img data-target="preview.preview" style="max-width: 100%; max-height: 200px;">
     <div class="creation-picture"></div>
       <div class="custom-file-input-wrapper " data-controller="preview">
@@ -35,45 +35,34 @@
     </div>
     <%= form.text_area :bio, placeholder: "Biography", class: "bio-edit-band", input_html: {value: @band.bio }  %>
     <%# mettre le lien vidéo YOUTUBE %>
-    <div class="name-input-page-creation">
+    <div class="name-input-page-edition">
       <i class="fas fa-video icon-page-creation"></i>
-      <%= form.url_field :video_url, placeholder: "Video URL", class: "input-creation-style" %>
+      <%= form.url_field :video_url, placeholder: "Video URL", class: "input-edit-url" %>
     </div>
     <%= form.submit "Save", class: "button-edition-band" %>
     <%end%>
   </div>
-        <div class="modal-content pop-body">
-            <button type="button" class="back-btn-pop m-3 align-self-start fa-solid fa-arrow-left" data-bs-dismiss="modal" aria-label="Close" ></button>
-          <div class="modal-header align-self-center">
-            <h1 class="modal-title title-member-banner" id="exampleModalLabel"  >Members</h1>
-          </div>
-
-          <%# POP-UP BODY %>
-          <div class="modal-body user-names pb-5">
-            <div class="member-name">
-
 
       <!-- POP-UP -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content pop-body">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Members</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
+            <button type="button" class="back-btn-pop m-3 align-self-start fa-solid fa-arrow-left" data-bs-dismiss="modal" aria-label="Close" ></button>
+          <div class="modal-header align-self-center">
+            <h1 class="modal-title title-member-banner" id="exampleModalLabel"  >Members</h1>
+          </div>
         <%# POP-UP BODY %>
-        <div class="modal-body user-names">
-        <div class="member-name">
+        <div class="modal-body user-names pb-5">
+            <div class="member-name">
           <% @users.each do |user| %>
             <% if @users.include?(user) %>
             <div class= "name-instrument d-flex align-items-center my-4">
               <div class="">
                 <div>
-                  <%= button_to "-",
+                  <%= button_to "",
                       user_path(user),
                       method: :patch,
-                      data: { turbo_confirm: "Are you sure?" },
-                      class: "delete-button hidden-field" %>
+                      class: "delete-button hidden-field"%>
                   <%=cl_image_tag user.avatar.key, width: 80, height: 80, crop: :fill, class: "member-photo" %>
                 </div>
               </div>

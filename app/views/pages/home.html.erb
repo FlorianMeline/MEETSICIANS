@@ -1,4 +1,4 @@
-<div class="body-homepage" style="background-image: url(<%= image_path "ampli.jpg"%>);">
+<div class="body-homepage-home" style="background-image: url(<%= image_path "ampli.jpg"%>);">
   <div class="logo">
     <%= image_tag "logo.png"%>
   </div>
@@ -8,7 +8,11 @@
   </div>
 
   <div class="btn-home">
-    <button class="btn-primary btn-sign-up">Sign-up</button>
+    <%= link_to "Meetsicians", bands_path, class: "btn-primary btn-meetsicians" %>
+  </div>
+
+  <div class="btn-home">
+    <%= link_to "Sign-up", new_user_session_path, class: "btn-primary btn-sign-up" %>
   </div>
 
 </div>
