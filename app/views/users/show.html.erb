@@ -4,13 +4,14 @@
 <div class= "band-container">
   <div class="banner-band banner-user-profil">
       <%= cl_image_tag @banner_picture_user ,class: "band-banner"%>
-      <h1 id="name-user"><strong><%= @user.first_name.upcase %>
+      <h1 id="name-user-profil"><strong><%= @user.first_name.upcase %>
       <%= @user.last_name.upcase%> </strong></h1>
   </div>
+    <p class= "city-band position-city d-flex justify-content-center text-align-center"><i class="fa-solid fa-location-dot dot-localisation padding-dot" style="color: #ff082a;"> </i> <%= @user.city.upcase%></p>
   <div class="functions-band">
-  <%if @user.band.present?%>
-  <%= link_to "See the band", band_path(@user.band),  class: " btn-create-band"%>
-  <%end%>
+    <%if @user.band.present?%>
+    <%= link_to "See the band", band_path(@user.band),  class: " btn-create-band"%>
+    <%end%>
 
     <%= cl_image_tag @user.avatar.key, class: "band-avatar", width: 200, height: 200, crop: :fill, gravity: :face%>
     <div class ="user-pill d-flex justify-content-between">
@@ -24,7 +25,7 @@
       <p class="bio-band mt-4 d-flex justify-content-space-between p-3"><%= @user.bio%></p>
     </div>
     <div class="container">
-  
+
     </div>
   </div>
 </div>
