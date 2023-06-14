@@ -1,47 +1,10 @@
 .delete-button{
   background-color: transparent;
-  border: 2px solid #FF082A;
-  border-radius: 100%;
-  height: 33px;
-  width: 33px;
-  text-align: center;
-  font-weight: 400;
+  border: none;
   position: absolute;
-  left: 19em;
-  margin-top: 14px;
-}
-
-.delete-button::before{
-  font-family: 'Font Awesome 6 Free';
-  content: "\f068";
-  font-weight: 900;
+  left: 18em;
   color: #FF082A;
-  text-align: center;
-}
-
-.city-band-edit-band {    position: absolute;
-  right: 20px;
-  top: 127px;
-  font-size: 12px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-  background: #121212;
-  border-radius: 6px;
-  padding-bottom: 26px;
-  padding-inline: 12px;
-  margin: auto;
-  height: 22px;
-  z-index: 1;
-  text-align: center;
-}
-
-.banner-creation-band #band_city  {
-  text-align: center;
-  width: 58%;
-}
-
-#paste-front-instrument {
-  z-index: 1;
+  margin-top: 18px;
 }
 
 .height-input-edition{
@@ -55,18 +18,14 @@
   color: white;
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
-  font-size: 34px;
-  margin-left: 1em;
+  font-size: 30px;
+  margin: 0em 14px;
+  &:focus-visible {
+    outline: none;
+    border: none;
+  }
 }
 
-.input-edit-band:focus-visible {
-  outline: none;
-  border: none;
-}
-.bio-edit-band:focus-visible {
-  outline: none;
-  border: none;
-}
 
 .bio-edit-band{
   border-radius: 25px;
@@ -81,6 +40,10 @@
   margin-left: 2em;
   text-align: justify;
   margin-bottom: 1em;
+  &:focus-visible {
+    outline: none;
+    border: none;
+  }
 }
 
 .pop-up-edit {
@@ -108,6 +71,7 @@
   font-family: 'Poppins', sans-serif;
   width: 7em;
   font-weight: 700;
+  margin-bottom: 60px;
 }
 
 .button-edition-band::before {
@@ -140,7 +104,7 @@
 
 .photo-preview-form-edit {
   height: 180px;
-  width: 414px;
+  width: 100%;
   position: absolute;
   -o-object-fit: cover;
   object-fit: cover;
@@ -190,18 +154,15 @@
 }
 
 .edition-city{
-  position: absolute;
-  right: 25px;
-  top: 24px;
+  width: 26%;
   font-size: 11px;
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
   background: #121212;
   border-radius: 6px;
-  z-index: 5;
-  width: 29%;
   padding: 5px;
 }
+
 
 .height-input-edition #band_needed_instrument_id{
   margin-top: 22px;
@@ -216,7 +177,7 @@
   margin-bottom: 17px;
   width: 40%;
   text-align: center;
-  margin-left: 31px;
+  margin-left: 18px;
 }
 
 
@@ -265,4 +226,47 @@
 
 .padding-navbar-edit {
   margin-bottom: 53px;
+}
+
+.back-btn-pop-edit {
+  position: absolute;
+  color: white;
+  left: 1px;
+  top: 23px;
+  background-color: #191919;
+  border: 2px solid #191919;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  z-index: 100;
+  font-size: 24px;
+}
+
+.padding-modal-header {
+  margin-top: 4em;
+}
+
+.input-city-edition-style {
+  border-radius: 25px;
+  background-color: transparent;
+  border: none;
+  color: #A4A3A3;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  &:focus-visible {
+    outline: none;
+    border: none;
+  }
+}
+
+.name-city-edition {
+  border-radius: 6px;
+  background: #191919;
+  align-items: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 5px 0px 5px 0px;
+  margin: 4px 126px 10px;
 }
