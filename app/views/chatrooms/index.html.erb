@@ -7,6 +7,7 @@
       <div class="message">
         <%= cl_image_tag chatroom.band.photo.key, class:"band-chat-avatar" %>
           <div class="preview">
+
             <h4><strong><%= link_to chatroom.band.name, chatroom_path(chatroom), class:"link-chat" %></strong></h4>
             <%= chatroom.messages.last.content %>
           </div>
@@ -14,9 +15,9 @@
         <% end %>
         <% @chatrooms_band.each do |chatroom|%>
           <div class="message">
-            <%= cl_image_tag chatroom.band.photo.key, class:"band-chat-avatar" %>
+            <%= cl_image_tag chatroom.users.last.avatar.key, class:"band-chat-avatar" %>
           <div class="preview">
-            <h4><strong><%= link_to chatroom.band.name, chatroom_path(chatroom), class:"link-chat"%></strong></h4>
+            <h4><strong><%= link_to "#{chatroom.users.last.first_name} #{chatroom.users.last.last_name}", chatroom_path(chatroom), class:"link-chat"%></strong></h4>
             <%= chatroom.messages.last.content %>
           </div>
             </div>
