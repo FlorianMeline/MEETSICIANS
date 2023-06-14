@@ -2,6 +2,7 @@ class ChatroomsController < ApplicationController
   def index
     @chatrooms_band = current_user.band_chatrooms
     @chatrooms_joined = current_user.chatrooms_joined
+    @user = current_user
   end
 
   def show
