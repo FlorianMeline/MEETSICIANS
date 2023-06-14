@@ -1,0 +1,30 @@
+
+<%# PAGE A MODIFIER %>
+
+<div class= "band-container">
+  <div class="banner-band banner-user-profil">
+      <%= cl_image_tag @banner_picture_user ,class: "band-banner"%>
+      <h1 id="name-user"><strong><%= @user.first_name.upcase %>
+      <%= @user.last_name.upcase%> </strong></h1>
+  </div>
+  <div class="functions-band">
+  <%if @user.band.present?%>
+  <%= link_to "See the band", band_path(@user.band),  class: " btn-create-band"%>
+  <%end%>
+
+    <%= cl_image_tag @user.avatar.key, class: "band-avatar", width: 200, height: 200, crop: :fill, gravity: :face%>
+    <div class ="user-pill d-flex justify-content-between">
+    </div>
+  </div>
+    <div class="pills-profil-user">
+      <p class= "music-style mr-2 pt-2"><%= @user.instrument.name.upcase%></p>
+      <p class= "music-style pt-2"><%= @user.style.name.upcase%></p>
+    </div>
+    <div>
+      <p class="bio-band mt-4 d-flex justify-content-space-between p-3"><%= @user.bio%></p>
+    </div>
+    <div class="container">
+  
+    </div>
+  </div>
+</div>

@@ -53,6 +53,10 @@
   text-shadow: 4px 4px 6px #000000;
   margin-top: auto;
   text-align: center;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 
 .bloc-new-message {
@@ -83,7 +87,7 @@
 }
 
 .banner-dicussion-chat {
-  height: 120px;
+  height: 143px;
   background-size: cover;
   background-position: center;
   padding: 60px 20px;
