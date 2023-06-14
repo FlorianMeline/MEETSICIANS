@@ -1,12 +1,13 @@
 <div class="banner-dicussion-chat" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
-      <strong><h1 class="title-chatroom"><%= @chatroom.band.name.upcase %></h1></strong>
-    <% if current_user.band.present? %>
-      <% current_user.band.id == @chatroom.band.id %>
-
-    <%# turbo method update %>
-    <%= link_to "Add to your band", update_user_chatroom_path(@chatroom),data: {turbo_method: :patch}, class:"add-btn" %>
-
-    <% end %>
+<%if @chatroom.band.users.pluck(:id).include?(current_user.id) %>
+  <%= link_to "#{@chatroom.messages.first.user.first_name} #{@chatroom.messages.first.user.last_name}", user_path(@chatroom.messages.first.user), class:"title-chatroom"%>
+<% else %>
+  <%= link_to "#{@chatroom.band.name}",band_path(@chatroom.band), class:"title-chatroom"%>
+  <%end%>
+  <% if current_user.band.present? %>
+    <% current_user.band.id == @chatroom.band.id %>
+  <%= link_to "Add to your band", update_user_chatroom_path(@chatroom),data: {turbo_method: :patch}, class:"add-btn" %>
+  <% end %>
 </div>
 <div class="container chatroom"
     data-controller="chatroom-subscription"

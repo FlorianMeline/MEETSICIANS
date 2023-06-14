@@ -1,4 +1,15 @@
 class UsersController < ApplicationController
+
+  def show
+    @user = User.find(params[:id])
+
+    if @user.band.present?
+      @banner_picture_user = @user.band.photo.key
+    else
+      @banner_picture_user = @user.avatar.key
+    end
+  end
+
   def update
     @user = User.find(params[:id])  # Assuming the user ID is passed as a parameter
     @user.update(band: nil)
