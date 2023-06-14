@@ -19,7 +19,7 @@
       <%# <img data-preview-target="preview" style="max-width: 100%; max-height: 200px;"> %>
     </div>
   </div>
-  <div>
+  <div class="container padding-navbar-edit">
   <div class="padding-form-creation">
   <div class="name-input-page-creation">
     <i class="far fa-user-circle icon-page-creation"></i>
@@ -41,7 +41,6 @@
     <%= form.collection_select :style_id, Style.all, :id, :name, prompt: "Add a style"%>
     <%= form.submit "Create Band", class: "button-creation-band" %>
     <% end %>
-  <div>
   </div>
 <%# <script src="/path/to/preview_controller.js" type="module"></script> %>
 </div>

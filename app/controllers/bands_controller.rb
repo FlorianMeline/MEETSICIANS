@@ -26,7 +26,7 @@ class BandsController < ApplicationController
     @band = Band.new(band_params)
     @current_user = current_user
     if @band.save
-      redirect_to @band
+      redirect_to band_path(@band)
       current_user.update(band_id: @band.id)
     else
       render :new
@@ -45,7 +45,7 @@ class BandsController < ApplicationController
     @band = Band.find(params[:id])  # Assuming the user ID is passed as a parameter
 
     if @band.update(band_params)
-      redirect_to @band
+      redirect_to band_path(@band)
     else
       render :new, status: :unprocessable_entity
     end

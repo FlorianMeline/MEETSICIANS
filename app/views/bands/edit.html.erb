@@ -2,18 +2,16 @@
 <div class="banner-creation-band">
   <%= form_with(model: @band, url: band_path,method: :patch) do |form| %>
   <%= cl_image_tag @band.photo.key,class: "band-banner-edit"%>
-    <div class="edition-city position-city d-flex justify-content-center text-align-center">
-      <%= form.text_field :city, placeholder: "City", class: "input-creation-style" %>
-    </div>
     <%=cl_image_tag @band.avatar.key, class: "band-avatar-edition", width: 200, height: 200, crop: :fill%>
     <img data-target="preview.preview" style="max-width: 100%; max-height: 200px;">
     <div class="creation-picture"></div>
-      <div class="custom-file-input-wrapper " data-controller="preview">
-        <%= label_tag 'photo', class: 'custom-file-label-photo', id: 'photo-input' do %>
-        <i class="fas fa-plus"></i>
-        <% end %>
-        <%= form.file_field :photo, id: 'photo', class: 'hidden-field custom-file-input', accept: 'image/png, image/jpeg, image/jpg', data: { action: 'preview#display' }%>
-        <img data-preview-target="previewImage" class="photo-preview-form-edit ">
+        <div class="custom-file-input-wrapper " data-controller="preview">
+          <%= label_tag 'photo', class: 'custom-file-label-photo', id: 'photo-input' do %>
+              <i class="fas fa-plus"></i>
+          <% end %>
+          <%= form.file_field :photo, id: 'photo', class: 'hidden-field custom-file-input', accept: 'image/png, image/jpeg, image/jpg', data: { action: 'preview#display' }%>
+          <img data-preview-target="previewImage" class="photo-preview-form-edit">
+        </div>
         <div class="custom-file-input-wrapper" data-controller="preview">
           <%= label_tag 'avatar', id: 'avatar-input', class: 'custom-file-label-avatar' do %>
           <i class="fas fa-plus"></i>
@@ -23,7 +21,6 @@
           <img data-preview-target="previewImage" class="custom-avatar-input">
           <%# <img data-preview-target="preview" style="max-width: 100%; max-height: 200px;"> %>
         </div>
-      </div>
       <button type="button" class="btn btn-primary btn-band-show" id="edit-member-page-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
           members
       </button>
@@ -31,6 +28,10 @@
     <div class="container padding-navbar-edit">
       <div class="height-input-edition">
         <%= form.text_field :name, placeholder: 'Name', class: " input-edit-band name-band d-flex justify-content-center" %>
+        <div class="name-city-edition">
+          <i class="fas fa-map-marker-alt icon-page-creation" style="color: #ff082a;" ></i>
+          <%= form.text_field :city, placeholder: "City", class: "input-city-edition-style" %>
+        </div>
         <%= form.collection_select :needed_instrument_id, Instrument.all, :id, :name, class:"dropdown-edition", prompt: "Add the instrument you need"%>
         <%= form.collection_select :style_id, Style.all, :id, :name, prompt: "Add a style"%>
       </div>
@@ -43,14 +44,13 @@
       <%= form.submit "Save", class: "button-edition-band" %>
       <%end%>
     </div>
-  </div>
 
       <!-- POP-UP -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content pop-body">
-            <button type="button" class="back-btn-pop m-3 align-self-start fa-solid fa-arrow-left" data-bs-dismiss="modal" aria-label="Close" ></button>
-          <div class="modal-header align-self-center">
+            <button type="button" class="back-btn-pop-edit hidden-field align-self-start fas fa-arrow-left" data-bs-dismiss="modal" aria-label="Close" ></button>
+          <div class="modal-header padding-modal-header align-self-center">
             <h1 class="modal-title title-member-banner" id="exampleModalLabel"  >Members</h1>
           </div>
         <%# POP-UP BODY %>
@@ -61,7 +61,7 @@
             <div class= "name-instrument d-flex align-items-center my-4">
               <div class="">
                 <div>
-                  <%= button_to "",
+                  <%= button_to "DELETE",
                       user_path(user),
                       method: :patch,
                       class: "delete-button hidden-field"%>
@@ -84,5 +84,6 @@
       </div>
       <%# POP-UP BODY %>
     </div>
+  </div>
   </div>
 </div>
