@@ -1083,12 +1083,12 @@ file = File.open(Rails.root.join("app/assets/images/oceane-avatar.jpeg"))
 oceane.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
 victor = User.create!(last_name: "Pichereau", first_name: "Victor",
-  email: "victor@email.com", password: "azerty", bio: "I am Victor, a fierce metal vocalist.
-  With each scream that escapes my throat, I unleash a torrent of raw power and emotion.
-  My voice cuts through the chaos, piercing the darkness with brutal melodies.
-  I command the stage with an unyielding presence, captivating metalheads worldwide.
-  My relentless journey in the world of metal continues, leaving a thunderous mark on the music scene.",
-  city: "Nantes", instrument: vocal, style: metal,  video_url: "https://www.youtube.com/embed/9L_T9khrwdo")
+  email: "victor@email.com", password: "azerty", bio: "I am Victor, a guitar virtuoso who dominates the stage with my
+  blistering solos and captivating melodies.
+  My fingers effortlessly glide across the fretboard, infusing each note with raw emotion.
+  With an electrifying presence, I leave an indelible mark on the music scene,
+  setting the strings ablaze with my undeniable talent.",
+  city: "Nantes", instrument: guitar, style: metal,  video_url: "https://www.youtube.com/embed/9L_T9khrwdo")
 
 file = File.open(Rails.root.join("app/assets/images/victor-avatar.jpeg"))
 victor.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
