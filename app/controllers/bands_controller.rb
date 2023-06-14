@@ -26,7 +26,7 @@ class BandsController < ApplicationController
     @band = Band.new(band_params)
     @current_user = current_user
     if @band.save
-      redirect_to @band
+      redirect_to band_path(@band)
       current_user.update(band_id: @band.id)
     else
       render :new
