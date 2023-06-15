@@ -45,3 +45,13 @@
   font-weight: 400;
   font-size: 13px;
 }
+
+.visible{
+  background-color: red;
+  height: 15px;
+  width: 15px;
+  display: flex;
+  align-self: center;
+  border-radius: 100%;
+  margin-left: auto;
+}

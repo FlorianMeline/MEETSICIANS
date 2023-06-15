@@ -20,6 +20,10 @@
               <h4><strong><%= link_to "#{chatroom.band.name}",chatroom_path(chatroom), class:"link-chat"%></strong></h4>
                             <%= chatroom.messages.last.content %>
             </div>
+             <% if chatroom.messages.last.user_id != current_user.id %>
+                <div class="visible">
+                </div>
+                <% end %>
           <% elsif chatroom.band.id == @user.band_id && @user.id != chatroom.messages.first.user.id %>
               <%= cl_image_tag chatroom.users.first.avatar.key, class:"band-chat-avatar" %>
             <div class="preview">
@@ -27,12 +31,20 @@
               <h4><strong><%= link_to "#{@second_user.first_name} #{@second_user.last_name}", chatroom_path(chatroom), class:"link-chat" %></strong></h4>
               <%= chatroom.messages.last.content %>
             </div>
+             <% if chatroom.messages.last.user_id != current_user.id %>
+                <div class="visible">
+                </div>
+                <% end %>
           <% elsif chatroom.band.id == @user.band_id && @user.id == chatroom.messages.first.user.id %>
               <%= cl_image_tag chatroom.band.avatar.key, class:"band-chat-avatar" %>
             <div class="preview">
               <h4><strong><%= link_to "#{chatroom.band.name}",chatroom_path(chatroom), class:"link-chat"%></strong></h4>
               <%= chatroom.messages.last.content %>
             </div>
+             <% if chatroom.messages.last.user_id != current_user.id %>
+                <div class="visible">
+                </div>
+                <% end %>
           <% end %>
           </div>
         </div>
