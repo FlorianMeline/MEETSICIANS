@@ -8,45 +8,44 @@
         <%= cl_image_tag chatroom.band.photo.key, class:"band-chat-avatar" %>
         <div class="preview">
           <h4><strong><%= link_to chatroom.band.name, chatroom_path(chatroom), class:"link-chat" %></strong></h4>
-          <%= chatroom.messages.last.content %>
+          <%= truncate(chatroom.messages.last.content, length: 20) %>
         </div>
       </div>
     <% end %>
       <% @chatrooms_band.each do |chatroom|%>
         <div class="message">
           <% if chatroom.band.id != @user.band_id %>
-                <%= cl_image_tag chatroom.band.avatar.key, class:"band-chat-avatar" %>
-            <div class="preview">
-              <h4><strong><%= link_to "#{chatroom.band.name}",chatroom_path(chatroom), class:"link-chat"%></strong></h4>
-                            <%= chatroom.messages.last.content %>
+            <%= cl_image_tag chatroom.band.avatar.key, class:"band-chat-avatar" %>
+              <div class="preview">
+                <h4><strong><%= link_to "#{chatroom.band.name}",chatroom_path(chatroom), class:"link-chat"%></strong></h4>
+                <%= truncate(chatroom.messages.last.content, length: 20) %>
+              </div>
+          <% if chatroom.messages.last.user_id != current_user.id %>
+            <div class="visible">
             </div>
-             <% if chatroom.messages.last.user_id != current_user.id %>
-                <div class="visible">
-                </div>
-                <% end %>
+            <% end %>
           <% elsif chatroom.band.id == @user.band_id && @user.id != chatroom.messages.first.user.id %>
-              <%= cl_image_tag chatroom.users.first.avatar.key, class:"band-chat-avatar" %>
-            <div class="preview">
-              <% @second_user = chatroom.messages.first.user %>
-              <h4><strong><%= link_to "#{@second_user.first_name} #{@second_user.last_name}", chatroom_path(chatroom), class:"link-chat" %></strong></h4>
-              <%= chatroom.messages.last.content %>
-            </div>
-             <% if chatroom.messages.last.user_id != current_user.id %>
-                <div class="visible">
-                </div>
-                <% end %>
+            <%= cl_image_tag chatroom.messages.first.user.avatar.key, class:"band-chat-avatar" %>
+              <div class="preview">
+                <% @second_user = chatroom.messages.first.user %>
+                <h4><strong><%= link_to "#{@second_user.first_name} #{@second_user.last_name}", chatroom_path(chatroom), class:"link-chat" %></strong></h4>
+                <%= truncate(chatroom.messages.last.content, length: 20) %>
+              </div>
+            <% if chatroom.messages.last.user_id != current_user.id %>
+              <div class="visible"></div>
+            <% end %>
           <% elsif chatroom.band.id == @user.band_id && @user.id == chatroom.messages.first.user.id %>
-              <%= cl_image_tag chatroom.band.avatar.key, class:"band-chat-avatar" %>
-            <div class="preview">
-              <h4><strong><%= link_to "#{chatroom.band.name}",chatroom_path(chatroom), class:"link-chat"%></strong></h4>
-              <%= chatroom.messages.last.content %>
-            </div>
-             <% if chatroom.messages.last.user_id != current_user.id %>
-                <div class="visible">
-                </div>
-                <% end %>
-          <% end %>
+            <%= cl_image_tag chatroom.band.avatar.key, class:"band-chat-avatar" %>
+              <div class="preview">
+                <h4><strong><%= link_to "#{chatroom.band.name}",chatroom_path(chatroom), class:"link-chat"%></strong></h4>
+                <%= truncate(chatroom.messages.last.content, length: 20) %>
+              </div>
+                <% if chatroom.messages.last.user_id != current_user.id %>
+              <div class="visible">
+              </div>
+            <% end %>
           </div>
+          <% end %>
         </div>
       <% end %>
   </div>
