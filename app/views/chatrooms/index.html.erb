@@ -3,24 +3,34 @@
     <%= cl_image_tag current_user.avatar.key, class: "chat-avatar", width: 200, height: 200, crop: :fill, gravity: :face%>
 <div class="container container-chats">
   <div class= "chat-preview">
-      <% @chatrooms_joined.each do |chatroom|%>
+    <% @chatrooms_joined.each do |chatroom|%>
       <div class="message">
         <%= cl_image_tag chatroom.band.photo.key, class:"band-chat-avatar" %>
-          <div class="preview">
-
-            <h4><strong><%= link_to chatroom.band.name, chatroom_path(chatroom), class:"link-chat" %></strong></h4>
-            <%= chatroom.messages.last.content %>
-          </div>
+        <div class="preview">
+          <h4><strong><%= link_to chatroom.band.name, chatroom_path(chatroom), class:"link-chat" %></strong></h4>
+          <%= chatroom.messages.last.content %>
+        </div>
       </div>
-        <% end %>
-        <% @chatrooms_band.each do |chatroom|%>
-          <div class="message">
-            <%= cl_image_tag chatroom.users.last.avatar.key, class:"band-chat-avatar" %>
-          <div class="preview">
-            <h4><strong><%= link_to "#{chatroom.users.last.first_name} #{chatroom.users.last.last_name}", chatroom_path(chatroom), class:"link-chat"%></strong></h4>
+    <% end %>
+      <% @chatrooms_band.each do |chatroom|%>
+        <div class="message">
+          <%= cl_image_tag chatroom.users.last.avatar.key, class:"band-chat-avatar" %>
+            <div class="preview">
+
+
+  <% if chatroom.band.id != @user.band_id %>
+      <h4><strong><%= link_to "#{chatroom.band.name}",chatroom_path(chatroom), class:"link-chat"%></strong></h4>
+  <% elsif chatroom.band.id == @user.band_id && @user.id != chatroom.messages.first.user.id %>
+      <% @second_user = chatroom.messages.first.user %>
+        <h4><strong><%= link_to "#{@second_user.first_name} #{@second_user.last_name}", chatroom_path(chatroom), class:"link-chat" %></strong></h4>
+  <% elsif chatroom.band.id == @user.band_id && @user.id == chatroom.messages.first.user.id %>
+      <h4><strong><%= link_to "#{chatroom.band.name}",chatroom_path(chatroom), class:"link-chat"%></strong></h4>
+  <% end %>
+
+
             <%= chatroom.messages.last.content %>
           </div>
-            </div>
-          <% end %>
+        </div>
+      <% end %>
   </div>
 </div>
