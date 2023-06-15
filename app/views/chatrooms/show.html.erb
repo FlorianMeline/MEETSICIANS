@@ -4,7 +4,6 @@
   <% if @chatroom.messages.empty? %>
     <%= link_to "#{@chatroom.band.name}",band_path(@chatroom.band), class:"title-chatroom"%>
   <% elsif @chatroom.messages.empty? == false %>
-    <%# <% @messages = @chatroom.messages.where(@user.band_id == @chatroom.band_id) %> %>
     <% @second_user = @chatroom.messages.first.user %>
     <% if @second_user.band_id != @chatroom.band_id || @second_user.band_id = nil || @user.id == @second_user.id %>
       <%= link_to "#{@chatroom.band.name}",band_path(@chatroom.band), class:"title-chatroom"%>
