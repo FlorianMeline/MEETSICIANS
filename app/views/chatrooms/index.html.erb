@@ -2,8 +2,8 @@
 </div>
     <%= cl_image_tag current_user.avatar.key, class: "chat-avatar", width: 200, height: 200, crop: :fill, gravity: :face%>
 <div class="container container-chats">
-  <div class= "chat-preview">
   <div data-controller="notif-navbar">
+  <div class= "chat-preview">
     <% @chatrooms_joined.each do |chatroom|%>
     <div data-action="click->notif-navbar#handleClick" data-target="message">
       <div class="message">
