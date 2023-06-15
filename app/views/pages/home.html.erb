@@ -7,12 +7,16 @@
     <h1>FIND A HOT BAND IN YOUR AREA</h1>
   </div>
 
-  <div class="btn-home">
-    <%= link_to "Meetsicians", bands_path, class: "btn-primary btn-meetsicians" %>
-  </div>
 
-  <div class="btn-home">
-    <%= link_to "Sign-up", new_user_session_path, class: "btn-primary btn-sign-up" %>
-  </div>
+
+  <% if user_signed_in? %>
+    <div class="btn-home">
+      <%= link_to "Meetsicians", bands_path, class: "btn-primary btn-meetsicians" %>
+    </div>
+  <% else %>
+    <div class="btn-home">
+      <%= link_to "Sign-up", new_user_session_path, class: "btn-primary btn-meetsicians" %>
+    </div>
+  <% end %>
 
 </div>
