@@ -245,7 +245,7 @@ omens = Band.create!(
   in their own journeys.",
   city: "Nantes",
   style: metal,
-  needed_instrument_id: bass.id,
+  needed_instrument_id: bagpipe.id,
   video_url: "https://www.youtube.com/embed/Aibxit_PpAg"
 )
 file = File.open(Rails.root.join("app/assets/images/Bad-Omens-1.jpeg"))

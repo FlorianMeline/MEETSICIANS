@@ -1,5 +1,4 @@
 <div class="banner-dicussion-chat" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
-
 <% if @chatroom.band.id != @user.band_id %>
   <% if @chatroom.messages.empty? %>
     <%= link_to "#{@chatroom.band.name}",band_path(@chatroom.band), class:"title-chatroom"%>

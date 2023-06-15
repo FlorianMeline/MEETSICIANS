@@ -35,11 +35,11 @@
 
 .user-pill .music-style {
   margin-right: -9px;
+  &:first-child {
+    margin-right: 8px;
+  }
 }
 
-.user-pill .music-style:first-child {
-  margin-right: 8px;
-}
 
 
 .pill-profil-instrument {
