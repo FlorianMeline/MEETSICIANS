@@ -3,7 +3,9 @@
     <%= cl_image_tag current_user.avatar.key, class: "chat-avatar", width: 200, height: 200, crop: :fill, gravity: :face%>
 <div class="container container-chats">
   <div class= "chat-preview">
+  <div data-controller="notif-navbar">
     <% @chatrooms_joined.each do |chatroom|%>
+    <div data-action="click->notif-navbar#handleClick" data-target="message">
       <div class="message">
         <%= cl_image_tag chatroom.band.photo.key, class:"band-chat-avatar" %>
         <div class="preview">
@@ -11,8 +13,10 @@
           <%= truncate(chatroom.messages.last.content, length: 20) %>
         </div>
       </div>
+      </div>
     <% end %>
       <% @chatrooms_band.each do |chatroom|%>
+       <div data-action="click->notif-navbar#handleClick" data-target="message">
         <div class="message">
           <% if chatroom.band.id != @user.band_id %>
             <%= cl_image_tag chatroom.band.avatar.key, class:"band-chat-avatar" %>
@@ -40,13 +44,15 @@
                 <h4><strong><%= link_to "#{chatroom.band.name}",chatroom_path(chatroom), class:"link-chat"%></strong></h4>
                 <%= truncate(chatroom.messages.last.content, length: 20) %>
               </div>
-                <% if chatroom.messages.last.user_id != current_user.id %>
+                <% if chatroom.messages.last.user != current_user %>
               <div class="visible">
               </div>
             <% end %>
           </div>
           <% end %>
         </div>
+        </div>
       <% end %>
+</div>
   </div>
 </div>

@@ -16,5 +16,8 @@ application.register("edit-profil", EditProfilController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import NotifNavbarController from "./notif_navbar_controller"
+application.register("notif-navbar", NotifNavbarController)
+
 import PreviewController from "./preview_controller"
 application.register("preview", PreviewController)

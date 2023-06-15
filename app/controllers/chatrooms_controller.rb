@@ -9,6 +9,7 @@ class ChatroomsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find(params[:id])
+    @chatroom.messages.update_all(view: true)
     @message = Message.new
     @user = current_user
   end
