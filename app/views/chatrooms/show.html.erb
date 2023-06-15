@@ -1,13 +1,28 @@
 <div class="banner-dicussion-chat" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg"%>);">
-<%if @chatroom.band.users.pluck(:id).include?(current_user.id) %>
-  <%= link_to "#{@chatroom.messages.first.user.first_name} #{@chatroom.messages.first.user.last_name}", user_path(@chatroom.messages.first.user), class:"title-chatroom"%>
-<% else %>
-  <%= link_to "#{@chatroom.band.name}",band_path(@chatroom.band), class:"title-chatroom"%>
-  <%end%>
-  <% if current_user.band.present? %>
-    <% current_user.band.id == @chatroom.band.id %>
-  <%= link_to "Add to your band", update_user_chatroom_path(@chatroom),data: {turbo_method: :patch}, class:"add-btn" %>
+  <% if @chatroom.band.id != @user.band_id %>
+    <% if @chatroom.messages.empty? %>
+      <%= link_to "#{@chatroom.band.name}",band_path(@chatroom.band), class:"title-chatroom"%>
+    <% elsif @chatroom.messages.empty? == false %>
+      <% @second_user = @chatroom.messages.first.user %>
+      <% if @second_user.band_id != @chatroom.band_id || @second_user.band_id = nil || @user.id == @second_user.id %>
+        <%= link_to "#{@chatroom.band.name}",band_path(@chatroom.band), class:"title-chatroom"%>
+      <% else %>
+        <%= link_to "#{@second_user.first_name} #{@second_user.last_name}", user_path(@chatroom.messages.first.user), class:"title-chatroom" %>
+      <%end%>
+    <% end %>
+  <% elsif @chatroom.band.id == @user.band_id && @user.id != @chatroom.messages.first.user.id %>
+      <% @second_user = @chatroom.messages.first.user %>
+        <%= link_to "#{@second_user.first_name} #{@second_user.last_name}", user_path(@chatroom.messages.first.user), class:"title-chatroom" %>
+        <%unless @chatroom.messages.first.user.band.present? %>
+          <%= link_to "Add to your band", update_user_chatroom_path(@chatroom),data: {turbo_method: :patch}, class:"add-btn" %>
+        <%end%>
+  <% elsif @chatroom.band.id == @user.band_id && @user.id == @chatroom.messages.first.user.id%>
+      <%= link_to "#{@chatroom.band.name}",band_path(@chatroom.band), class:"title-chatroom"%>
   <% end %>
+    <% if current_user.band.present? %>
+      <% current_user.band.id == @chatroom.band.id %>
+    <% end %>
+
 </div>
 <div class="container chatroom"
     data-controller="chatroom-subscription"
