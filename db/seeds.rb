@@ -391,6 +391,22 @@ epica.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
 file_avatar = File.open(Rails.root.join("app/assets/images/epica-avatar.jpeg"))
 epica.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
 
+time = Band.create!(
+  name: "Time for Energy",
+  bio: "We are Time for Energy, a group of passionate musicians who live and breathe music.
+  Our boundless creativity and shared love for sonic innovation drive us to constantly push boundaries and redefine genres.
+  When we hit the stage, our captivating performances ignite a fire in the hearts of our listeners,
+  leaving them energized and hungry for more. Time for Energy is the embodiment of our musical vitality and pure sonic bliss.",
+  city: "Nantes",
+  style: metal,
+  needed_instrument_id: bagpipe.id,
+  video_url: "https://www.youtube.com/embed/r_rrvfg3M5w"
+)
+file = File.open(Rails.root.join("app/assets/images/TimeForEnergy.jpeg"))
+time.photo.attach(io: file, filename: "band.jpeg", content_type: "image/jpeg")
+file_avatar = File.open(Rails.root.join("app/assets/images/timeforenergy-avatar.jpeg"))
+time.avatar.attach(io: file_avatar, filename: "avatar_band.jpeg", content_type: "image/jpeg")
+
 puts "Bandz created"
 
 puts "Creating users..."
@@ -1114,6 +1130,59 @@ florian = User.create!(last_name: "Meline", first_name: "Florian",
 
 file = File.open(Rails.root.join("app/assets/images/florian-avatar.jpeg"))
 florian.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
+
+antonin = User.create!(last_name: "TFE", first_name: "Antonin",
+  email: "antonin@email.com", password: "azerty", bio: "I am Antonin, the frontman
+  of Time for Energy. Through my voice, I channel the energy of the universe,
+  delivering electrifying performances. Each lyric carries a message of
+  empowerment and resilience, inspiring audiences to rise above. With a stage
+  presence that commands attention, I lead the band into a sonic frenzy.
+  My journey as the singer of Time for Energy propels forward, leaving an
+  indelible impact on the music scene.",
+  city: "Nantes", instrument: vocal, style: metal, band: time)
+
+file = File.open(Rails.root.join("app/assets/images/antonin-avatar.jpeg"))
+antonin.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
+
+tao = User.create!(last_name: "TFE", first_name: "Tao",
+  email: "tao@email.com", password: "azerty", bio: "I am Tao, the powerhouse
+  drummer of Time for Energy. With every thunderous strike of my drums,
+  I ignite a rhythmic explosion that drives the band's energy. The heartbeat of
+  our music pulses through my veins as I unleash a relentless torrent of beats.
+  My precise and dynamic playing electrifies the stage, captivating
+  audiences with an irresistible force. As the drummer of Time for Energy,
+  I propel our sonic journey forward, leaving an indelible mark on the music
+  scene.",
+  city: "Nantes", instrument: drums, style: metal, band: time)
+
+file = File.open(Rails.root.join("app/assets/images/tao-avatar.jpeg"))
+tao.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
+
+julien = User.create!(last_name: "TFE", first_name: "Julien",
+  email: "julien@email.com", password: "azerty", bio: "I am Julien,
+  the fiery guitarist of Time for Energy. With my fingertips,
+  I conjure blistering riffs that ignite the air with raw power.
+  The strings of my guitar become an extension of my soul as I unleash
+  passionate melodies and searing solos. My relentless energy on stage
+  electrifies the audience, leaving them in awe of the sonic landscapes we
+  create. As the guitarist of Time for Energy, I forge a path of sonic intensity,
+  leaving an indelible mark on the music scene.",
+  city: "Montcuq", instrument: guitar, style: metal, band: time)
+
+file = File.open(Rails.root.join("app/assets/images/julien-avatar.jpeg"))
+julien.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
+
+yox = User.create!(last_name: "TFE", first_name: "Yox",
+  email: "yox@email.com", password: "azerty", bio: "I am Yox, the thunderous
+  bassist of Time for Energy. With each pluck of the strings, I lay down a foundation of
+  groove that resonates deep within the music. The pulsating rhythms flow through my
+  veins, as I lock in with the drummer to create an unshakeable backbone. My melodic
+  basslines add a touch of soul and drive the energy of our sound. As the bassist of
+  Time for Energy, I propel the band forward, leaving an indelible mark on the music scene.",
+  city: "Montcuq", instrument: bass, style: metal, band: time)
+
+file = File.open(Rails.root.join("app/assets/images/yox-avatar.jpeg"))
+yox.avatar.attach(io: file, filename: "user.jpeg", content_type: "image/jpeg")
 
 puts "Users created"
 
