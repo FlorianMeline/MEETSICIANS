@@ -1,6 +1,8 @@
 <footer>
   <div class="footer">
       <%# sticky le footer en bas de l'écran et non de la page %>
+        <div class="envlop"></div>
+
     <div class="footer-container d-flex justify-content-around align-items-center h-100">
       <div class="nav-link <%="active" if current_page?(bands_path)%>">
         <%= link_to "", bands_path, class:"footicon fa-solid fa-house"%>

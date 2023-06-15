@@ -16,3 +16,33 @@ a.footicon {
 .nav-link.active .footicon {
   color:#FF082A
 }
+
+.envlop{
+  position: absolute;
+  bottom: 34px;
+  background-color: red;
+  height: 8px;
+  width: 8px;
+  display: flex;
+  align-self: center;
+  border-radius: 100%;
+  border: solid 1px black;
+  margin-left: 52.5%;
+  background: FF082A;
+  box-shadow: 0 0 0 0 FF082A;
+  animation: pulse-red 2s infinite;
+}
+@keyframes pulse-red {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 #FF082A;
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+  }
+}
