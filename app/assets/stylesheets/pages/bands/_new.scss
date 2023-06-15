@@ -27,6 +27,11 @@
   width: 369px;
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
+  &:focus-visible {
+    outline: none;
+    border: none;
+  }
+
 }
 
 .padding-form-creation {
@@ -66,12 +71,12 @@
   width: 89%;
   text-align: center;
   margin-left: 20px;
+  &:focus-visible {
+    outline: none;
+    border:1px solid #FF082A;
+  }
 }
 
-#band_needed_instrument_id:focus-visible {
-  outline: none;
-  border:1px solid #FF082A;
-}
 
 #band_style_id{
   background-color: black;
@@ -86,10 +91,10 @@
   width: 89%;
   text-align: center;
   margin-left: 20px;
-}
-#band_style_id:focus-visible {
-  outline: none;
-  border: 1px solid #FF082A;
+  &:focus-visible {
+    outline: none;
+    border: 1px solid #FF082A;
+  }
 }
 
 #band_photo {
@@ -104,12 +109,12 @@
   pointer-events: none;
   width: 0;
   height: 0;
+  &-wrapper {
+    position: absolute;
+    display: inline-block;
+  }
 }
 
-.custom-file-input-wrapper {
-  position: absolute;
-  display: inline-block;
-}
 
 .custom-file-label {
   position: absolute;
@@ -182,11 +187,6 @@
   position: absolute;
   object-fit: cover;
   background-color: #646262;
-}
-
-.input-creation-style:focus-visible {
-  outline: none;
-  border: none;
 }
 
 .padding-new-band {
