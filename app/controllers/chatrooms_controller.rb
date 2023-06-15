@@ -3,6 +3,8 @@ class ChatroomsController < ApplicationController
     @chatrooms_band = current_user.band_chatrooms
     @chatrooms_joined = current_user.chatrooms_joined
     @user = current_user
+    @chatrooms = @user.band.chatrooms.all
+
   end
 
   def show
@@ -18,6 +20,7 @@ class ChatroomsController < ApplicationController
   def update_user
     @chatroom = Chatroom.find(params[:id])
     @users = @chatroom.users
+    @chatroom.name = @chatroom.band.name if @chatroom.name != @chatroom.band.name
     @user = @users.find { |user| user.band_id == nil }
     if @user.update(band: @chatroom.band)
       redirect_to chatrooms_path(@chatrooms)
