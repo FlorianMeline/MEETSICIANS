@@ -47,11 +47,32 @@
 }
 
 .visible{
-  background-color: red;
+  // background-color: red;
   height: 15px;
   width: 15px;
   display: flex;
   align-self: center;
   border-radius: 100%;
   margin-left: auto;
+  background: rgb(255, 0, 0);
+	box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
+	animation: pulse-red 1.5s infinite;
 }
+
+@keyframes pulse-red {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+	}
+}
+
